@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Physics.QuantumMechanics
 {
-    internal class Schrodinger
+    public class Schrodinger
     {
     }
 }
