@@ -8,7 +8,7 @@ using Physics.CoordinateSystems;
 namespace Physics.Types
 {
     /// <summary>
-    /// Vectors represented in Cartersian, Polar, Spherical, etc. <typeparamref name="Coordinates"/>.
+    /// Vectors represented in Cartesian, Cylindrical, Spherical, etc. coordinates.
     /// </summary>
     /// <remarks>
     /// Components must be doubles.
@@ -17,33 +17,63 @@ namespace Physics.Types
     public struct Vector<Coordinates>
         where Coordinates : class
     {
+        public string CoordinateSystem;
         public double X1 { get; set; }
         public double X2 { get; set; }
         public double X3 { get; set; }
 
         public Vector(double x1, double x2, double x3 = 0)
         {
+            CoordinateSystem = typeof(Coordinates).Name;
+
+            if (typeof(Coordinates).Namespace is not "Physics.CoordinateSystems")
+            {
+                throw new TypeAccessException($"{CoordinateSystem} is not a valid coordinate system.");
+            }
+
             X1 = x1;
             X2 = x2;
             X3 = x3;
         }
 
-        // public static Vector<T> operator +(Vector<T> left, Vector<T> right);
+        //public static Vector<Coordinates> operator +(Vector<Coordinates> left, Vector<Coordinates> right);
 
-        public Vector<Cartesian> Add(Vector<Cartesian> vector)
+        public Vector<Coordinates> Add(Vector<Coordinates> vector)
         {
-            return new Vector<Cartesian>(X1 + vector.X1, X2 + vector.X2, X3 + vector.X3);
+            return new Vector<Coordinates>(X1 + vector.X1, X2 + vector.X2, X3 + vector.X3);
         }
 
         public double Length()
         {
-            return System.Math.Sqrt(X1 * X1 + X2 * X2 + X3 * X3);
+            if (CoordinateSystem is "Cartesian")
+            {
+                return System.Math.Sqrt(X1 * X1 + X2 * X2 + X3 * X3);
+            }
+            else if (CoordinateSystem is "Cylindrical")
+            {
+                return System.Math.Sqrt(X1 * X1 + X3 * X3);
+            }
+            else
+            {
+                return X1;
+            }
         }
 
-        public Vector<Cartesian> Normalize()
+        public Vector<Coordinates> Normalize()
         {
             var length = Length();
-            return new Vector<Cartesian>(X1 / length, X2 / length, X3 / length);
+            if (CoordinateSystem is "Cartesian")
+            {
+                return new Vector<Coordinates>(X1 / length, X2 / length, X3 / length);
+            }
+            else if (CoordinateSystem is "Cylindrical")
+            {
+                return new Vector<Coordinates>(X1 / length, X2, X3 / length);
+            }
+            else
+            {
+                return new Vector<Coordinates>(1, X2, X3);
+            }
         }
 
         public ValueTuple<double, double, double> ToTuple()

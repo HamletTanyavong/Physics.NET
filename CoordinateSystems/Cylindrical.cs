@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace Physics.CoordinateSystems
 {
     /// <summary>
-    /// Polar coordinates in the form (r, θ).
+    /// Polar coordinates in the form (r, θ, z) with optional parameter z.
     /// </summary>
-    public class Polar
+    public class Cylindrical
     {
         public double R { get; set; }
         public double Theta { get; set; }
