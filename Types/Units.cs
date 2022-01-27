@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.Math
+namespace Physics.Types
 {
-    internal class ComplexAnalysis
+    public class Units
     {
     }
 }

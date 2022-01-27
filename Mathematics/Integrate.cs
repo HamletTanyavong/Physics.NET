@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Physics.Exceptions;
 using Physics.Types;
 
-namespace Physics.Math
+namespace Physics.Mathematics
 {
     /// <summary>
     /// Numerical integration methods for physics calculations.
@@ -54,6 +54,7 @@ namespace Physics.Math
                 throw;
             }
         }
+
         /// <summary>
         /// Monte Carlo method of integration for multivariable integrals.
         /// </summary>
