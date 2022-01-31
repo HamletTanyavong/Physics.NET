@@ -14,5 +14,12 @@ namespace Physics.CoordinateSystems
         public double R { get; set; }
         public double Theta { get; set; }
         public double Phi { get; set; }
+
+        public Spherical(double r, double theta, double phi)
+        {
+            R = r;
+            Theta = theta;
+            Phi = phi;
+        }
     }
 }

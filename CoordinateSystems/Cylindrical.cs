@@ -13,5 +13,13 @@ namespace Physics.CoordinateSystems
     {
         public double R { get; set; }
         public double Theta { get; set; }
+        public double Z { get; set; }
+
+        public Cylindrical(double r, double theta, double z)
+        {
+            R = r;
+            Theta = theta;
+            Z = z;
+        }
     }
 }
