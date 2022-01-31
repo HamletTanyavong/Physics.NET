@@ -75,12 +75,34 @@ namespace Physics.Types
 
         public static Vector<Coordinates> operator *(double left, Vector<Coordinates> vector)
         {
-            return new Vector<Coordinates>(left * vector.First, left * vector.Second, left * vector.Third);
+            if (CoordinateSystem is "Cartesian")
+            {
+                return new Vector<Coordinates>(left * vector.First, left * vector.Second, left * vector.Third);
+            }
+            else if (CoordinateSystem is "Cylindrical")
+            {
+                return new Vector<Coordinates>(left * vector.First, vector.Second, left * vector.Third);
+            }
+            else
+            {
+                return new Vector<Coordinates>(left * vector.First, vector.Second, vector.Third);
+            }
         }
 
         public static Vector<Coordinates> operator *(Vector<Coordinates> vector, double right)
         {
-            return new Vector<Coordinates>(right * vector.First, right * vector.Second, right * vector.Third);
+            if (CoordinateSystem is "Cartesian")
+            {
+                return new Vector<Coordinates>(right * vector.First, right * vector.Second, right * vector.Third);
+            }
+            else if (CoordinateSystem is "Cylindrical")
+            {
+                return new Vector<Coordinates>(right * vector.First, vector.Second, right * vector.Third);
+            }
+            else
+            {
+                return new Vector<Coordinates>(right * vector.First, vector.Second, vector.Third);
+            }
         }
 
         public double Length()
