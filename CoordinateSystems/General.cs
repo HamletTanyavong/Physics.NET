@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Physics.CoordinateSystems
 {
-    public class General<T>
+    public class General : ICoordinateSystem
     {
-        public General()
-        {
-
-        }
     }
 }

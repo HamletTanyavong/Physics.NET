@@ -9,17 +9,7 @@ namespace Physics.CoordinateSystems
     /// <summary>
     /// Spherical coordinates in the form (r, θ, φ).
     /// </summary>
-    public class Spherical
+    public class Spherical : ICoordinateSystem
     {
-        public double R { get; set; }
-        public double Theta { get; set; }
-        public double Phi { get; set; }
-
-        public Spherical(double r, double theta, double phi)
-        {
-            R = r;
-            Theta = theta;
-            Phi = phi;
-        }
     }
 }

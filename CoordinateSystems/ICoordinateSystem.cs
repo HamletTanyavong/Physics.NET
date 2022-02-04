@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Physics.CoordinateSystems
 {
-    /// <summary>
-    /// Polar coordinates in the form (r, θ, z) with optional parameter z.
-    /// </summary>
-    public class Cylindrical : ICoordinateSystem
+    public interface ICoordinateSystem
     {
     }
 }
