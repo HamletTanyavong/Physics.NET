@@ -11,26 +11,25 @@ namespace Physics.Types
     /// Vector in <typeparamref name="Coordinates"/> coordinates.
     /// </summary>
     /// <remarks>
-    /// Components must be doubles. Cartesian, Cylindrical, and Spherical coordinates are all valid. For Polar coordinates, use Cylindrical type with an empty third argument. For vectors of n dimensions, use General.
+    /// Components must be doubles. <typeparamref name="Cartesian"/>, <typeparamref name="Cylindrical"/>, and <typeparamref name="Spherical"/> coordinates are all valid. For Polar coordinates, use Cylindrical type with an empty third argument. For vectors of n dimensions, use <typeparamref name="General"/>.
     /// </remarks>
     /// <typeparam name="Coordinates"></typeparam>
+    /// <typeparam name="Cartesian"></typeparam>
+    /// <typeparam name="Cylindrical"></typeparam>
+    /// <typeparam name="Spherical"></typeparam>
+    /// <typeparam name="General"></typeparam>
     public struct Vector<Coordinates> : IEquatable<Vector<Coordinates>>
-        where Coordinates : class
+        where Coordinates : class, ICoordinateSystem
     {
-        private static string? CoordinateSystem;
+        private static string? _coordinateSystem;
 
         public double First { get; set; }
-        public double Second { get; set; } 
+        public double Second { get; set; }
         public double Third { get; set; }
         
         public Vector(double first, double second, double third = 0)
         {
-            CoordinateSystem = typeof(Coordinates).Name;
-
-            if (typeof(Coordinates).Namespace is not "Physics.CoordinateSystems")
-            {
-                throw new TypeAccessException($"'{CoordinateSystem}' is not a valid coordinate system.");
-            }
+            _coordinateSystem = typeof(Coordinates).Name;
 
             First = first;
             Second = second;
@@ -39,11 +38,11 @@ namespace Physics.Types
 
         public static Vector<Coordinates> operator +(Vector<Coordinates> left, Vector<Coordinates> right)
         {
-            if (CoordinateSystem is "Cartesian")
+            if (_coordinateSystem is "Cartesian")
             {
                 return new Vector<Coordinates>(left.First + right.First, left.Second + right.Second, left.Third + right.Third);
             }
-            else if (CoordinateSystem is "Cylindrical")
+            else if (_coordinateSystem is "Cylindrical")
             {
                 var result = (left.ToCartesian() + right.ToCartesian()).ToCylindrical();
                 return new Vector<Coordinates>(result.First, result.Second, result.Third);
@@ -57,11 +56,11 @@ namespace Physics.Types
 
         public static Vector<Coordinates> operator -(Vector<Coordinates> left, Vector<Coordinates> right)
         {
-            if (CoordinateSystem is "Cartesian")
+            if (_coordinateSystem is "Cartesian")
             {
                 return new Vector<Coordinates>(left.First - right.First, left.Second - right.Second, left.Third - right.Third);
             }
-            else if (CoordinateSystem is "Cylindrical")
+            else if (_coordinateSystem is "Cylindrical")
             {
                 var result = (left.ToCartesian() - right.ToCartesian()).ToCylindrical();
                 return new Vector<Coordinates>(result.First, result.Second, result.Third);
@@ -75,11 +74,11 @@ namespace Physics.Types
 
         public static Vector<Coordinates> operator *(double left, Vector<Coordinates> vector)
         {
-            if (CoordinateSystem is "Cartesian")
+            if (_coordinateSystem is "Cartesian")
             {
                 return new Vector<Coordinates>(left * vector.First, left * vector.Second, left * vector.Third);
             }
-            else if (CoordinateSystem is "Cylindrical")
+            else if (_coordinateSystem is "Cylindrical")
             {
                 return new Vector<Coordinates>(left * vector.First, vector.Second, left * vector.Third);
             }
@@ -91,11 +90,11 @@ namespace Physics.Types
 
         public static Vector<Coordinates> operator *(Vector<Coordinates> vector, double right)
         {
-            if (CoordinateSystem is "Cartesian")
+            if (_coordinateSystem is "Cartesian")
             {
                 return new Vector<Coordinates>(right * vector.First, right * vector.Second, right * vector.Third);
             }
-            else if (CoordinateSystem is "Cylindrical")
+            else if (_coordinateSystem is "Cylindrical")
             {
                 return new Vector<Coordinates>(right * vector.First, vector.Second, right * vector.Third);
             }
@@ -107,11 +106,11 @@ namespace Physics.Types
 
         public double Length()
         {
-            if (CoordinateSystem is "Cartesian")
+            if (_coordinateSystem is "Cartesian")
             {
                 return System.Math.Sqrt(First * First + Second * Second + Third * Third);
             }
-            else if (CoordinateSystem is "Cylindrical")
+            else if (_coordinateSystem is "Cylindrical")
             {
                 return System.Math.Sqrt(First * First + Third * Third);
             }
@@ -124,11 +123,11 @@ namespace Physics.Types
         public Vector<Coordinates> Normalize()
         {
             var length = Length();
-            if (CoordinateSystem is "Cartesian")
+            if (_coordinateSystem is "Cartesian")
             {
                 return new Vector<Coordinates>(First / length, Second / length, Third / length);
             }
-            else if (CoordinateSystem is "Cylindrical")
+            else if (_coordinateSystem is "Cylindrical")
             {
                 return new Vector<Coordinates>(First / length, Second, Third / length);
             }
@@ -145,7 +144,7 @@ namespace Physics.Types
 
         public Vector<Cartesian> ToCartesian()
         {
-            if (CoordinateSystem is "Cylindrical")
+            if (_coordinateSystem is "Cylindrical")
             {
                 return new Vector<Cartesian>(First * Math.Cos(Second), First * Math.Sin(Second), Third);
             }
@@ -157,7 +156,7 @@ namespace Physics.Types
 
         public Vector<Cylindrical> ToCylindrical()
         {
-            if (CoordinateSystem is "Cartesian")
+            if (_coordinateSystem is "Cartesian")
             {
                 return new Vector<Cylindrical>(Math.Sqrt(First * First + Second * Second), Math.Atan2(Second, First), Third);
             }
@@ -169,7 +168,7 @@ namespace Physics.Types
 
         public Vector<Spherical> ToSpherical()
         {
-            if (CoordinateSystem is "Cartesian")
+            if (_coordinateSystem is "Cartesian")
             {
                 var radius = Math.Sqrt(First * First + Second * Second + Third * Third);
                 return new Vector<Spherical>(radius, Math.Acos(Third / radius), Math.Atan2(Second, First));

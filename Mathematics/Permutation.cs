@@ -8,18 +8,18 @@ namespace Physics.Mathematics
 {
     public class Permutation
     {
-        public uint I { get; set; }
-        public uint J { get; set; }
-        public uint N { get; set; }
+        public int I { get; set; }
+        public int J { get; set; }
+        public int N { get; set; }
 
-        public Permutation(uint i, uint j, uint n)
+        public Permutation(int i, int j, int n)
         {
             I = i;
             J = j;
             N = n;
         }
 
-        //public uint Size()
+        //public int Size()
         //{
         //    Math.Factor
         //}

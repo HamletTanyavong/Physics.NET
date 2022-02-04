@@ -19,14 +19,14 @@ namespace Physics.Mathematics
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
-        public static ulong General(uint n)
+        public static long General(int n)
         {
             if (n == 0)
                 return 1;
-            ulong result = 1;
+            long result = 1;
             if (n <= 65)
             {
-                for (uint i = n; i > 1; i--)
+                for (int i = n; i > 1; i--)
                 {
                     result *= i;
                 }
@@ -44,7 +44,7 @@ namespace Physics.Mathematics
         /// <param name="n"></param>
         /// <param name="order"></param>
         /// <returns></returns>
-        public static double Stirling(uint n, uint order)
+        public static double Stirling(int n, int order)
         {
             double constant = Math.Sqrt(2 * Math.PI * n) * Math.Pow(n, n) / Math.Pow(Math.E, n);
             double series = 0;
