@@ -9,7 +9,7 @@ namespace Physics.Core
     /// <summary>
     /// Universal constants in SI units.
     /// </summary>
-    public static class Constants
+    public static class Constant
     {
         /// <summary>
         /// Speed of light.
