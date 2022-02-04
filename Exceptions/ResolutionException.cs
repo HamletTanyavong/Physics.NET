@@ -9,7 +9,7 @@ namespace Physics.Exceptions
     [Serializable]
     public class ResolutionException : Exception
     {
-        public uint Value { get; }
+        public int Value { get; }
 
         public ResolutionException()
         {
@@ -25,7 +25,7 @@ namespace Physics.Exceptions
         {
         }
 
-        public ResolutionException(string message, uint value)
+        public ResolutionException(string message, int value)
             : this(message)
         {
             Value = value;
