@@ -16,18 +16,14 @@ namespace Physics.Mathematics
     {
         public static double Trapezoidal(Func<double, double> function, double a, double b, int N)
         {
-            var watch = new System.Diagnostics.Stopwatch();
             try
             {
-                watch.Start();
                 double partialSum = 0;
                 double delta = (b - a) / N;
                 for (int i = 1; i < N; i++)
                 {
                     partialSum += function(a + (i * delta));
                 }
-                watch.Stop();
-                Console.WriteLine($"Elapsed time for sequential method: {watch.ElapsedMilliseconds} ms");
                 return (partialSum + ((function(a) + function(b)) / 2)) * delta;
             }
             catch (Exception)
@@ -48,9 +44,8 @@ namespace Physics.Mathematics
         /// <param name="N">N must be an integer greater than zero.</param>
         /// <exception cref="ResolutionException"></exception>
         /// <returns>The value of the integral between the bounds <paramref name="a"/> and <paramref name="b"/>.</returns>
-        public static double Trapezoidal(Func<double, double> function, double a, double b, uint N, string parallel)
+        public static double Trapezoidal(Func<double, double> function, double a, double b, int N, string parallel)
         {
-            var watch = new System.Diagnostics.Stopwatch();
             try
             {
                 if (N < 1)
@@ -59,7 +54,6 @@ namespace Physics.Mathematics
                 }
                 if (parallel is "CPU")
                 {
-                    watch.Start();
                     var partialSum = new ConcurrentBag<double>();
                     double delta = (b - a) / N;
                     Parallel.For<double>(1, N, () => 0,
@@ -71,8 +65,6 @@ namespace Physics.Mathematics
                         {
                             partialSum.Add(result);
                         });
-                    watch.Stop();
-                    Console.WriteLine($"Elapsed time for parallel method: {watch.ElapsedMilliseconds} ms");
                     return (partialSum.Sum() + ((function(a) + function(b)) / 2)) * delta;
                 }
                 else if (parallel is "GPU")
