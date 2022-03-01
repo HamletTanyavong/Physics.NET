@@ -19,11 +19,11 @@ namespace Physics.Mathematics
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
-        public static long General(int n)
+        public static int General(int n)
         {
             if (n == 0)
                 return 1;
-            long result = 1;
+            int result = 1;
             if (n <= 65)
             {
                 for (int i = n; i > 1; i--)
