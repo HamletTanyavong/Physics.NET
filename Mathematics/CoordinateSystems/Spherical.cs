@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.CoordinateSystems
+namespace Physics.Mathematics.CoordinateSystems
 {
     /// <summary>
     /// Spherical coordinates in the form (r, θ, φ).

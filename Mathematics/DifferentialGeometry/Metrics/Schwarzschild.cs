@@ -3,21 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Physics.Units.SI;
 using Physics.Mathematics;
+using Physics.Mathematics.CoordinateSystems;
 
 namespace Physics.Mathematics.DifferentialGeometry.Metrics
 {
     /// <summary>
-    /// The metric for a gravitiational field created by an object of mass M, assuming no angular momentum or electric charge.
+    /// The metric for a gravitiational field created by an object of mass M, assuming no angular momentum or electric charge. Signature (-1, 1, 1, 1).
     /// </summary>
     public class Schwarzschild : IMetric
     {
-        public static double[,] Schwarzschild(FourVector fourvector, double M)
+        /// <summary>
+        /// Calculate the value of a metric at a specific point in spacetime.
+        /// </summary>
+        /// <param name="M"></param>
+        /// <param name="fourvector"></param>
+        /// <returns></returns>
+        internal static double[,] Calculate<T>(double M, FourVector<T> fourvector)
+            where T : class, ICoordinateSystem
         {
+            var schwarzschildRadius = 2 * Constant.G * M / Constant.cSquared;
             return Matrix.Diagonal
             (
-                -1 * (1 - (Constant.G * M) / (Constant.c * Constant.c * fourvector.First)),
-                1 / (1 - (Constant.G * M) / (Constant.c * Constant.c * fourvector.First)),
+                schwarzschildRadius / fourvector.First - 1,
+                1 / (1 - schwarzschildRadius / fourvector.First),
                 fourvector.First * fourvector.First,
                 fourvector.First * fourvector.First * Math.Pow(Math.Sin(fourvector.Second), 2)
             );

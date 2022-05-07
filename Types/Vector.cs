@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Physics.CoordinateSystems;
+using Physics.Mathematics.CoordinateSystems;
 
 namespace Physics.Types
 {

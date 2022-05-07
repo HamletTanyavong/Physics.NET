@@ -4,48 +4,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Physics.Mathematics;
-using Physics.Mathematics.DifferentialGeometry.Signatures;
+using Physics.Mathematics.CoordinateSystems;
 
 namespace Physics.Mathematics.DifferentialGeometry.Metrics
 {
-    public class Minkowski<Signature> : IMetric
-        where Signature : ISignature
+    public class Minkowski : IMetric
     {
-        private static string _signature = typeof(Signature).Name;
         private static double[,] MetricS130 = Matrix.Diagonal(1, -1, -1, -1);
         private static double[,] MetricS310 = Matrix.Diagonal(-1, 1, 1, 1);
-        public static FourVector Calculate(FourVector coordinate)
+
+        internal static double[,] Calculate<T>(FourVector<T> fourVector)
+            where T : class, ICoordinateSystem
         {
-            if (_signature is "S130")
-                return new FourVector(coordinate.Zeroth, -1 * coordinate.First, -1 * coordinate.Second, -1 * coordinate.Third);
-            else
-                return new FourVector(-1 * coordinate.Zeroth, coordinate.First, coordinate.Second, coordinate.Third);
+            return Matrix.Diagonal(-1, 1, 1, 1);
         }
 
-        public static Tensor Calculate(Tensor tensor)
+        internal static double[,] CalculateTest<T>(FourVector<T> fourVector)
+            where T : class, ICoordinateSystem
         {
-            Tensor result = new();
-            if (_signature is "S130")
-            {
-                for (int i = 0; i < 4; i++)
-                {
-                    for (int j = 0; j < 4; j++)
-                    {
-                        result[i, j] = MetricS130[i, i] * tensor[i, j];
-                    }
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 4; i++)
-                {
-                    for (int j = 0; j < 4; j++)
-                    {
-                        result[i, j] = MetricS310[i, i] * tensor[i, j];
-                    }
-                }
-            }
-            return result;
+            return Matrix.Diagonal(-1 * fourVector.Zeroth, fourVector.First, fourVector.Second, fourVector.Third);
         }
+
+        //internal static Tensor Calculate(Tensor tensor)
+        //{
+        //    Tensor result = new();
+        //    if (typeof(U).Name is "S130")
+        //    {
+        //        for (int i = 0; i < 4; i++)
+        //        {
+        //            for (int j = 0; j < 4; j++)
+        //            {
+        //                result[i, j] = MetricS130[i, i] * tensor[i, j];
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        for (int i = 0; i < 4; i++)
+        //        {
+        //            for (int j = 0; j < 4; j++)
+        //            {
+        //                result[i, j] = MetricS310[i, i] * tensor[i, j];
+        //            }
+        //        }
+        //    }
+        //    return result;
+        //}
     }
 }

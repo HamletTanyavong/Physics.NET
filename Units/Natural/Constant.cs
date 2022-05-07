@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.Mathematics.DifferentialGeometry.Signatures
+namespace Physics.Units.Natural
 {
-    public interface ISignature
+    public class Constant
     {
     }
 }

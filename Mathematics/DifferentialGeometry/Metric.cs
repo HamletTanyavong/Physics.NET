@@ -3,40 +3,58 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Physics.Core;
+using Physics.Units.SI;
+using Physics.Mathematics.CoordinateSystems;
 using Physics.Mathematics.DifferentialGeometry.Metrics;
-using Physics.Mathematics.DifferentialGeometry.Signatures;
 
 namespace Physics.Mathematics.DifferentialGeometry
 {
     /// <summary>
-    /// The <typeparamref name="Name"/> metric with signature <typeparamref name="Signature"/> and spedified indicies.
+    /// The <typeparamref name="Name"/> metric in <typeparamref name="Coordinates"/> coordinates with signature (-1, 1, 1, 1) and specified indicies.
     /// </summary>
     /// <typeparam name="Name"></typeparam>
-    /// <typeparam name="Signature"></typeparam>
-    public struct Metric<Name, Signature> : IMetric, ITensor
+    public struct Metric<Name, Coordinates> : IMetric, ITensor
         where Name : class, IMetric
-        where Signature : class, ISignature
+        where Coordinates : class, ICoordinateSystem
     {
         private static string? _name;
-        private static string? _signature;
         public int Rank { get; set; } = 2;
         private double[,] MetricTensor { get; set; }
         private Indicies _indicies { get; set; }
 
-        public Metric(Indicies indicies)
+        public Metric(Indicies indicies, FourVector<Coordinates> fourVector)
         {
             _name = typeof(Name).Name;
-            _signature = typeof(Signature).Name;
             _indicies = indicies;
 
-            MetricTensor = new double[4,4];
+            if (_name is "Minkowski")
+            {
+                MetricTensor = Minkowski.Calculate<Coordinates>(fourVector);
+            }
+            else
+            {
+                throw new TypeAccessException($"{_name} is not a valid metric.");
+            }
+        }
+
+        public Metric(Indicies indicies, double M, FourVector<Coordinates> fourVector)
+        {
+            _name = typeof(Name).Name;
+            _indicies = indicies;
+
+            if (_name is "Schwarzschild")
+            {
+                MetricTensor = Schwarzschild.Calculate<Coordinates>(M, fourVector);
+            }
+            else
+            {
+                throw new TypeAccessException($"{_name} is not a valid type.");
+            }
         }
 
         public Metric(Indicies indicies, double[,] metric)
         {
             _name = typeof(Name).Name;
-            _signature = typeof(Signature).Name;
             _indicies = indicies;
 
             MetricTensor = metric;
@@ -45,15 +63,9 @@ namespace Physics.Mathematics.DifferentialGeometry
         public Metric (Indicies indicies, double zeroth, double first, double second, double third)
         {
             _name = typeof(Name).Name;
-            _signature = typeof(Signature).Name;
             _indicies = indicies;
 
             MetricTensor = Matrix.Diagonal(zeroth, first, second, third);
-        }
-
-        public static FourVector Input(FourVector coordinate)
-        {
-            return Minkowski<Signature>.Calculate(coordinate);
         }
 
         public void Raise<T>(T metric, string index)

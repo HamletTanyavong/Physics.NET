@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.CoordinateSystems
+namespace Physics.Mathematics.CoordinateSystems
 {
     public interface ICoordinateSystem
     {

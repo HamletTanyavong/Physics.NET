@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Physics.Mathematics.DifferentialGeometry;
 using Physics.Mathematics.DifferentialGeometry.Metrics;
-using Physics.Mathematics.DifferentialGeometry.Signatures;
 
 namespace Physics.Mathematics.DifferentialGeometry
 {

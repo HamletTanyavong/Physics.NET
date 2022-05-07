@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.CoordinateSystems
+namespace Physics.Units
 {
-    public class General : ICoordinateSystem
+    internal interface IUnits
     {
     }
 }
