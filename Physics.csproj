@@ -10,9 +10,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="lib\Functions.dll">
+    <None Update="lib\glfw3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Shaders\simple_shader.frag.spv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Graphics\Shaders\simple_shader.vert.spv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="lib\Renderer.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\x64\Debug\" />
   </ItemGroup>
 
 </Project>

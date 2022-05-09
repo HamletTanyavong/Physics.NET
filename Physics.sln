@@ -4,13 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Physics", "Physics.csproj", "{A9E4DF95-5F64-4FEA-AA98-BCC4C654790C}"
-	ProjectSection(ProjectDependencies) = postProject
-		{7F1B769D-8E9C-44A1-99D9-6947D4DE9087} = {7F1B769D-8E9C-44A1-99D9-6947D4DE9087}
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackageVerifier", "..\PackageVerifier\PackageVerifier.csproj", "{E5BECD45-2B4F-46AD-AFE6-C4BE896F807A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Functions", "..\Functions\Functions.vcxproj", "{7F1B769D-8E9C-44A1-99D9-6947D4DE9087}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Renderer", "..\Renderer\Renderer.vcxproj", "{7F1B769D-8E9C-44A1-99D9-6947D4DE9087}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
