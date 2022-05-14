@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.Mathematics.CoordinateSystems
+namespace Physics.Mathematics.Vectors
 {
     /// <summary>
     /// Spherical coordinates in the form (r, θ, φ).
     /// </summary>
-    public class Spherical : ICoordinateSystem
+    public class Spherical : ICoordinateSystem, I3D
     {
     }
 }

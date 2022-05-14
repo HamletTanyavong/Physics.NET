@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.Mathematics.CoordinateSystems
+namespace Physics.Mathematics.Vectors
 {
-    public class General : ICoordinateSystem
+    public interface IVector
     {
     }
 }

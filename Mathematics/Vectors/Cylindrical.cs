@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.Mathematics.CoordinateSystems
+namespace Physics.Mathematics.Vectors
 {
     /// <summary>
-    /// Polar coordinates in the form (r, θ, z) with optional parameter z.
+    /// Polar coordinates in the form (r, θ, z).
     /// </summary>
-    public class Cylindrical : ICoordinateSystem
+    public class Cylindrical : ICoordinateSystem, I3D
     {
     }
 }
