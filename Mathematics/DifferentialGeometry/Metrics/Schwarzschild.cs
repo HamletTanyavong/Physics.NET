@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Physics.Units.SI;
 using Physics.Mathematics;
-using Physics.Mathematics.CoordinateSystems;
+using Physics.Mathematics.Vectors;
 
 namespace Physics.Mathematics.DifferentialGeometry.Metrics
 {
@@ -21,7 +21,7 @@ namespace Physics.Mathematics.DifferentialGeometry.Metrics
         /// <param name="fourvector"></param>
         /// <returns></returns>
         internal static double[,] Calculate<T>(double M, FourVector<T> fourvector)
-            where T : class, ICoordinateSystem
+            where T : class, ICoordinateSystem, I3D
         {
             var schwarzschildRadius = 2 * Constant.G * M / Constant.cSquared;
             return Matrix.Diagonal

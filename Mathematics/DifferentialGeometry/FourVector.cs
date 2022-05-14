@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Physics.Mathematics.CoordinateSystems;
 using Physics.Mathematics.DifferentialGeometry.Metrics;
-using Physics.Types;
+using Physics.Mathematics.Vectors;
 
 namespace Physics.Mathematics.DifferentialGeometry
 {
@@ -18,10 +17,10 @@ namespace Physics.Mathematics.DifferentialGeometry
     /// <typeparam name="Coordinates"></typeparam>
     /// <typeparam name="Contravariant"></typeparam>
     /// <typeparam name="Covariant"></typeparam>
-    public struct FourVector<Coordinates> : ITensor
-        where Coordinates : class, ICoordinateSystem
+    public struct FourVector<Coordinates> : IVector, ITensor
+        where Coordinates : class, ICoordinateSystem, I3D
     {
-        public int Rank { get; set; } = 1;
+        readonly public int Rank { get; } = 1;
 
         public double Zeroth { get; set; }
         public double First { get; set; }
@@ -36,7 +35,7 @@ namespace Physics.Mathematics.DifferentialGeometry
             Third = third;
         }
 
-        public FourVector(double zeroth, Vector<Coordinates> vector)
+        public FourVector(double zeroth, Vector3D<Coordinates> vector)
         {
             Zeroth = zeroth;
             First = vector.First;

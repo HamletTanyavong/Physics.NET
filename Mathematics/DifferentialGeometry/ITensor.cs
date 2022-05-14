@@ -12,7 +12,7 @@ namespace Physics.Mathematics.DifferentialGeometry
         /// <summary>
         /// The rank of a tensor.
         /// </summary>
-        int Rank { get; set; }
+        int Rank { get; }
 
         /// <summary>
         /// Raise an <paramref name="index"/> with a <paramref name="metric"/> of type <typeparamref name="T"/>.

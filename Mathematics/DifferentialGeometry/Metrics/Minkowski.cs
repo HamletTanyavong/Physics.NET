@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Physics.Mathematics;
-using Physics.Mathematics.CoordinateSystems;
+using Physics.Mathematics.Vectors;
 
 namespace Physics.Mathematics.DifferentialGeometry.Metrics
 {
@@ -14,13 +14,13 @@ namespace Physics.Mathematics.DifferentialGeometry.Metrics
         private static double[,] MetricS310 = Matrix.Diagonal(-1, 1, 1, 1);
 
         internal static double[,] Calculate<T>(FourVector<T> fourVector)
-            where T : class, ICoordinateSystem
+            where T : class, ICoordinateSystem, I3D
         {
             return Matrix.Diagonal(-1, 1, 1, 1);
         }
 
         internal static double[,] CalculateTest<T>(FourVector<T> fourVector)
-            where T : class, ICoordinateSystem
+            where T : class, ICoordinateSystem, I3D
         {
             return Matrix.Diagonal(-1 * fourVector.Zeroth, fourVector.First, fourVector.Second, fourVector.Third);
         }

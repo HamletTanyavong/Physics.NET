@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Physics.Units.SI;
-using Physics.Mathematics.CoordinateSystems;
 using Physics.Mathematics.DifferentialGeometry.Metrics;
+using Physics.Mathematics.Vectors;
 
 namespace Physics.Mathematics.DifferentialGeometry
 {
@@ -15,17 +15,17 @@ namespace Physics.Mathematics.DifferentialGeometry
     /// <typeparam name="Name"></typeparam>
     public struct Metric<Name, Coordinates> : IMetric, ITensor
         where Name : class, IMetric
-        where Coordinates : class, ICoordinateSystem
+        where Coordinates : class, ICoordinateSystem, I3D
     {
         private static string? _name;
         public int Rank { get; set; } = 2;
         private double[,] MetricTensor { get; set; }
-        private Indicies _indicies { get; set; }
+        private Indicies MetricIndicies { get; set; }
 
         public Metric(Indicies indicies, FourVector<Coordinates> fourVector)
         {
             _name = typeof(Name).Name;
-            _indicies = indicies;
+            MetricIndicies = indicies;
 
             if (_name is "Minkowski")
             {
@@ -40,7 +40,7 @@ namespace Physics.Mathematics.DifferentialGeometry
         public Metric(Indicies indicies, double M, FourVector<Coordinates> fourVector)
         {
             _name = typeof(Name).Name;
-            _indicies = indicies;
+            MetricIndicies = indicies;
 
             if (_name is "Schwarzschild")
             {
@@ -55,7 +55,7 @@ namespace Physics.Mathematics.DifferentialGeometry
         public Metric(Indicies indicies, double[,] metric)
         {
             _name = typeof(Name).Name;
-            _indicies = indicies;
+            MetricIndicies = indicies;
 
             MetricTensor = metric;
         }
@@ -63,7 +63,7 @@ namespace Physics.Mathematics.DifferentialGeometry
         public Metric (Indicies indicies, double zeroth, double first, double second, double third)
         {
             _name = typeof(Name).Name;
-            _indicies = indicies;
+            MetricIndicies = indicies;
 
             MetricTensor = Matrix.Diagonal(zeroth, first, second, third);
         }
