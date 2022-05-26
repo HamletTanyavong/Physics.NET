@@ -8,9 +8,21 @@
     <BaseOutputPath>$(SolutionDir)bin</BaseOutputPath>
     <Platforms>x64</Platforms>
     <Authors>Hamlet Tanyavong</Authors>
-    <PackageTags>physics; mathematics; math</PackageTags>
+    <PackageTags>physics; QFT; quantum; general relativity, electrodynamics; statistical mechanics; mathematics; math</PackageTags>
     <PackageId>$(AssemblyName)</PackageId>
     <Version>0.1.0</Version>
+    <Description>A class library for solving physics problems encountered in Quantum Field Theory, Electrodynamics, General Relativity, and Statistical Mechanics.</Description>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>Copyright (c) 2022 Hamlet Tanyavong</Copyright>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <RepositoryUrl>https://github.com/HamletTanyavong/Physics.NET</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>This project is in alpha and is not yet ready for release.</PackageReleaseNotes>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageIcon>physics_icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/HamletTanyavong/Physics.NET</PackageProjectUrl>
+	<IncludeSymbols>True</IncludeSymbols>
+	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,6 +38,27 @@
     <None Remove="Graphics\**" />
     <None Remove="lib\**" />
     <None Remove="packages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Icons\physics_icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+	
+  <ItemGroup>
+    <None Update="LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
