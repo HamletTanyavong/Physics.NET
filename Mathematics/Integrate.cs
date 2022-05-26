@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Physics.Exceptions;
-using Physics.Types;
+using Physics.NET.Exceptions;
+using Physics.NET.Types;
 
-namespace Physics.Mathematics
+namespace Physics.NET.Mathematics
 {
     /// <summary>
     /// Numerical integration methods for physics calculations.

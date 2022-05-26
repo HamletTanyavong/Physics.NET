@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Physics.Mathematics.DifferentialGeometry;
-using Physics.Mathematics.DifferentialGeometry.Metrics;
+using Physics.NET.Mathematics.DifferentialGeometry;
+using Physics.NET.Mathematics.DifferentialGeometry.Metrics;
 
-namespace Physics.Mathematics.DifferentialGeometry
+namespace Physics.NET.Mathematics.DifferentialGeometry
 {
     /// <summary>
     /// Indicies with delimiters '^' and '_'.

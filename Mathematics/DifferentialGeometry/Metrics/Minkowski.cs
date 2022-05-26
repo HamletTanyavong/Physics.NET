@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Physics.Mathematics;
-using Physics.Mathematics.Vectors;
+using Physics.NET.Mathematics;
+using Physics.NET.Mathematics.Vectors;
 
-namespace Physics.Mathematics.DifferentialGeometry.Metrics
+namespace Physics.NET.Mathematics.DifferentialGeometry.Metrics
 {
     public class Minkowski : IMetric
     {

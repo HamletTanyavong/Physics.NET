@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics
+namespace Physics.NET
 {
     public static class Session
     {

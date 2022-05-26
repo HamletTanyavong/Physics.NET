@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.Mathematics.DifferentialGeometry.Metrics
+namespace Physics.NET.Mathematics.DifferentialGeometry.Metrics
 {
     public interface Euclidean : IMetric
     {

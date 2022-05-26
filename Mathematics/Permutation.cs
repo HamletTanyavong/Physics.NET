@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.Mathematics
+namespace Physics.NET.Mathematics
 {
     /// <summary>
     /// Calculates the permutation of a number of integers.
     /// </summary>
+    [Obsolete("method not ready for implementation")]
     public class Permutation
     {
         private static int N { get; set; }

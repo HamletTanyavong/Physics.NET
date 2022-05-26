@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Physics.Units.SI;
-using Physics.Mathematics;
-using Physics.Mathematics.Vectors;
+using Physics.NET.Units.SI;
+using Physics.NET.Mathematics;
+using Physics.NET.Mathematics.Vectors;
 
-namespace Physics.Mathematics.DifferentialGeometry.Metrics
+namespace Physics.NET.Mathematics.DifferentialGeometry.Metrics
 {
     /// <summary>
     /// The metric for a gravitiational field created by an object of mass M, assuming no angular momentum or electric charge. Signature (-1, 1, 1, 1).

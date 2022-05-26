@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.Units
+namespace Physics.NET.Units
 {
     internal interface IUnits
     {

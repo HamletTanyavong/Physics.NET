@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Physics.Mathematics.DifferentialGeometry.Metrics;
-using Physics.Mathematics.Vectors;
+using Physics.NET.Mathematics.DifferentialGeometry.Metrics;
+using Physics.NET.Mathematics.Vectors;
 
-namespace Physics.Mathematics.DifferentialGeometry
+namespace Physics.NET.Mathematics.DifferentialGeometry
 {
     /// <summary>
     /// Four-vector of type (<typeparamref name="Contravariant"/>, <typeparamref name="Covariant"/>) in <typeparamref name="Coordinates"/> coordinates.

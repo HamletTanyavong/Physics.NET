@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Physics.Mathematics.DifferentialGeometry.Metrics;
+using Physics.NET.Mathematics.DifferentialGeometry.Metrics;
 
-namespace Physics.Mathematics.DifferentialGeometry
+namespace Physics.NET.Mathematics.DifferentialGeometry
 {
     public class Covariant : ITensor
     {

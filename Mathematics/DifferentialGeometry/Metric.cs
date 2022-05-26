@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Physics.Units.SI;
-using Physics.Mathematics.DifferentialGeometry.Metrics;
-using Physics.Mathematics.Vectors;
+using Physics.NET.Units.SI;
+using Physics.NET.Mathematics.DifferentialGeometry.Metrics;
+using Physics.NET.Mathematics.Vectors;
 
-namespace Physics.Mathematics.DifferentialGeometry
+namespace Physics.NET.Mathematics.DifferentialGeometry
 {
     /// <summary>
     /// The <typeparamref name="Name"/> metric in <typeparamref name="Coordinates"/> coordinates with signature (-1, 1, 1, 1) and specified indicies.

@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Physics.NET.Types;
+using Physics.NET.Mathematics.Vectors;
 
-namespace Physics.Types
+namespace Physics.NET.Types
 {
-    public class Domain
+    public struct Domain
     {
-        public int Dimensions { get; set; }
-        public int Boundaries { get; set; }
+        public Domain()
+        {
+        }
+
+        public static double[] CreateDomain()
+        {
+            return new double[] { 0, 0 };
+        }
     }
 }

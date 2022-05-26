@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.Mathematics
+namespace Physics.NET.Mathematics
 {
     public static class Matrix
     {
