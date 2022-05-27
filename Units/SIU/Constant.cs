@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.NET.Units.SI
+namespace Physics.NET.Units.SIU
 {
     /// <summary>
     /// Universal constants in SI units.

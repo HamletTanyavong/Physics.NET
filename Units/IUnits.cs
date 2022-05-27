@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Physics.NET.Units
 {
-    internal interface IUnits
+    public interface IUnits
     {
     }
 }
