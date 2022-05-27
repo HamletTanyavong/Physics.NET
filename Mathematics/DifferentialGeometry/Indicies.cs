@@ -11,10 +11,11 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
     /// <summary>
     /// Indicies with delimiters '^' and '_'.
     /// </summary>
-    public class Indicies : ITensor
+    public struct Indicies : ITensor
     {
         public int Rank { get; set; }
         private string[,] IndexArray { get; set; }
+        //public SortedList<string, bool> Index { get; set; }
 
         public Indicies(params string[] indicies)
         {

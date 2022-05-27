@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Physics.NET.Units.SI;
+using Physics.NET.Units;
 using Physics.NET.Mathematics;
 using Physics.NET.Mathematics.Vectors;
 
@@ -23,7 +23,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry.Metrics
         internal static double[,] Calculate<T>(double M, FourVector<T> fourvector)
             where T : class, ICoordinateSystem, I3D
         {
-            var schwarzschildRadius = 2 * Constant.G * M / Constant.cSquared;
+            var schwarzschildRadius = 2 * SI.G * M / SI.cSquared;
             return Matrix.Diagonal
             (
                 schwarzschildRadius / fourvector.First - 1,

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Physics.NET.Units.SI;
+using Physics.NET.Units;
 using Physics.NET.Mathematics.DifferentialGeometry.Metrics;
 using Physics.NET.Mathematics.Vectors;
 
@@ -13,7 +13,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
     /// The <typeparamref name="Name"/> metric in <typeparamref name="Coordinates"/> coordinates with signature (-1, 1, 1, 1) and specified indicies.
     /// </summary>
     /// <typeparam name="Name"></typeparam>
-    public struct Metric<Name, Coordinates> : IMetric, ITensor
+    public struct MetricDepricated<Name, Coordinates> : IMetric, ITensor
         where Name : class, IMetric
         where Coordinates : class, ICoordinateSystem, I3D
     {
@@ -22,7 +22,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
         private double[,] MetricTensor { get; set; }
         private Indicies MetricIndicies { get; set; }
 
-        public Metric(Indicies indicies, FourVector<Coordinates> fourVector)
+        public MetricDepricated(Indicies indicies, FourVector<Coordinates> fourVector)
         {
             _name = typeof(Name).Name;
             MetricIndicies = indicies;
@@ -37,7 +37,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             }
         }
 
-        public Metric(Indicies indicies, double M, FourVector<Coordinates> fourVector)
+        public MetricDepricated(Indicies indicies, double M, FourVector<Coordinates> fourVector)
         {
             _name = typeof(Name).Name;
             MetricIndicies = indicies;
@@ -52,7 +52,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             }
         }
 
-        public Metric(Indicies indicies, double[,] metric)
+        public MetricDepricated(Indicies indicies, double[,] metric)
         {
             _name = typeof(Name).Name;
             MetricIndicies = indicies;
@@ -60,7 +60,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             MetricTensor = metric;
         }
 
-        public Metric (Indicies indicies, double zeroth, double first, double second, double third)
+        public MetricDepricated (Indicies indicies, double zeroth, double first, double second, double third)
         {
             _name = typeof(Name).Name;
             MetricIndicies = indicies;
