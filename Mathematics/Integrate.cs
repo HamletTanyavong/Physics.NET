@@ -36,7 +36,7 @@ namespace Physics.NET.Mathematics
         /// Integrate a one-dimensional <paramref name="function"/> using the trapezoidal rule.
         /// </summary>
         /// <remarks>
-        /// <para>This method utilizes parallel computing to quicken integration but may use more system memory. For a system with 16 processors, the parellel method is quicker than sequential methods for roughly <paramref name="N"/> greater than 250000.</para>
+        /// <para>This method utilizes parallel computing.</para>
         /// </remarks>
         /// <param name="function">One-dimensional function to be integrated.</param>
         /// <param name="a">Lower integration bound.</param>
@@ -82,7 +82,7 @@ namespace Physics.NET.Mathematics
                 throw;
             }
         }
-
+        // Work in progress.
         /// <summary>
         /// Monte Carlo method of integration for multivariable integrals with importance sampling.
         /// </summary>
