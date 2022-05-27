@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,71 +41,71 @@ namespace Physics.NET.Mathematics.Vectors
             Third = third;
         }
 
-        public static Vector3D<Coordinates> operator +(Vector3D<Coordinates> left, Vector3D<Coordinates> right)
+        public static Vector3D<Coordinates> operator +(Vector3D<Coordinates> a, Vector3D<Coordinates> b)
         {
             if (_coordinateSystem is "Cartesian")
             {
-                return new Vector3D<Coordinates>(left.First + right.First, left.Second + right.Second, left.Third + right.Third);
+                return new Vector3D<Coordinates>(a.First + b.First, a.Second + b.Second, a.Third + b.Third);
             }
             else if (_coordinateSystem is "Cylindrical")
             {
-                var result = (left.ToCartesian() + right.ToCartesian()).ToCylindrical();
+                var result = (a.ToCartesian() + b.ToCartesian()).ToCylindrical();
                 return new Vector3D<Coordinates>(result.First, result.Second, result.Third);
             }
             else
             {
-                var result = (left.ToCartesian() + right.ToCartesian()).ToSpherical();
-                return new Vector3D<Coordinates>(result.First, result.Second, result.Third);
-            }
-        }
-
-        public static Vector3D<Coordinates> operator -(Vector3D<Coordinates> left, Vector3D<Coordinates> right)
-        {
-            if (_coordinateSystem is "Cartesian")
-            {
-                return new Vector3D<Coordinates>(left.First - right.First, left.Second - right.Second, left.Third - right.Third);
-            }
-            else if (_coordinateSystem is "Cylindrical")
-            {
-                var result = (left.ToCartesian() - right.ToCartesian()).ToCylindrical();
-                return new Vector3D<Coordinates>(result.First, result.Second, result.Third);
-            }
-            else
-            {
-                var result = (left.ToCartesian() - right.ToCartesian()).ToSpherical();
+                var result = (a.ToCartesian() + b.ToCartesian()).ToSpherical();
                 return new Vector3D<Coordinates>(result.First, result.Second, result.Third);
             }
         }
 
-        public static Vector3D<Coordinates> operator *(double left, Vector3D<Coordinates> vector)
+        public static Vector3D<Coordinates> operator -(Vector3D<Coordinates> a, Vector3D<Coordinates> b)
         {
             if (_coordinateSystem is "Cartesian")
             {
-                return new Vector3D<Coordinates>(left * vector.First, left * vector.Second, left * vector.Third);
+                return new Vector3D<Coordinates>(a.First - b.First, a.Second - b.Second, a.Third - b.Third);
             }
             else if (_coordinateSystem is "Cylindrical")
             {
-                return new Vector3D<Coordinates>(left * vector.First, vector.Second, left * vector.Third);
+                var result = (a.ToCartesian() - b.ToCartesian()).ToCylindrical();
+                return new Vector3D<Coordinates>(result.First, result.Second, result.Third);
             }
             else
             {
-                return new Vector3D<Coordinates>(left * vector.First, vector.Second, vector.Third);
+                var result = (a.ToCartesian() - b.ToCartesian()).ToSpherical();
+                return new Vector3D<Coordinates>(result.First, result.Second, result.Third);
             }
         }
 
-        public static Vector3D<Coordinates> operator *(Vector3D<Coordinates> vector, double right)
+        public static Vector3D<Coordinates> operator *(double a, Vector3D<Coordinates> b)
         {
             if (_coordinateSystem is "Cartesian")
             {
-                return new Vector3D<Coordinates>(right * vector.First, right * vector.Second, right * vector.Third);
+                return new Vector3D<Coordinates>(a * b.First, a * b.Second, a * b.Third);
             }
             else if (_coordinateSystem is "Cylindrical")
             {
-                return new Vector3D<Coordinates>(right * vector.First, vector.Second, right * vector.Third);
+                return new Vector3D<Coordinates>(a * b.First, b.Second, a * b.Third);
             }
             else
             {
-                return new Vector3D<Coordinates>(right * vector.First, vector.Second, vector.Third);
+                return new Vector3D<Coordinates>(a * b.First, b.Second, b.Third);
+            }
+        }
+
+        public static Vector3D<Coordinates> operator *(Vector3D<Coordinates> a, double b)
+        {
+            if (_coordinateSystem is "Cartesian")
+            {
+                return new Vector3D<Coordinates>(b * a.First, b * a.Second, b * a.Third);
+            }
+            else if (_coordinateSystem is "Cylindrical")
+            {
+                return new Vector3D<Coordinates>(b * a.First, a.Second, b * a.Third);
+            }
+            else
+            {
+                return new Vector3D<Coordinates>(b * a.First, a.Second, a.Third);
             }
         }
 
@@ -139,11 +140,6 @@ namespace Physics.NET.Mathematics.Vectors
             {
                 return new Vector3D<Coordinates>(1, Second, Third);
             }
-        }
-
-        public bool Equals(Vector3D<Coordinates> vector)
-        {
-            return First == vector.First && Second == vector.Second && Third == vector.Third;
         }
 
         public Vector3D<Cartesian> ToCartesian()
@@ -182,6 +178,31 @@ namespace Physics.NET.Mathematics.Vectors
                 var radius = Math.Sqrt(First * First + Third * Third);
                 return new Vector3D<Spherical>(radius, Math.Acos(Third / radius), Second);
             }
+        }
+
+        public bool Equals(Vector3D<Coordinates> other)
+        {
+            return First == other.First && Second == other.Second && Third == other.Third;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Vector3D<Coordinates> && Equals(this);
+        }
+
+        public static bool operator ==(Vector3D<Coordinates> a, Vector3D<Coordinates> b)
+        {
+            return a.First == b.First && a.Second == b.Second && a.Third == b.Third;
+        }
+
+        public static bool operator !=(Vector3D<Coordinates> a, Vector3D<Coordinates> b)
+        {
+            return !(a == b);
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(First, Second, Third);
         }
 
         public override string ToString()
