@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Physics.NET.Units;
-using Physics.NET.Mathematics.DifferentialGeometry.Metrics;
+using Physics.NET.Mathematics.DifferentialGeometry;
 
 namespace Physics.NET
 {
@@ -14,6 +14,7 @@ namespace Physics.NET
     public static class Session
     {
         internal static string? Signature { get; set; } = "Spacelike";
+        internal static int SigConst { get; set; }
         internal static string? Units { get; set; } = "SI";
 
         public static void SetUnits(string units)
@@ -28,9 +29,17 @@ namespace Physics.NET
         /// <exception cref="TypeAccessException"></exception>
         public static void SetSignature(string signature)
         {
-            if (typeof(ISignature).IsAssignableFrom(Type.GetType($"Physics.NET.Mathematics.DifferentialGeometry.Metrics.I{signature}")))
+            if (typeof(ISignature).IsAssignableFrom(Type.GetType($"Physics.NET.Mathematics.DifferentialGeometry.I{signature}")))
             {
                 Signature = signature;
+                if (signature is "Spacelike")
+                {
+                    SigConst = 1;
+                }
+                else
+                {
+                    SigConst = -1;
+                }
             }
             else
             {
