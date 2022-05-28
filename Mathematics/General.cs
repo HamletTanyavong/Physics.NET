@@ -11,8 +11,8 @@ namespace Physics.NET.Mathematics
     /// </summary>
     public static class General
     {
-        private static long[] Numerator  = new long[] {1, 1, 1, -139, -571, 163879, 5246819, -534703531, -4483131259, 432261921612371};
-        private static long[] Denominator = new long[] {1, 12, 288, 51840, 2488320, 209018880, 75246796800, 902961561600, 86684309913600, 514904800886784000};
+        private static readonly long[] Numerator  = new long[] {1, 1, 1, -139, -571, 163879, 5246819, -534703531, -4483131259, 432261921612371};
+        private static readonly long[] Denominator = new long[] {1, 12, 288, 51840, 2488320, 209018880, 75246796800, 902961561600, 86684309913600, 514904800886784000};
         
         /// <summary>
         /// Computes the factorial of <paramref name="n"/> for <paramref name="n"/> less than or equal to 65. For larger values of <paramref name="n"/>, use approximations.
