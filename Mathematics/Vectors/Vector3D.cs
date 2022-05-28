@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Physics.NET.Mathematics.Vectors
+﻿namespace Physics.NET.Mathematics.Vectors
 {
     /// <summary>
     /// 3D Vector in <typeparamref name="Coordinates"/> coordinates.
