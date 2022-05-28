@@ -3,34 +3,38 @@
     public static partial class Metric
     {
         /// <summary>
-        /// Calculate the value of the Schwarzschild metric for an object of mass <paramref name="M"/> at a point in spacetime represented by <paramref name="fourVector"/>. <typeparamref name="T"/> must be spherical.
+        /// Calculate the value of the Schwarzschild metric for an object of mass <paramref name="M"/> at a point in spacetime represented by <paramref name="fourvector"/>. If <paramref name="inverse"/> is true, then the inverse metric will be used for the calculation. Coordinates must be spherical.
         /// </summary>
         /// <typeparam name="T"></typeparam>
+        /// <param name="inverse"></param>
         /// <param name="M"></param>
-        /// <param name="fourVector"></param>
+        /// <param name="fourvector"></param>
         /// <returns></returns>
-        public static FourVector<T> Schwarzschild<T>(double M, FourVector<T> fourVector)
+        public static FourVector<T> Schwarzschild<T>(bool inverse, double M, FourVector<T> fourvector)
             where T : class, ICoordinateSystem, I3D
         {
-            var schwarzschildRadius = 2 * SI.G * M / SI.cSquared;
-            if (Session.Signature is "Spacelike")
+            if (typeof(T).Name is not "Spherical")
             {
-                FourVector<T> result = new(
-                    schwarzschildRadius / fourVector.First - 1,
-                    1 / (1 - schwarzschildRadius / fourVector.First),
-                    fourVector.First * fourVector.First,
-                    fourVector.First * fourVector.First * Math.Pow(Math.Sin(fourVector.Second), 2)
-                );
+                throw new TypeAccessException("error: Method uses spherical spatial coordinates");
+            }
+            FourVector<T> result = new();
+            var schwarzschildRadius = 2 * SI.G * M / SI.cSquared;
+            var firstSquared = fourvector.First * fourvector.First;
+            var sinSquared = Math.Sin(fourvector.Second) * Math.Sin(fourvector.Second);
+            if (inverse is false)
+            {
+                result.Zeroth = sc * (schwarzschildRadius / fourvector.First - 1);
+                result.First = sc / (1 - schwarzschildRadius / fourvector.First);
+                result.Second = sc * firstSquared;
+                result.Third = sc * firstSquared * sinSquared;
                 return result;
             }
             else
             {
-                FourVector<T> result = new(
-                    1 - schwarzschildRadius / fourVector.First,
-                    1 / (schwarzschildRadius / fourVector.First - 1),
-                    -1 * fourVector.First * fourVector.First,
-                    -1 * fourVector.First * fourVector.First * Math.Pow(Math.Sin(fourVector.Second), 2)
-                );
+                result.Zeroth = sc / (schwarzschildRadius / fourvector.First - 1);
+                result.First = sc * (1 - schwarzschildRadius / fourvector.First);
+                result.Second = sc / firstSquared;
+                result.Third = sc / (firstSquared * sinSquared);
                 return result;
             }
         }
