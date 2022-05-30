@@ -10,38 +10,51 @@
         /// <typeparam name="T"></typeparam>
         /// <param name="fourvector"></param>
         /// <returns></returns>
-        public static FourVector<T> Minkowski<T>(bool inverse, FourVector<T> fourvector)
+        public static FourVector<T, L> Minkowski<T>(FourVector<T, U> fourvector)
             where T : class, ICoordinateSystem, I3D
         {
             string coordinateSystem = typeof(T).Name;
 
             if (coordinateSystem is "Cartesian")
             {
-                return new FourVector<T>(-1 * sc, sc, sc, sc);
+                return new FourVector<T, L>(-1 * sc, sc, sc, sc);
             }
             else if (coordinateSystem is "Cylindrical")
             {
-                if (inverse is false)
-                {
-                    return new FourVector<T>(-1 * sc, sc, fourvector.First * fourvector.First * sc, sc);
-                }
-                else
-                {
-                    return new FourVector<T>(-1 * sc, sc, sc / (fourvector.First * fourvector.First), sc);
-                }
+                return new FourVector<T, L>(-1 * sc, sc, fourvector.First * fourvector.First * sc, sc);
             }
             else
             {
                 var firstSquared = fourvector.First * fourvector.First;
                 var sinSquared = Math.Sin(fourvector.Second) * Math.Sin(fourvector.Second);
-                if (inverse is false)
-                {
-                    return new FourVector<T>(-1 * sc, sc, firstSquared * sc, firstSquared * sinSquared * sc);
-                }
-                else
-                {
-                    return new FourVector<T>(-1 * sc, sc, sc / firstSquared, sc / (firstSquared * sinSquared));
-                }
+                return new FourVector<T, L>(-1 * sc, sc, firstSquared * sc, firstSquared * sinSquared * sc);
+            }
+        }
+
+        /// <summary>
+        /// Calculate the value of the Minkowski metric at a point in spacetime represented by <paramref name="fourvector"/>. If <paramref name="inverse"/> is true, then the inverse metric will be used for the calculation.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="fourvector"></param>
+        /// <returns></returns>
+        public static FourVector<T, U> Minkowski<T>(FourVector<T, L> fourvector)
+            where T : class, ICoordinateSystem, I3D
+        {
+            string coordinateSystem = typeof(T).Name;
+
+            if (coordinateSystem is "Cartesian")
+            {
+                return new FourVector<T, U>(-1 * sc, sc, sc, sc);
+            }
+            else if (coordinateSystem is "Cylindrical")
+            {
+                return new FourVector<T, U>(-1 * sc, sc, sc / (fourvector.First * fourvector.First), sc);
+            }
+            else
+            {
+                var firstSquared = fourvector.First * fourvector.First;
+                var sinSquared = Math.Sin(fourvector.Second) * Math.Sin(fourvector.Second);
+                return new FourVector<T, U>(-1 * sc, sc, sc / firstSquared, sc / (firstSquared * sinSquared));
             }
         }
     }

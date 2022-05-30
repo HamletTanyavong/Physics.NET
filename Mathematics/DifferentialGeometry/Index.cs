@@ -9,24 +9,21 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
     /// <summary>
     /// Represents a tensor index.
     /// </summary>
-    public class Index
+    public struct Index<T> where T : class, IIndexPosition
     {
-        public int Location { get; set; }
-        public string? IndexName { get; set; }
-        public bool? Position { get; set; }
+        public int? Location { get; set; } = null;
+        public string IndexName { get; set; } = string.Empty;
 
         public Index()
         {
-            Location = 0;
-            IndexName = null;
-            Position = null;
+            Location = null;
+            IndexName = String.Empty;
         }
 
-        public Index(int location, string index, bool position)
+        public Index(int location, string index)
         {
             Location = location;
             IndexName = index;
-            Position = position;
         }
     }
 }

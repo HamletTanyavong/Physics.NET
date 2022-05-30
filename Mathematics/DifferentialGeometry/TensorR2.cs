@@ -3,25 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Physics.NET.Mathematics.DifferentialGeometry.Metrics;
 
 namespace Physics.NET.Mathematics.DifferentialGeometry
 {
-    public struct Tensor : ITensor
+    public struct TensorR2
     {
-        public int Rank { get; set; }
+        public int Rank { get; } = 2;
 
         private double[,] GeneralTensor { get; set; }
 
-        public Tensor(Indicies indicies)
+        public TensorR2()
         {
-            Rank = indicies.Rank;
             GeneralTensor = new double[4, 4];
         }
 
-        public Tensor(Indicies indicies, double[,] tensor)
+        public TensorR2(double[,] tensor)
         {
-            Rank = indicies.Rank;
             GeneralTensor = tensor;
         }
 

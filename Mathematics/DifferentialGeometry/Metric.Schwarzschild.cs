@@ -10,33 +10,52 @@
         /// <param name="M"></param>
         /// <param name="fourvector"></param>
         /// <returns></returns>
-        public static FourVector<T> Schwarzschild<T>(bool inverse, double M, FourVector<T> fourvector)
+        public static FourVector<T, L> Schwarzschild<T>(double M, FourVector<T, U> fourvector)
             where T : class, ICoordinateSystem, I3D
         {
             if (typeof(T).Name is not "Spherical")
             {
                 throw new TypeAccessException("error: Method uses spherical spatial coordinates");
             }
-            FourVector<T> result = new();
             var schwarzschildRadius = 2 * SI.G * M / SI.cSquared;
             var firstSquared = fourvector.First * fourvector.First;
             var sinSquared = Math.Sin(fourvector.Second) * Math.Sin(fourvector.Second);
-            if (inverse is false)
+            FourVector<T, L> result = new()
             {
-                result.Zeroth = sc * (schwarzschildRadius / fourvector.First - 1);
-                result.First = sc / (1 - schwarzschildRadius / fourvector.First);
-                result.Second = sc * firstSquared;
-                result.Third = sc * firstSquared * sinSquared;
-                return result;
-            }
-            else
+                Zeroth = sc * (schwarzschildRadius / fourvector.First - 1),
+                First = sc / (1 - schwarzschildRadius / fourvector.First),
+                Second = sc * firstSquared,
+                Third = sc * firstSquared * sinSquared
+            };
+            return result;
+        }
+
+        /// <summary>
+        /// Calculate the value of the Schwarzschild metric for an object of mass <paramref name="M"/> at a point in spacetime represented by <paramref name="fourvector"/>. If <paramref name="inverse"/> is true, then the inverse metric will be used for the calculation. Coordinates must be spherical.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="inverse"></param>
+        /// <param name="M"></param>
+        /// <param name="fourvector"></param>
+        /// <returns></returns>
+        public static FourVector<T, U> Schwarzschild<T>(double M, FourVector<T, L> fourvector)
+            where T : class, ICoordinateSystem, I3D
+        {
+            if (typeof(T).Name is not "Spherical")
             {
-                result.Zeroth = sc / (schwarzschildRadius / fourvector.First - 1);
-                result.First = sc * (1 - schwarzschildRadius / fourvector.First);
-                result.Second = sc / firstSquared;
-                result.Third = sc / (firstSquared * sinSquared);
-                return result;
+                throw new TypeAccessException("error: Method uses spherical spatial coordinates");
             }
+            var schwarzschildRadius = 2 * SI.G * M / SI.cSquared;
+            var firstSquared = fourvector.First * fourvector.First;
+            var sinSquared = Math.Sin(fourvector.Second) * Math.Sin(fourvector.Second);
+            FourVector<T, U> result = new()
+            {
+                Zeroth = sc / (schwarzschildRadius / fourvector.First - 1),
+                First = sc * (1 - schwarzschildRadius / fourvector.First),
+                Second = sc / firstSquared,
+                Third = sc / (firstSquared * sinSquared)
+            };
+            return result;
         }
     }
 }

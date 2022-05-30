@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Physics.NET.Mathematics.DifferentialGeometry.Metrics;
-using Physics.NET.Mathematics.Vectors;
+﻿using Physics.NET.Exceptions;
+using Physics.NET.Mathematics.LinearAlgebra;
 
 namespace Physics.NET.Mathematics.DifferentialGeometry
 {
@@ -13,12 +7,15 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
     /// Four-vector, with a specified index, in <typeparamref name="Coordinates"/> coordinates.
     /// </summary>
     /// <typeparam name="Coordinates"></typeparam>
-    public struct FourVector<Coordinates> : IVector, IEquatable<FourVector<Coordinates>>
+    public struct FourVector<Coordinates, I> : IVector, ITensorR1<Coordinates, I>, IEquatable<FourVector<Coordinates, I>>
         where Coordinates : class, ICoordinateSystem, I3D
+        where I : class, IIndexPosition
     {
+        private static readonly string CoordinateSystem = typeof(Coordinates).Name;
+        private static readonly string IndexPosition = typeof(I).Name;
+        private Index<I> Indicies { get; set; }
+
         readonly public int Rank { get; } = 1;
-        private List<Index> IndexList { get; set; }
-        private Index IndividualIndex { get; set; }
 
         public double Zeroth { get; set; }
         public double First { get; set; }
@@ -27,8 +24,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
 
         public FourVector(double zeroth, double first, double second, double third)
         {
-            IndexList = new();
-            IndividualIndex = new();
+            Indicies = new();
 
             Zeroth = zeroth;
             First = first;
@@ -38,8 +34,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
 
         public FourVector(double zeroth, Vector3D<Coordinates> vector)
         {
-            IndexList = new();
-            IndividualIndex = new();
+            Indicies = new();
 
             Zeroth = zeroth;
             First = vector.First;
@@ -47,116 +42,140 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             Third = vector.Third;
         }
 
-        public void SetIndex(string index, bool position)
+        public void SetIndex(int location, string index)
         {
-            if (IndexList.Count < Rank)
+            Indicies = new(location, index);
+        }
+
+        public string GetIndex()
+        {
+            return $"({Indicies!.IndexName}, {IndexPosition})";
+        }
+
+        public FourVector<Coordinates, U> Raise(string index, Func<FourVector<Coordinates, L>, FourVector<Coordinates, U>> metric)
+        {
+            CheckIndexPosition(index);
+
+            if (IndexPosition is "U")
             {
-                IndividualIndex.Location = 0; IndividualIndex.IndexName = index; IndividualIndex.Position = position;
-                IndexList.Add(IndividualIndex);
+                throw new ArgumentException($"error: {index} is already raised");
             }
             else
             {
-                throw new IndexOutOfRangeException("error: Index already set");
+                var value = metric(new FourVector<Coordinates, L>(Zeroth, First, Second, Third));
+                var result = Matrix.Multiply(value, this);
+                result.SetIndex(0, index);
+                return result;
             }
         }
 
-        public List<Index> GetIndicies()
+        public FourVector<Coordinates, U> Raise(string index, Func<double, FourVector<Coordinates, L>, FourVector<Coordinates, U>> metric, double M)
         {
-            return IndexList;
+            CheckIndexPosition(index);
+
+            if (IndexPosition is "U")
+            {
+                throw new ArgumentException($"error: {index} is already raised");
+            }
+            else
+            {
+                var value = metric(M, new FourVector<Coordinates, L>(Zeroth, First, Second, Third));
+                var result = Matrix.Multiply(value, this);
+                result.SetIndex(0, index);
+                return result;
+            }
         }
 
-        public void Raise(string index, Func<FourVector<Coordinates>, FourVector<Coordinates>> metric)
+        public FourVector<Coordinates, L> Lower(string index, Func<FourVector<Coordinates, U>, FourVector<Coordinates, L>> metric)
         {
-            if (IndividualIndex.Position is null || IndividualIndex.IndexName != index)
+            CheckIndexPosition(index);
+
+            if (IndexPosition is "L")
+            {
+                throw new ArgumentException($"error: {index} is already lowered");
+            }
+            else
+            {
+                var value = metric(new FourVector<Coordinates, U>(Zeroth, First, Second, Third));
+                var result = Matrix.Multiply(value, this);
+                result.SetIndex(0, index);
+                return result;
+            }
+        }
+
+        public FourVector<Coordinates, L> Lower(string index, Func<double, FourVector<Coordinates, U>, FourVector<Coordinates, L>> metric, double M)
+        {
+            CheckIndexPosition(index);
+
+            if (IndexPosition is "L")
+            {
+                throw new ArgumentException($"error: {index} is already lowered");
+            }
+            else
+            {
+                var value = metric(M, new FourVector<Coordinates, U>(Zeroth, First, Second, Third));
+                var result = Matrix.Multiply(value, this);
+                result.SetIndex(0, index);
+                return result;
+            }
+        }
+
+        private void CheckIndexPosition(string index)
+        {
+            if (Indicies.Location is null || Indicies.IndexName != index)
             {
                 throw new ArgumentException("error: Index not found");
             }
-
-            if (IndividualIndex.Position is true)
-            {
-                throw new ArgumentException("error: index is already raised");
-            }
-            else
-            {
-                var result = metric(this);
-                Zeroth = result.Zeroth; First = result.First; Second = result.Second; Third = result.Third;
-                IndividualIndex.Position = true;
-            }
         }
 
-        public void Raise(string index, Func<double, FourVector<Coordinates>, FourVector<Coordinates>> metric, double M)
+        public static FourVector<Coordinates, I> operator +(FourVector<Coordinates, I> a, FourVector<Coordinates, I> b)
         {
-            if (IndividualIndex.Position is null || IndividualIndex.IndexName != index)
+            if (CoordinateSystem is "Cartesian")
             {
-                throw new ArgumentException("error: Index not found");
+                return new FourVector<Coordinates, I>(a.Zeroth + b.Zeroth, a.First + b.First, a.Second + b.Second, a.Third + b.Third);
             }
-
-            if (IndividualIndex.Position is true)
+            else if (CoordinateSystem is "Cylindrical")
             {
-                throw new ArgumentException("error: Index is already raised");
+                return new FourVector<Coordinates, I>();
             }
             else
             {
-                var result = metric(M, this);
-                Zeroth = result.Zeroth; First = result.First; Second = result.Second; Third = result.Third;
-                IndividualIndex.Position= true;
+                return new FourVector<Coordinates, I>();
             }
         }
 
-        public void Lower(string index, Func<FourVector<Coordinates>, FourVector<Coordinates>> metric)
+        public static FourVector<Coordinates, I> operator -(FourVector<Coordinates, I> a, FourVector<Coordinates, I> b)
         {
-            if (IndividualIndex.Position is null || IndividualIndex.IndexName != index)
+            if (CoordinateSystem is "Cartesian")
             {
-                throw new ArgumentException("error: Index not found");
+                return new FourVector<Coordinates, I>(a.Zeroth - b.Zeroth, a.First - b.First, a.Second - b.Second, a.Third - b.Third);
             }
-
-            if (IndividualIndex.Position is false)
+            else if (CoordinateSystem is "Cylindrical")
             {
-                throw new ArgumentException("error: index is already lowered");
-            }
-            else
-            {
-                var result = metric(this);
-                Zeroth = result.Zeroth; First = result.First; Second = result.Second; Third = result.Third;
-                IndividualIndex.Position = false;
-            }
-        }
-
-        public void Lower(string index, Func<double, FourVector<Coordinates>, FourVector<Coordinates>> metric, double M)
-        {
-            if (IndividualIndex.Position is null || IndividualIndex.IndexName != index)
-            {
-                throw new ArgumentException("error: Index not found");
-            }
-
-            if (IndividualIndex.Position is false)
-            {
-                throw new ArgumentException("error: Index is already lowered");
+                return new FourVector<Coordinates, I>();
             }
             else
             {
-                var result = metric(M, this);
-                Zeroth = result.Zeroth; First = result.First; Second = result.Second; Third = result.Third;
-                IndividualIndex.Position = false;
+                return new FourVector<Coordinates, I>();
             }
         }
 
-        public bool Equals(FourVector<Coordinates> other)
+        public bool Equals(FourVector<Coordinates, I> other)
         {
             return Zeroth == other.Zeroth && First == other.First && Second == other.Second && Third == other.Third;
         }
 
         public override bool Equals(object? obj)
         {
-            return obj is FourVector<Coordinates> && Equals(this);
+            return obj is FourVector<Coordinates, I> && Equals(this);
         }
 
-        public static bool operator ==(FourVector<Coordinates> a, FourVector<Coordinates> b)
+        public static bool operator ==(FourVector<Coordinates, I> a, FourVector<Coordinates, I> b)
         {
             return a.Zeroth == b.Zeroth && a.First == b.First && a.Second == b.Second && a.Third == b.Third;
         }
 
-        public static bool operator !=(FourVector<Coordinates> a, FourVector<Coordinates> b)
+        public static bool operator !=(FourVector<Coordinates, I> a, FourVector<Coordinates, I> b)
         {
             return !(a == b);
         }
@@ -169,6 +188,32 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
         public override string ToString()
         {
             return $"({Zeroth}, {First}, {Second}, {Third})";
+        }
+         
+        public double this[int index]
+        {
+            get
+            {
+                return index switch
+                {
+                    0 => Zeroth,
+                    1 => First,
+                    2 => Second,
+                    3 => Third,
+                    _ => throw new ArgumentOutOfRangeException(nameof(index)),
+                };
+            }
+            set
+            {
+                switch (index)
+                {
+                    case 0: Zeroth = value; break;
+                    case 1: First = value; break;
+                    case 2: Second = value; break;
+                    case 3: Third = value; break;
+                    default: throw new ArgumentOutOfRangeException(nameof(index));
+                }
+            }
         }
     }
 }
