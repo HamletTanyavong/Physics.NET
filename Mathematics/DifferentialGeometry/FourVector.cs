@@ -4,14 +4,14 @@ using Physics.NET.Mathematics.LinearAlgebra;
 namespace Physics.NET.Mathematics.DifferentialGeometry
 {
     /// <summary>
-    /// Four-vector, with a specified index, in <typeparamref name="Coordinates"/> coordinates.
+    /// Four-vector, with a specified index, in <typeparamref name="T"/> coordinates.
     /// </summary>
-    /// <typeparam name="Coordinates"></typeparam>
-    public struct FourVector<Coordinates, I> : IVector, ITensorR1<Coordinates, I>, IEquatable<FourVector<Coordinates, I>>
-        where Coordinates : class, ICoordinateSystem, I3D
+    /// <typeparam name="T"></typeparam>
+    public partial struct FourVector<T, I> : IVector, ITensorR1<T, I>, IEquatable<FourVector<T, I>>
+        where T : class, ICoordinateSystem, I3D
         where I : class, IIndexPosition
     {
-        private static readonly string CoordinateSystem = typeof(Coordinates).Name;
+        private static readonly string CoordinateSystem = typeof(T).Name;
         private static readonly string IndexPosition = typeof(I).Name;
         private Index<I> Indicies { get; set; }
 
@@ -32,7 +32,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             Third = third;
         }
 
-        public FourVector(double zeroth, Vector3D<Coordinates> vector)
+        public FourVector(double zeroth, Vector3D<T> vector)
         {
             Indicies = new();
 
@@ -52,7 +52,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             return $"({Indicies!.IndexName}, {IndexPosition})";
         }
 
-        public FourVector<Coordinates, U> Raise(string index, Func<FourVector<Coordinates, L>, FourVector<Coordinates, U>> metric)
+        public FourVector<T, U> Raise(string index, Func<FourVector<T, L>, FourVector<T, U>> metric)
         {
             CheckIndexPosition(index);
 
@@ -60,16 +60,14 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             {
                 throw new ArgumentException($"error: {index} is already raised");
             }
-            else
-            {
-                var value = metric(new FourVector<Coordinates, L>(Zeroth, First, Second, Third));
-                var result = Matrix.Multiply(value, this);
-                result.SetIndex(0, index);
-                return result;
-            }
+
+            var value = metric(new FourVector<T, L>(Zeroth, First, Second, Third));
+            var result = Matrix.Multiply(value, this);
+            result.SetIndex(0, index);
+            return result;
         }
 
-        public FourVector<Coordinates, U> Raise(string index, Func<double, FourVector<Coordinates, L>, FourVector<Coordinates, U>> metric, double M)
+        public FourVector<T, U> Raise(string index, Func<double, FourVector<T, L>, FourVector<T, U>> metric, double M)
         {
             CheckIndexPosition(index);
 
@@ -77,16 +75,14 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             {
                 throw new ArgumentException($"error: {index} is already raised");
             }
-            else
-            {
-                var value = metric(M, new FourVector<Coordinates, L>(Zeroth, First, Second, Third));
-                var result = Matrix.Multiply(value, this);
-                result.SetIndex(0, index);
-                return result;
-            }
+
+            var value = metric(M, new FourVector<T, L>(Zeroth, First, Second, Third));
+            var result = Matrix.Multiply(value, this);
+            result.SetIndex(0, index);
+            return result;
         }
 
-        public FourVector<Coordinates, L> Lower(string index, Func<FourVector<Coordinates, U>, FourVector<Coordinates, L>> metric)
+        public FourVector<T, L> Lower(string index, Func<FourVector<T, U>, FourVector<T, L>> metric)
         {
             CheckIndexPosition(index);
 
@@ -94,16 +90,14 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             {
                 throw new ArgumentException($"error: {index} is already lowered");
             }
-            else
-            {
-                var value = metric(new FourVector<Coordinates, U>(Zeroth, First, Second, Third));
-                var result = Matrix.Multiply(value, this);
-                result.SetIndex(0, index);
-                return result;
-            }
+
+            var value = metric(new FourVector<T, U>(Zeroth, First, Second, Third));
+            var result = Matrix.Multiply(value, this);
+            result.SetIndex(0, index);
+            return result;
         }
 
-        public FourVector<Coordinates, L> Lower(string index, Func<double, FourVector<Coordinates, U>, FourVector<Coordinates, L>> metric, double M)
+        public FourVector<T, L> Lower(string index, Func<double, FourVector<T, U>, FourVector<T, L>> metric, double M)
         {
             CheckIndexPosition(index);
 
@@ -111,13 +105,11 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             {
                 throw new ArgumentException($"error: {index} is already lowered");
             }
-            else
-            {
-                var value = metric(M, new FourVector<Coordinates, U>(Zeroth, First, Second, Third));
-                var result = Matrix.Multiply(value, this);
-                result.SetIndex(0, index);
-                return result;
-            }
+
+            var value = metric(M, new FourVector<T, U>(Zeroth, First, Second, Third));
+            var result = Matrix.Multiply(value, this);
+            result.SetIndex(0, index);
+            return result;
         }
 
         private void CheckIndexPosition(string index)
@@ -128,54 +120,54 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             }
         }
 
-        public static FourVector<Coordinates, I> operator +(FourVector<Coordinates, I> a, FourVector<Coordinates, I> b)
+        public static FourVector<T, I> operator +(FourVector<T, I> a, FourVector<T, I> b)
         {
             if (CoordinateSystem is "Cartesian")
             {
-                return new FourVector<Coordinates, I>(a.Zeroth + b.Zeroth, a.First + b.First, a.Second + b.Second, a.Third + b.Third);
+                return new FourVector<T, I>(a.Zeroth + b.Zeroth, a.First + b.First, a.Second + b.Second, a.Third + b.Third);
             }
             else if (CoordinateSystem is "Cylindrical")
             {
-                return new FourVector<Coordinates, I>();
+                return new FourVector<T, I>();
             }
             else
             {
-                return new FourVector<Coordinates, I>();
+                return new FourVector<T, I>();
             }
         }
 
-        public static FourVector<Coordinates, I> operator -(FourVector<Coordinates, I> a, FourVector<Coordinates, I> b)
+        public static FourVector<T, I> operator -(FourVector<T, I> a, FourVector<T, I> b)
         {
             if (CoordinateSystem is "Cartesian")
             {
-                return new FourVector<Coordinates, I>(a.Zeroth - b.Zeroth, a.First - b.First, a.Second - b.Second, a.Third - b.Third);
+                return new FourVector<T, I>(a.Zeroth - b.Zeroth, a.First - b.First, a.Second - b.Second, a.Third - b.Third);
             }
             else if (CoordinateSystem is "Cylindrical")
             {
-                return new FourVector<Coordinates, I>();
+                return new FourVector<T, I>();
             }
             else
             {
-                return new FourVector<Coordinates, I>();
+                return new FourVector<T, I>();
             }
         }
 
-        public bool Equals(FourVector<Coordinates, I> other)
+        public bool Equals(FourVector<T, I> other)
         {
             return Zeroth == other.Zeroth && First == other.First && Second == other.Second && Third == other.Third;
         }
 
         public override bool Equals(object? obj)
         {
-            return obj is FourVector<Coordinates, I> && Equals(this);
+            return obj is FourVector<T, I> && Equals(this);
         }
 
-        public static bool operator ==(FourVector<Coordinates, I> a, FourVector<Coordinates, I> b)
+        public static bool operator ==(FourVector<T, I> a, FourVector<T, I> b)
         {
             return a.Zeroth == b.Zeroth && a.First == b.First && a.Second == b.Second && a.Third == b.Third;
         }
 
-        public static bool operator !=(FourVector<Coordinates, I> a, FourVector<Coordinates, I> b)
+        public static bool operator !=(FourVector<T, I> a, FourVector<T, I> b)
         {
             return !(a == b);
         }
