@@ -31,7 +31,7 @@
         }
 
         /// <summary>
-        /// Calculate the value of the Schwarzschild metric for an object of mass <paramref name="M"/> at a point in spacetime represented by <paramref name="fourvector"/>. If <paramref name="inverse"/> is true, then the inverse metric will be used for the calculation. Coordinates must be spherical.
+        /// Calculate the value of the inverse Schwarzschild metric for an object of mass <paramref name="M"/> at a point in spacetime represented by <paramref name="fourvector"/>. If <paramref name="inverse"/> is true, then the inverse metric will be used for the calculation. Coordinates must be spherical.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="inverse"></param>
