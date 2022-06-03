@@ -60,9 +60,5 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
-	
-  <ItemGroup>
-    <Folder Include="LaTeX\" />
-  </ItemGroup>
 
 </Project>
