@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 namespace Physics.NET.Mathematics.Vectors
 {
     /// <summary>
-    /// 2D Vector in <typeparamref name="Coordinates"/> coordinates.
+    /// 2D Vector in <typeparamref name="T"/> coordinates.
     /// </summary>
     /// <remarks>
     /// Components must be doubles. <typeparamref name="Cartesian"/> and <typeparamref name="Polar"/> coordinates are valid.
     /// </remarks>
-    /// <typeparam name="Coordinates"></typeparam>
+    /// <typeparam name="T"></typeparam>
     /// <typeparam name="Cartesian"></typeparam>
     /// <typeparam name="Polar"></typeparam>
-    public struct Vector2D<Coordinates> : IVector
-        where Coordinates : class, ICoordinateSystem, I2D
+    public struct Vector2D<T> : IVector
+        where T : class, ICoordinateSystem, I2D
     {
         private static string? _coordinateSystem;
         public double First { get; set; }
@@ -24,58 +24,58 @@ namespace Physics.NET.Mathematics.Vectors
 
         public Vector2D(double first, double second)
         {
-            _coordinateSystem = typeof(Coordinates).Name;
+            _coordinateSystem = typeof(T).Name;
             First = first;
             Second = second;
         }
 
-        public static Vector2D<Coordinates> operator +(Vector2D<Coordinates> left, Vector2D<Coordinates> right)
+        public static Vector2D<T> operator +(Vector2D<T> left, Vector2D<T> right)
         {
             if (_coordinateSystem is "Cartesian")
             {
-                return new Vector2D<Coordinates>(left.First + right.First, left.Second + right.Second);
+                return new Vector2D<T>(left.First + right.First, left.Second + right.Second);
             }
             else
             {
                 var result = (left.ToCartesian() + right.ToCartesian()).ToPolar();
-                return new Vector2D<Coordinates>(result.First, result.Second);
+                return new Vector2D<T>(result.First, result.Second);
             }
         }
 
-        public static Vector2D<Coordinates> operator -(Vector2D<Coordinates> left, Vector2D<Coordinates> right)
+        public static Vector2D<T> operator -(Vector2D<T> left, Vector2D<T> right)
         {
             if (_coordinateSystem is "Cartesian")
             {
-                return new Vector2D<Coordinates>(left.First - right.First, left.Second - right.Second);
+                return new Vector2D<T>(left.First - right.First, left.Second - right.Second);
             }
             else
             {
                 var result = (left.ToCartesian() - right.ToCartesian()).ToPolar();
-                return new Vector2D<Coordinates>(result.First, result.Second);
+                return new Vector2D<T>(result.First, result.Second);
             }
         }
 
-        public static Vector2D<Coordinates> operator *(double left, Vector2D<Coordinates> right)
+        public static Vector2D<T> operator *(double left, Vector2D<T> right)
         {
             if (_coordinateSystem is "Cartesian")
             {
-                return new Vector2D<Coordinates>(left * right.First, left * right.Second);
+                return new Vector2D<T>(left * right.First, left * right.Second);
             }
             else
             {
-                return new Vector2D<Coordinates>(left * right.First, right.Second);
+                return new Vector2D<T>(left * right.First, right.Second);
             }
         }
 
-        public static Vector2D<Coordinates> operator *(Vector2D<Coordinates> left, double right)
+        public static Vector2D<T> operator *(Vector2D<T> left, double right)
         {
             if (_coordinateSystem is "Cartesian")
             {
-                return new Vector2D<Coordinates>(left.First * right, left.Second * right);
+                return new Vector2D<T>(left.First * right, left.Second * right);
             }
             else
             {
-                return new Vector2D<Coordinates>(left.First * right, left.Second);
+                return new Vector2D<T>(left.First * right, left.Second);
             }
         }
 
@@ -91,16 +91,16 @@ namespace Physics.NET.Mathematics.Vectors
             }
         }
 
-        public Vector2D<Coordinates> Normalize()
+        public Vector2D<T> Normalize()
         {
             var length = Length();
             if (_coordinateSystem is "Cartesian")
             {
-                return new Vector2D<Coordinates>(First / length, Second / length);
+                return new Vector2D<T>(First / length, Second / length);
             }
             else
             {
-                return new Vector2D<Coordinates>(First / length, Second);
+                return new Vector2D<T>(First / length, Second);
             }
         }
 
