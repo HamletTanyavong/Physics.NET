@@ -5,7 +5,7 @@
         private readonly static int sc = Session.SigConst;
 
         /// <summary>
-        /// Calculate the value of the Minkowski metric at a point in spacetime represented by <paramref name="fourvector"/>. If <paramref name="inverse"/> is true, then the inverse metric will be used for the calculation.
+        /// Calculate the value of the Minkowski metric at a point in spacetime represented by a <paramref name="fourvector"/> with a contravariant index. 
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="fourvector"></param>
@@ -32,7 +32,7 @@
         }
 
         /// <summary>
-        /// Calculate the value of the Minkowski metric at a point in spacetime represented by <paramref name="fourvector"/>. If <paramref name="inverse"/> is true, then the inverse metric will be used for the calculation.
+        /// Calculate the value of the Minkowski metric at a point in spacetime represented by a <paramref name="fourvector"/> with a covariant index.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="fourvector"></param>
