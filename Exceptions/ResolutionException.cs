@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Physics.NET.Exceptions
+﻿namespace Physics.NET.Exceptions
 {
-    [Serializable]
-    public class ResolutionException : Exception
+    internal class ResolutionException : Exception
     {
         public int Value { get; }
 
