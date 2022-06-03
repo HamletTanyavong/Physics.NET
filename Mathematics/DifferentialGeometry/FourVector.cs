@@ -1,5 +1,4 @@
-﻿using Physics.NET.Exceptions;
-using Physics.NET.Mathematics.LinearAlgebra;
+﻿using Physics.NET.Mathematics.LinearAlgebra;
 
 namespace Physics.NET.Mathematics.DifferentialGeometry
 {
@@ -7,7 +6,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
     /// Four-vector, with a specified index, in <typeparamref name="T"/> coordinates.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public partial struct FourVector<T, I> : IVector, ITensorR1<T, I>, IEquatable<FourVector<T, I>>
+    public struct FourVector<T, I> : IVector, ITensorR1<T, I>, IEquatable<FourVector<T, I>>
         where T : class, ICoordinateSystem, I3D
         where I : class, IIndexPosition
     {
@@ -122,34 +121,12 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
 
         public static FourVector<T, I> operator +(FourVector<T, I> a, FourVector<T, I> b)
         {
-            if (CoordinateSystem is "Cartesian")
-            {
-                return new FourVector<T, I>(a.Zeroth + b.Zeroth, a.First + b.First, a.Second + b.Second, a.Third + b.Third);
-            }
-            else if (CoordinateSystem is "Cylindrical")
-            {
-                return new FourVector<T, I>();
-            }
-            else
-            {
-                return new FourVector<T, I>();
-            }
+            return Selector.Coordinate(Selector.Operation, "Add", a, b);
         }
 
         public static FourVector<T, I> operator -(FourVector<T, I> a, FourVector<T, I> b)
         {
-            if (CoordinateSystem is "Cartesian")
-            {
-                return new FourVector<T, I>(a.Zeroth - b.Zeroth, a.First - b.First, a.Second - b.Second, a.Third - b.Third);
-            }
-            else if (CoordinateSystem is "Cylindrical")
-            {
-                return new FourVector<T, I>();
-            }
-            else
-            {
-                return new FourVector<T, I>();
-            }
+            return Selector.Coordinate(Selector.Operation, "Subtract", a, b);
         }
 
         public bool Equals(FourVector<T, I> other)
