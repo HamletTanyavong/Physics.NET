@@ -1,8 +1,8 @@
 ﻿namespace Physics.NET.Mathematics.DifferentialGeometry
 {
-    internal static partial class Operations
+    public static partial class Operations
     {
-        internal static FourVector<T, I> Add<T, I>(FourVector<T, I> a, FourVector<T, I> b)
+        public static FourVector<T, I> Add<T, I>(FourVector<T, I> a, FourVector<T, I> b)
             where T : class, ICoordinateSystem, I3D
             where I : class, IIndexPosition
         {
@@ -16,14 +16,14 @@
             };
         }
 
-        internal static FourVector<T, I> Add<T, I>(FourVector<Cartesian, I> a, FourVector<Cartesian, I> b)
+        public static FourVector<T, I> Add<T, I>(FourVector<Cartesian, I> a, FourVector<Cartesian, I> b)
             where T : class, ICoordinateSystem, I3D
             where I : class, IIndexPosition
         {
             return new(a.Zeroth + b.Zeroth, a.First + b.First, a.Second + b.Second, a.Third + b.Third);
         }
 
-        internal static FourVector<T, I> Add<T, I>(FourVector<Cylindrical, I> a, FourVector<Cylindrical, I> b)
+        public static FourVector<T, I> Add<T, I>(FourVector<Cylindrical, I> a, FourVector<Cylindrical, I> b)
             where T : class, ICoordinateSystem, I3D
             where I : class, IIndexPosition
         {
@@ -39,7 +39,7 @@
             );
         }
 
-        internal static FourVector<T, I> Add<T, I>(FourVector<Spherical, I> a, FourVector<Spherical, I> b)
+        public static FourVector<T, I> Add<T, I>(FourVector<Spherical, I> a, FourVector<Spherical, I> b)
             where T : class, ICoordinateSystem, I3D
             where I : class, IIndexPosition
         {
