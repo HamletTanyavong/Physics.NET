@@ -6,13 +6,12 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
     /// Four-vector, with a specified index, in <typeparamref name="T"/> coordinates.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public struct FourVector<T, I> : IVector, ITensorR1<T, I>, IEquatable<FourVector<T, I>>
+    public struct FourVector<T, I> : IFourVector, IFourVectorIndexManagement<T>, IEquatable<FourVector<T, I>>
         where T : class, ICoordinateSystem, I3D
         where I : class, IIndexPosition
     {
-        private static readonly string CoordinateSystem = typeof(T).Name;
         private static readonly string IndexPosition = typeof(I).Name;
-        private Index<I> Indicies { get; set; }
+        private readonly IIndex _Index;
 
         readonly public int Rank { get; } = 1;
 
@@ -23,7 +22,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
 
         public FourVector(double zeroth, double first, double second, double third)
         {
-            Indicies = new();
+            _Index = IndexFactory.CreateIndex<I>();
 
             Zeroth = zeroth;
             First = first;
@@ -33,7 +32,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
 
         public FourVector(double zeroth, Vector3D<T> vector)
         {
-            Indicies = new();
+            _Index = IndexFactory.CreateIndex<I>();
 
             Zeroth = zeroth;
             First = vector.First;
@@ -41,26 +40,62 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             Third = vector.Third;
         }
 
+        public static explicit operator FourVector<T, L>(FourVector<T, I> a)
+        {
+            var result = new FourVector<T, L>(a.Zeroth, a.First, a.Second, a.Third);
+            result.SetIndex(0, a._Index.IndexName);
+            return result;
+        }
+
+        public static explicit operator FourVector<T, U>(FourVector<T, I> a)
+        {
+            var result = new FourVector<T, U>(a.Zeroth, a.First, a.Second, a.Third);
+            result.SetIndex(0, a._Index.IndexName);
+            return result;
+        }
+
+        public static explicit operator FourVector<Cartesian, I>(FourVector<T, I> a)
+        {
+            var result = new FourVector<Cartesian, I>(a.Zeroth, a.First, a.Second, a.Third);
+            result.SetIndex(0, a._Index.IndexName);
+            return result;
+        }
+
+        public static explicit operator FourVector<Cylindrical, I>(FourVector<T, I> a)
+        {
+            var result = new FourVector<Cylindrical, I>(a.Zeroth, a.First, a.Second, a.Third);
+            result.SetIndex(0, a._Index.IndexName);
+            return result;
+        }
+
+        public static explicit operator FourVector<Spherical, I>(FourVector<T, I> a)
+        {
+            var result = new FourVector<Spherical, I>(a.Zeroth, a.First, a.Second, a.Third);
+            result.SetIndex(0, a._Index.IndexName);
+            return result;
+        }
+
         public void SetIndex(int location, string index)
         {
-            Indicies = new(location, index);
+            _Index.Location = location;
+            _Index.IndexName = index;
         }
 
         public string GetIndex()
         {
-            return $"({Indicies!.IndexName}, {IndexPosition})";
+            return $"({_Index!.IndexName}, {IndexPosition})";
         }
 
         public FourVector<T, U> Raise(string index, Func<FourVector<T, L>, FourVector<T, U>> metric)
         {
             CheckIndexPosition(index);
 
-            if (IndexPosition is "U")
+            if (IndexPosition == "U")
             {
                 throw new ArgumentException($"error: {index} is already raised");
             }
-
-            var value = metric(new FourVector<T, L>(Zeroth, First, Second, Third));
+            
+            var value = metric((FourVector<T, L>)this);
             var result = Matrix.Multiply(value, this);
             result.SetIndex(0, index);
             return result;
@@ -70,12 +105,12 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
         {
             CheckIndexPosition(index);
 
-            if (IndexPosition is "U")
+            if (IndexPosition == "U")
             {
                 throw new ArgumentException($"error: {index} is already raised");
             }
 
-            var value = metric(M, new FourVector<T, L>(Zeroth, First, Second, Third));
+            var value = metric(M, (FourVector<T, L>)this);
             var result = Matrix.Multiply(value, this);
             result.SetIndex(0, index);
             return result;
@@ -85,12 +120,12 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
         {
             CheckIndexPosition(index);
 
-            if (IndexPosition is "L")
+            if (IndexPosition == "L")
             {
                 throw new ArgumentException($"error: {index} is already lowered");
             }
 
-            var value = metric(new FourVector<T, U>(Zeroth, First, Second, Third));
+            var value = metric((FourVector<T, U>)this);
             var result = Matrix.Multiply(value, this);
             result.SetIndex(0, index);
             return result;
@@ -100,12 +135,12 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
         {
             CheckIndexPosition(index);
 
-            if (IndexPosition is "L")
+            if (IndexPosition == "L")
             {
                 throw new ArgumentException($"error: {index} is already lowered");
             }
 
-            var value = metric(M, new FourVector<T, U>(Zeroth, First, Second, Third));
+            var value = metric(M, (FourVector<T, U>)this);
             var result = Matrix.Multiply(value, this);
             result.SetIndex(0, index);
             return result;
@@ -113,7 +148,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
 
         private void CheckIndexPosition(string index)
         {
-            if (Indicies.Location is null || Indicies.IndexName != index)
+            if (_Index.Location is null || _Index.IndexName != index)
             {
                 throw new ArgumentException("error: Index not found");
             }
@@ -121,12 +156,22 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
 
         public static FourVector<T, I> operator +(FourVector<T, I> a, FourVector<T, I> b)
         {
-            return Selector.Coordinate(Selector.Operation, "Add", a, b);
+            return Operations.Add(a, b);
         }
 
         public static FourVector<T, I> operator -(FourVector<T, I> a, FourVector<T, I> b)
         {
-            return Selector.Coordinate(Selector.Operation, "Subtract", a, b);
+            return Operations.Subtract(a, b);
+        }
+
+        public static FourVector<T, I> operator *(double a, FourVector<T, I> b)
+        {
+            return Operations.Multiply(a, b);
+        }
+
+        public static FourVector<T, I> operator *(FourVector<T, I> a, double b)
+        {
+            return Operations.Multiply(a, b);
         }
 
         public bool Equals(FourVector<T, I> other)
@@ -158,7 +203,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
         {
             return $"({Zeroth}, {First}, {Second}, {Third})";
         }
-         
+
         public double this[int index]
         {
             get
