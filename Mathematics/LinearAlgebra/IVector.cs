@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.NET.Mathematics.Vectors
+namespace Physics.NET.Mathematics.LinearAlgebra
 {
-    public class General : ICoordinateSystem
+    public interface IVector
     {
     }
 }
