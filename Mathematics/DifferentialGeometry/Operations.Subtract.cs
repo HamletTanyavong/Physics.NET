@@ -1,4 +1,6 @@
-﻿namespace Physics.NET.Mathematics.DifferentialGeometry
+﻿using Physics.NET.Mathematics.LinearAlgebra;
+
+namespace Physics.NET.Mathematics.DifferentialGeometry
 {
     public static partial class Operations
     {
@@ -12,7 +14,7 @@
                 "Cartesian" => Subtract<T, I>((FourVector<Cartesian, I>)a, (FourVector<Cartesian, I>)b),
                 "Cylindrical" => Subtract<T, I>((FourVector<Cylindrical, I>)a, (FourVector<Cylindrical, I>)b),
                 "Spherical" => Subtract<T, I>((FourVector<Spherical, I>)a, (FourVector<Spherical, I>)b),
-                _ => throw new TypeAccessException($"{coordinateSystem} is not a valid coordinate system"),
+                _ => throw new TypeAccessException($"error: {coordinateSystem} is not a valid coordinate system"),
             };
         }
 
