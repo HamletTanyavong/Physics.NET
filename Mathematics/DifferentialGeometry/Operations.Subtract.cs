@@ -1,21 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Physics.NET.Mathematics.DifferentialGeometry
+﻿namespace Physics.NET.Mathematics.DifferentialGeometry
 {
     internal static partial class Operations
     {
-        internal static FourVector<T, I> SubtractCartesian<T, I>(FourVector<T, I> a, FourVector<T, I> b)
+        internal static FourVector<T, I> Subtract<T, I>(FourVector<T, I> a, FourVector<T, I> b)
+            where T : class, ICoordinateSystem, I3D
+            where I : class, IIndexPosition
+        {
+            string coordinateSystem = typeof(T).Name;
+            return coordinateSystem switch
+            {
+                "Cartesian" => Subtract<T, I>((FourVector<Cartesian, I>)a, (FourVector<Cartesian, I>)b),
+                "Cylindrical" => Subtract<T, I>((FourVector<Cylindrical, I>)a, (FourVector<Cylindrical, I>)b),
+                "Spherical" => Subtract<T, I>((FourVector<Spherical, I>)a, (FourVector<Spherical, I>)b),
+                _ => throw new TypeAccessException($"{coordinateSystem} is not a valid coordinate system"),
+            };
+        }
+
+        internal static FourVector<T, I> Subtract<T, I>(FourVector<Cartesian, I> a, FourVector<Cartesian, I> b)
             where T : class, ICoordinateSystem, I3D
             where I : class, IIndexPosition
         {
             return new(a.Zeroth - b.Zeroth, a.First - b.First, a.Second - b.Second, a.Third - b.Third);
         }
 
-        internal static FourVector<T, I> SubtractCylindrical<T, I>(FourVector<T, I> a, FourVector<T, I> b)
+        internal static FourVector<T, I> Subtract<T, I>(FourVector<Cylindrical, I> a, FourVector<Cylindrical, I> b)
             where T : class, ICoordinateSystem, I3D
             where I : class, IIndexPosition
         {
@@ -31,7 +39,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             );
         }
 
-        internal static FourVector<T, I> SubtractSpherical<T, I>(FourVector<T, I> a, FourVector<T, I> b)
+        internal static FourVector<T, I> Subtract<T, I>(FourVector<Spherical, I> a, FourVector<Spherical, I> b)
             where T : class, ICoordinateSystem, I3D
             where I : class, IIndexPosition
         {
