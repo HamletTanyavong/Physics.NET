@@ -1,4 +1,4 @@
-﻿namespace Physics.NET.Mathematics.Vectors
+﻿namespace Physics.NET.Mathematics.LinearAlgebra
 {
     /// <summary>
     /// 3D Vector in <typeparamref name="T"/> coordinates.

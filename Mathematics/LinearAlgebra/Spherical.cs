@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.NET.Mathematics.Vectors
+namespace Physics.NET.Mathematics.LinearAlgebra
 {
     /// <summary>
-    /// Polar coordinates in the form (r, θ).
+    /// Spherical coordinates in the form (r, θ, φ).
     /// </summary>
-    public class Polar : ICoordinateSystem, I2D
+    public class Spherical : ICoordinateSystem, I3D
     {
     }
 }
