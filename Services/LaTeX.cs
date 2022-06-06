@@ -1,4 +1,5 @@
 ﻿using Physics.NET.Mathematics.DifferentialGeometry;
+using Physics.NET.Mathematics.LinearAlgebra;
 
 namespace Physics.NET.Services
 {
