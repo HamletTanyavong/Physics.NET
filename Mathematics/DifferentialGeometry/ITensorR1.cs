@@ -1,8 +1,6 @@
 ﻿namespace Physics.NET.Mathematics.DifferentialGeometry
 {
-    public interface ITensorR1<Coordinates, I> : ITensor
-        where Coordinates : class, ICoordinateSystem, I3D
-        where I : class, IIndexPosition
+    public interface ITensorR1 : ITensor
     {
         /// <summary>
         /// Give a tensor indicies with a specified name and location. Use <paramref name="true"/> for upper and <paramref name="false"/> for lower positions.
@@ -13,19 +11,10 @@
         void SetIndex(int location, string index);
 
         /// <summary>
-        /// Raise <paramref name="index"/> with <paramref name="metric"/>.
+        /// Returns the value of a rank one tensor at the specified <paramref name="index"/>.
         /// </summary>
         /// <param name="index"></param>
-        /// <param name="metric"></param>
         /// <returns></returns>
-        FourVector<Coordinates, U> Raise(string index, Func<FourVector<Coordinates, L>, FourVector<Coordinates, U>> metric);
-
-        /// <summary>
-        /// Lower <paramref name="index"/> with <paramref name="metric"/>
-        /// </summary>
-        /// <param name="index"></param>
-        /// <param name="metric"></param>
-        /// <returns></returns>
-        FourVector<Coordinates, L> Lower(string index, Func<FourVector<Coordinates, U>, FourVector<Coordinates, L>> metric);
+        double this[int index] { get; set; }
     }
 }

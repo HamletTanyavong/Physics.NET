@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace Physics.NET.Mathematics.DifferentialGeometry
 {
-    public interface ITensor
+    internal static class IndexFactory
     {
-        /// <summary>
-        /// The rank of a tensor.
-        /// </summary>
-        int Rank { get; }
-
-        string GetIndex();
-        string ToString();
+        internal static IIndex CreateIndex<I>()
+            where I : class, IIndexPosition
+        {
+            return new Index<I>();
+        }
     }
 }

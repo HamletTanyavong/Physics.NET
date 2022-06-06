@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.NET.Mathematics.Vectors
+namespace Physics.NET.Mathematics.LinearAlgebra
 {
     /// <summary>
     /// Polar coordinates in the form (r, θ).
