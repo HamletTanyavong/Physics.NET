@@ -32,143 +32,53 @@
             Third = third;
         }
 
+        public static explicit operator Vector3D<Cartesian>(Vector3D<T> a)
+        {
+            var result = new Vector3D<Cartesian>(a.First, a.Second, a.Third);
+            return result;
+        }
+
+        public static explicit operator Vector3D<Cylindrical>(Vector3D<T> a)
+        {
+            var result = new Vector3D<Cylindrical>(a.First, a.Second, a.Third);
+            return result;
+        }
+
+        public static explicit operator Vector3D<Spherical>(Vector3D<T> a)
+        {
+            var result = new Vector3D<Spherical>(a.First, a.Second, a.Third);
+            return result;
+        }
+
         public static Vector3D<T> operator +(Vector3D<T> a, Vector3D<T> b)
         {
-            if (CoordinateSystem is "Cartesian")
-            {
-                return new Vector3D<T>(a.First + b.First, a.Second + b.Second, a.Third + b.Third);
-            }
-            else if (CoordinateSystem is "Cylindrical")
-            {
-                var result = (a.ToCartesian() + b.ToCartesian()).ToCylindrical();
-                return new Vector3D<T>(result.First, result.Second, result.Third);
-            }
-            else
-            {
-                var result = (a.ToCartesian() + b.ToCartesian()).ToSpherical();
-                return new Vector3D<T>(result.First, result.Second, result.Third);
-            }
+            return Operations.Add(a, b);
         }
 
         public static Vector3D<T> operator -(Vector3D<T> a, Vector3D<T> b)
         {
-            if (CoordinateSystem is "Cartesian")
-            {
-                return new Vector3D<T>(a.First - b.First, a.Second - b.Second, a.Third - b.Third);
-            }
-            else if (CoordinateSystem is "Cylindrical")
-            {
-                var result = (a.ToCartesian() - b.ToCartesian()).ToCylindrical();
-                return new Vector3D<T>(result.First, result.Second, result.Third);
-            }
-            else
-            {
-                var result = (a.ToCartesian() - b.ToCartesian()).ToSpherical();
-                return new Vector3D<T>(result.First, result.Second, result.Third);
-            }
+            return Operations.Subtract(a, b);
         }
 
         public static Vector3D<T> operator *(double a, Vector3D<T> b)
         {
-            if (CoordinateSystem is "Cartesian")
-            {
-                return new Vector3D<T>(a * b.First, a * b.Second, a * b.Third);
-            }
-            else if (CoordinateSystem is "Cylindrical")
-            {
-                return new Vector3D<T>(a * b.First, b.Second, a * b.Third);
-            }
-            else
-            {
-                return new Vector3D<T>(a * b.First, b.Second, b.Third);
-            }
+            return Operations.Multiply(a, b);
         }
 
         public static Vector3D<T> operator *(Vector3D<T> a, double b)
         {
-            if (CoordinateSystem is "Cartesian")
-            {
-                return new Vector3D<T>(b * a.First, b * a.Second, b * a.Third);
-            }
-            else if (CoordinateSystem is "Cylindrical")
-            {
-                return new Vector3D<T>(b * a.First, a.Second, b * a.Third);
-            }
-            else
-            {
-                return new Vector3D<T>(b * a.First, a.Second, a.Third);
-            }
+            return Operations.Multiply(a, b);
         }
 
-        public double Length()
+        public double Norm()
         {
-            if (CoordinateSystem is "Cartesian")
-            {
-                return Math.Sqrt(First * First + Second * Second + Third * Third);
-            }
-            else if (CoordinateSystem is "Cylindrical")
-            {
-                return Math.Sqrt(First * First + Third * Third);
-            }
-            else
-            {
-                return First;
-            }
+            return Math.Sqrt(First * First + Second * Second + Third * Third);
         }
 
         public Vector3D<T> Normalize()
         {
-            var length = Length();
-            if (CoordinateSystem is "Cartesian")
-            {
-                return new Vector3D<T>(First / length, Second / length, Third / length);
-            }
-            else if (CoordinateSystem is "Cylindrical")
-            {
-                return new Vector3D<T>(First / length, Second, Third / length);
-            }
-            else
-            {
-                return new Vector3D<T>(1, Second, Third);
-            }
-        }
-
-        public Vector3D<Cartesian> ToCartesian()
-        {
-            if (CoordinateSystem is "Cylindrical")
-            {
-                return new Vector3D<Cartesian>(First * Math.Cos(Second), First * Math.Sin(Second), Third);
-            }
-            else
-            {
-                return new Vector3D<Cartesian>(First * Math.Cos(Third) * Math.Sin(Second), First * Math.Sin(Third) * Math.Sin(Second), First * Math.Cos(Second));
-            }
-        }
-
-        public Vector3D<Cylindrical> ToCylindrical()
-        {
-            if (CoordinateSystem is "Cartesian")
-            {
-                return new Vector3D<Cylindrical>(Math.Sqrt(First * First + Second * Second), Math.Atan2(Second, First), Third);
-            }
-            else
-            {
-                return new Vector3D<Cylindrical>(First * Math.Sin(Second), Third, First * Math.Cos(Second));
-            }
-        }
-
-        public Vector3D<Spherical> ToSpherical()
-        {
-            if (CoordinateSystem is "Cartesian")
-            {
-                var radius = Math.Sqrt(First * First + Second * Second + Third * Third);
-                return new Vector3D<Spherical>(radius, Math.Acos(Third / radius), Math.Atan2(Second, First));
-            }
-            else
-            {
-                var radius = Math.Sqrt(First * First + Third * Third);
-                return new Vector3D<Spherical>(radius, Math.Acos(Third / radius), Second);
-            }
+            var norm = Norm();
+            return new Vector3D<T>(First / norm, Second / norm, Third / norm);
         }
 
         public bool Equals(Vector3D<T> other)

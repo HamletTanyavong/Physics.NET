@@ -1,6 +1,4 @@
-﻿using Physics.NET.Mathematics.LinearAlgebra;
-
-namespace Physics.NET.Mathematics.DifferentialGeometry
+﻿namespace Physics.NET.Mathematics.DifferentialGeometry
 {
     /// <summary>
     /// Four-vector, with a specified index, in <typeparamref name="T"/> coordinates.
@@ -96,7 +94,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             }
             
             var value = metric((FourVector<T, L>)this);
-            var result = Matrix.Multiply(value, this);
+            var result = Operations.Elementwise.Multiply(value, this);
             result.SetIndex(0, index);
             return result;
         }
@@ -111,7 +109,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             }
 
             var value = metric(M, (FourVector<T, L>)this);
-            var result = Matrix.Multiply(value, this);
+            var result = Operations.Elementwise.Multiply(value, this);
             result.SetIndex(0, index);
             return result;
         }
@@ -126,7 +124,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             }
 
             var value = metric((FourVector<T, U>)this);
-            var result = Matrix.Multiply(value, this);
+            var result = Operations.Elementwise.Multiply(value, this);
             result.SetIndex(0, index);
             return result;
         }
@@ -141,7 +139,7 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             }
 
             var value = metric(M, (FourVector<T, U>)this);
-            var result = Matrix.Multiply(value, this);
+            var result = Operations.Elementwise.Multiply(value, this);
             result.SetIndex(0, index);
             return result;
         }
@@ -152,26 +150,6 @@ namespace Physics.NET.Mathematics.DifferentialGeometry
             {
                 throw new ArgumentException("error: Index not found");
             }
-        }
-
-        public static FourVector<T, I> operator +(FourVector<T, I> a, FourVector<T, I> b)
-        {
-            return Operations.Add(a, b);
-        }
-
-        public static FourVector<T, I> operator -(FourVector<T, I> a, FourVector<T, I> b)
-        {
-            return Operations.Subtract(a, b);
-        }
-
-        public static FourVector<T, I> operator *(double a, FourVector<T, I> b)
-        {
-            return Operations.Multiply(a, b);
-        }
-
-        public static FourVector<T, I> operator *(FourVector<T, I> a, double b)
-        {
-            return Operations.Multiply(a, b);
         }
 
         public bool Equals(FourVector<T, I> other)
