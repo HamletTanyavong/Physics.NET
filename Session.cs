@@ -15,7 +15,7 @@ namespace Physics.NET
     {
         internal static string? Signature { get; set; } = "Spacelike";
         internal static int SigConst { get; set; }
-        internal static string? Units { get; set; } = "SI";
+        internal static string? Units { get; set; } = "Natural";
 
         public static void SetUnits(string units)
         {
