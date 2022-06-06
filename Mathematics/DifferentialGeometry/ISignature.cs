@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Physics.NET.Mathematics.DifferentialGeometry
 {
-    internal interface ISignature
+    public interface ISignature
     {
     }
 }
