@@ -31,21 +31,21 @@
         public static Vector3D<T> Multiply<T>(double a, Vector3D<Cartesian> b)
             where T : class, ICoordinateSystem, I3D
         {
-            return new(a * b.First, a * b.Second, a * b.Third);
+            return new(a * b.X1, a * b.X2, a * b.X3);
         }
 
         public static Vector3D<T> Multiply<T>(Vector3D<Cartesian> a, double b)
             where T : class, ICoordinateSystem, I3D
         {
-            return new(b * a.First, b * a.Second, b * a.Third);
+            return new(b * a.X1, b * a.X2, b * a.X3);
         }
 
         public static Vector3D<T> Multiply<T>(double a, Vector3D<Cylindrical> b)
             where T : class, ICoordinateSystem, I3D
         {
-            var r_1 = a * b.First * Math.Cos(b.Second);
-            var r_2 = a * b.First * Math.Sin(b.Second);
-            var r_3 = a * b.Third;
+            var r_1 = a * b.X1 * Math.Cos(b.X2);
+            var r_2 = a * b.X1 * Math.Sin(b.X2);
+            var r_3 = a * b.X3;
             return new(
                 Math.Sqrt(r_1 * r_1 + r_2 * r_2),
                 Math.Atan2(r_2, r_1),
@@ -56,9 +56,9 @@
         public static Vector3D<T> Multiply<T>(Vector3D<Cylindrical> a, double b)
             where T : class, ICoordinateSystem, I3D
         {
-            var r_1 = b * a.First * Math.Cos(a.Second);
-            var r_2 = b * a.First * Math.Sin(a.Second);
-            var r_3 = b * a.Third;
+            var r_1 = b * a.X1 * Math.Cos(a.X2);
+            var r_2 = b * a.X1 * Math.Sin(a.X2);
+            var r_3 = b * a.X3;
             return new(
                 Math.Sqrt(r_1 * r_1 + r_2 * r_2),
                 Math.Atan2(r_2, r_1),
@@ -69,9 +69,9 @@
         public static Vector3D<T> Multiply<T>(double a, Vector3D<Spherical> b)
             where T : class, ICoordinateSystem, I3D
         {
-            var r_1 = a * b.First * Math.Cos(b.Third) * Math.Sin(b.Second);
-            var r_2 = a * b.First * Math.Sin(b.Third) * Math.Sin(b.Second);
-            var r_3 = a * b.First * Math.Cos(b.Second);
+            var r_1 = a * b.X1 * Math.Cos(b.X3) * Math.Sin(b.X2);
+            var r_2 = a * b.X1 * Math.Sin(b.X3) * Math.Sin(b.X2);
+            var r_3 = a * b.X1 * Math.Cos(b.X2);
 
             var radius = Math.Sqrt(r_1 * r_1 + r_2 * r_2 + r_3 * r_3);
             return new(
@@ -84,9 +84,9 @@
         public static Vector3D<T> Multiply<T>(Vector3D<Spherical> a, double b)
             where T : class, ICoordinateSystem, I3D
         {
-            var r_1 = b * a.First * Math.Cos(a.Third) * Math.Sin(a.Second);
-            var r_2 = b * a.First * Math.Sin(a.Third) * Math.Sin(a.Second);
-            var r_3 = b * a.First * Math.Cos(a.Second);
+            var r_1 = b * a.X1 * Math.Cos(a.X3) * Math.Sin(a.X2);
+            var r_2 = b * a.X1 * Math.Sin(a.X3) * Math.Sin(a.X2);
+            var r_3 = b * a.X1 * Math.Cos(a.X2);
 
             var radius = Math.Sqrt(r_1 * r_1 + r_2 * r_2 + r_3 * r_3);
             return new(
