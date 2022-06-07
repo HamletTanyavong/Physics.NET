@@ -15,38 +15,38 @@
     {
         private static readonly string CoordinateSystem = typeof(T).Name;
 
-        public double First { get; set; }
-        public double Second { get; set; }
-        public double Third { get; set; }
+        public double X1 { get; set; }
+        public double X2 { get; set; }
+        public double X3 { get; set; }
 
         /// <summary>
-        /// Create a 3D vector with components (<paramref name="first"/>, <paramref name="second"/>, <paramref name="third"/>).
+        /// Create a 3D vector with components (<paramref name="x1"/>, <paramref name="x2"/>, <paramref name="x3"/>).
         /// </summary>
-        /// <param name="first"></param>
-        /// <param name="second"></param>
-        /// <param name="third"></param>
-        public Vector3D(double first, double second, double third)
+        /// <param name="x1"></param>
+        /// <param name="x2"></param>
+        /// <param name="x3"></param>
+        public Vector3D(double x1, double x2, double x3)
         {
-            First = first;
-            Second = second;
-            Third = third;
+            X1 = x1;
+            X2 = x2;
+            X3 = x3;
         }
 
         public static explicit operator Vector3D<Cartesian>(Vector3D<T> a)
         {
-            var result = new Vector3D<Cartesian>(a.First, a.Second, a.Third);
+            var result = new Vector3D<Cartesian>(a.X1, a.X2, a.X3);
             return result;
         }
 
         public static explicit operator Vector3D<Cylindrical>(Vector3D<T> a)
         {
-            var result = new Vector3D<Cylindrical>(a.First, a.Second, a.Third);
+            var result = new Vector3D<Cylindrical>(a.X1, a.X2, a.X3);
             return result;
         }
 
         public static explicit operator Vector3D<Spherical>(Vector3D<T> a)
         {
-            var result = new Vector3D<Spherical>(a.First, a.Second, a.Third);
+            var result = new Vector3D<Spherical>(a.X1, a.X2, a.X3);
             return result;
         }
 
@@ -72,18 +72,18 @@
 
         public double Norm()
         {
-            return Math.Sqrt(First * First + Second * Second + Third * Third);
+            return Math.Sqrt(X1 * X1 + X2 * X2 + X3 * X3);
         }
 
         public Vector3D<T> Normalize()
         {
             var norm = Norm();
-            return new Vector3D<T>(First / norm, Second / norm, Third / norm);
+            return new Vector3D<T>(X1 / norm, X2 / norm, X3 / norm);
         }
 
         public bool Equals(Vector3D<T> other)
         {
-            return First == other.First && Second == other.Second && Third == other.Third;
+            return X1 == other.X1 && X2 == other.X2 && X3 == other.X3;
         }
 
         public override bool Equals(object? obj)
@@ -93,7 +93,7 @@
 
         public static bool operator ==(Vector3D<T> a, Vector3D<T> b)
         {
-            return a.First == b.First && a.Second == b.Second && a.Third == b.Third;
+            return a.X1 == b.X1 && a.X2 == b.X2 && a.X3 == b.X3;
         }
 
         public static bool operator !=(Vector3D<T> a, Vector3D<T> b)
@@ -103,12 +103,12 @@
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(First, Second, Third);
+            return HashCode.Combine(X1, X2, X3);
         }
 
         public override string ToString()
         {
-            return $"({First}, {Second}, {Third})";
+            return $"({X1}, {X2}, {X3})";
         }
     }
 }
