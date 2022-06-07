@@ -6,14 +6,14 @@ namespace Physics.NET.Mathematics.LinearAlgebra
     {
         public static Vector3D<Spherical> ToSpherical(Vector3D<Cartesian> a)
         {
-            var radius = Math.Sqrt(a.First * a.First + a.Second * a.Second + a.Third * a.Third);
-            return new Vector3D<Spherical>(radius, Math.Acos(a.Third / radius), Math.Atan2(a.Second, a.First));
+            var radius = Math.Sqrt(a.X1 * a.X1 + a.X2 * a.X2 + a.X3 * a.X3);
+            return new Vector3D<Spherical>(radius, Math.Acos(a.X3 / radius), Math.Atan2(a.X2, a.X1));
         }
 
         public static Vector3D<Spherical> ToSpherical(Vector3D<Cylindrical> a)
         {
-            var radius = Math.Sqrt(a.First * a.First + a.Third * a.Third);
-            return new Vector3D<Spherical>(radius, Math.Acos(a.Third / radius), a.Second);
+            var radius = Math.Sqrt(a.X1 * a.X1 + a.X3 * a.X3);
+            return new Vector3D<Spherical>(radius, Math.Acos(a.X3 / radius), a.X2);
         }
     }
 }
