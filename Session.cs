@@ -7,8 +7,7 @@ namespace Physics.NET
     /// </summary>
     public static class Session
     {
-        internal static string? Signature { get; set; } = "Spacelike";
-        internal static int SigConst { get; set; }
+        internal static dynamic Signature = new Signature<Spacelike>();
         internal static string? Units { get; set; } = "Natural";
 
         public static void SetUnits(string units)
@@ -23,16 +22,15 @@ namespace Physics.NET
         /// <exception cref="TypeAccessException"></exception>
         public static void SetSignature(string signature)
         {
-            if (typeof(ISignature).IsAssignableFrom(Type.GetType($"Physics.NET.Mathematics.DifferentialGeometry.I{signature}")))
+            if (typeof(ISignature).IsAssignableFrom(Type.GetType($"Physics.NET.Mathematics.DifferentialGeometry.{signature}")))
             {
-                Signature = signature;
-                if (signature is "Spacelike")
+                if (signature == "Spacelike")
                 {
-                    SigConst = 1;
+                    Signature = new Signature<Spacelike>();
                 }
                 else
                 {
-                    SigConst = -1;
+                    Signature = new Signature<Timelike>();
                 }
             }
             else
