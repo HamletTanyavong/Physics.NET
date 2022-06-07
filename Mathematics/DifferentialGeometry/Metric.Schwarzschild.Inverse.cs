@@ -17,12 +17,12 @@
             where T : class, ICoordinateSystem, I3D
         {
             var schwarzschildRadius = 2 * SI.G * M;
-            var rSquared = fourvector.First * fourvector.First;
-            var sinSquared = Math.Sin(fourvector.Second) * Math.Sin(fourvector.Second);
+            var rSquared = fourvector.X1 * fourvector.X1;
+            var sinSquared = Math.Sin(fourvector.X2) * Math.Sin(fourvector.X2);
             return new
             (
-                1 / (schwarzschildRadius / fourvector.First - 1),
-                1 - schwarzschildRadius / fourvector.First,
+                1 / (schwarzschildRadius / fourvector.X1 - 1),
+                1 - schwarzschildRadius / fourvector.X1,
                 1 / rSquared,
                 1 / (rSquared * sinSquared)
             );
@@ -32,12 +32,12 @@
             where T : class, ICoordinateSystem, I3D
         {
             var schwarzschildRadius = 2 * SI.G * M;
-            var rSquared = fourvector.First * fourvector.First;
-            var sinSquared = Math.Sin(fourvector.Second) * Math.Sin(fourvector.Second);
+            var rSquared = fourvector.X1 * fourvector.X1;
+            var sinSquared = Math.Sin(fourvector.X2) * Math.Sin(fourvector.X2);
             return new
             (
-                1 / (1 - schwarzschildRadius / fourvector.First),
-                schwarzschildRadius / fourvector.First - 1,
+                1 / (1 - schwarzschildRadius / fourvector.X1),
+                schwarzschildRadius / fourvector.X1 - 1,
                 -1 / rSquared,
                 -1 / (rSquared * sinSquared)
             );
