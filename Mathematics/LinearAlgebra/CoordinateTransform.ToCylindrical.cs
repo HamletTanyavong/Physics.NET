@@ -6,12 +6,12 @@ namespace Physics.NET.Mathematics.LinearAlgebra
     {
         public static Vector3D<Cylindrical> ToCylindrical(Vector3D<Cartesian> a)
         {
-            return new Vector3D<Cylindrical>(Math.Sqrt(a.First * a.First + a.Second * a.Second), Math.Atan2(a.Second, a.First), a.Third);
+            return new Vector3D<Cylindrical>(Math.Sqrt(a.X1 * a.X1 + a.X2 * a.X2), Math.Atan2(a.X2, a.X1), a.X3);
         }
 
         public static Vector3D<Cylindrical> ToCylindrical(Vector3D<Spherical> a)
         {
-            return new Vector3D<Cylindrical>(a.First * Math.Sin(a.Second), a.Third, a.First * Math.Cos(a.Second));
+            return new Vector3D<Cylindrical>(a.X1 * Math.Sin(a.X2), a.X3, a.X1 * Math.Cos(a.X2));
         }
     }
 }
