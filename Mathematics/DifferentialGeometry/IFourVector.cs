@@ -5,21 +5,21 @@
         /// <summary>
         /// The zeroth component of a four-vector.
         /// </summary>
-        double Zeroth { get; set; }
+        double X0 { get; set; }
 
         /// <summary>
         /// The first component of a four-vector.
         /// </summary>
-        double First { get; set; }
+        double X1 { get; set; }
 
         /// <summary>
         /// The second component of a four-vector.
         /// </summary>
-        double Second { get; set; }
+        double X2 { get; set; }
 
         /// <summary>
         /// The third component of a four-vector.
         /// </summary>
-        double Third { get; set; }
+        double X3 { get; set; }
     }
 }
