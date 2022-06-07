@@ -18,15 +18,15 @@
         public static Vector3D<T> Add<T>(Vector3D<Cartesian> a, Vector3D<Cartesian> b)
             where T : class, ICoordinateSystem, I3D
         {
-            return new(a.First + b.First, a.Second + b.Second, a.Third + b.Third);
+            return new(a.X1 + b.X1, a.X2 + b.X2, a.X3 + b.X3);
         }
 
         public static Vector3D<T> Add<T>(Vector3D<Cylindrical> a, Vector3D<Cylindrical> b)
             where T : class, ICoordinateSystem, I3D
         {
-            var r_1 = a.First * Math.Cos(a.Second) + b.First * Math.Cos(b.Second);
-            var r_2 = a.First * Math.Sin(a.Second) + b.First * Math.Sin(b.Second);
-            var r_3 = a.Third + b.Third;
+            var r_1 = a.X1 * Math.Cos(a.X2) + b.X1 * Math.Cos(b.X2);
+            var r_2 = a.X1 * Math.Sin(a.X2) + b.X1 * Math.Sin(b.X2);
+            var r_3 = a.X3 + b.X3;
             return new(
                 Math.Sqrt(r_1 * r_1 + r_2 * r_2),
                 Math.Atan2(r_2, r_1),
@@ -37,9 +37,9 @@
         public static Vector3D<T> Add<T>(Vector3D<Spherical> a, Vector3D<Spherical> b)
             where T : class, ICoordinateSystem, I3D
         {
-            var r_1 = a.First * Math.Cos(a.Third) * Math.Sin(a.Second) + b.First * Math.Cos(b.Third) * Math.Sin(b.Second);
-            var r_2 = a.First * Math.Sin(a.Third) * Math.Sin(a.Second) + b.First * Math.Sin(b.Third) * Math.Sin(b.Second);
-            var r_3 = a.First * Math.Cos(a.Second) + b.First * Math.Cos(b.Second);
+            var r_1 = a.X1 * Math.Cos(a.X3) * Math.Sin(a.X2) + b.X1 * Math.Cos(b.X3) * Math.Sin(b.X2);
+            var r_2 = a.X1 * Math.Sin(a.X3) * Math.Sin(a.X2) + b.X1 * Math.Sin(b.X3) * Math.Sin(b.X2);
+            var r_3 = a.X1 * Math.Cos(a.X2) + b.X1 * Math.Cos(b.X2);
 
             var radius = Math.Sqrt(r_1 * r_1 + r_2 * r_2 + r_3 * r_3);
             return new(
