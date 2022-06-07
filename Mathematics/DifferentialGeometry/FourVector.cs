@@ -9,66 +9,66 @@
         where I : class, IIndexPosition
     {
         private static readonly string IndexPosition = typeof(I).Name;
-        private readonly IIndex _Index;
+        internal readonly IIndex _Index;
 
         readonly public int Rank { get; } = 1;
 
-        public double Zeroth { get; set; }
-        public double First { get; set; }
-        public double Second { get; set; }
-        public double Third { get; set; }
+        public double X0 { get; set; }
+        public double X1 { get; set; }
+        public double X2 { get; set; }
+        public double X3 { get; set; }
 
-        public FourVector(double zeroth, double first, double second, double third)
+        public FourVector(double x0, double x1, double x2, double x3)
         {
             _Index = IndexFactory.CreateIndex<I>();
 
-            Zeroth = zeroth;
-            First = first;
-            Second = second;
-            Third = third;
+            X0 = x0;
+            X1 = x1;
+            X2 = x2;
+            X3 = x3;
         }
 
-        public FourVector(double zeroth, Vector3D<T> vector)
+        public FourVector(double x0, Vector3D<T> a)
         {
             _Index = IndexFactory.CreateIndex<I>();
 
-            Zeroth = zeroth;
-            First = vector.First;
-            Second = vector.Second;
-            Third = vector.Third;
+            X0 = x0;
+            X1 = a.X1;
+            X2 = a.X2;
+            X3 = a.X3;
         }
 
         public static explicit operator FourVector<T, L>(FourVector<T, I> a)
         {
-            var result = new FourVector<T, L>(a.Zeroth, a.First, a.Second, a.Third);
+            var result = new FourVector<T, L>(a.X0, a.X1, a.X2, a.X3);
             result.SetIndex(0, a._Index.IndexName);
             return result;
         }
 
         public static explicit operator FourVector<T, U>(FourVector<T, I> a)
         {
-            var result = new FourVector<T, U>(a.Zeroth, a.First, a.Second, a.Third);
+            var result = new FourVector<T, U>(a.X0, a.X1, a.X2, a.X3);
             result.SetIndex(0, a._Index.IndexName);
             return result;
         }
 
         public static explicit operator FourVector<Cartesian, I>(FourVector<T, I> a)
         {
-            var result = new FourVector<Cartesian, I>(a.Zeroth, a.First, a.Second, a.Third);
+            var result = new FourVector<Cartesian, I>(a.X0, a.X1, a.X2, a.X3);
             result.SetIndex(0, a._Index.IndexName);
             return result;
         }
 
         public static explicit operator FourVector<Cylindrical, I>(FourVector<T, I> a)
         {
-            var result = new FourVector<Cylindrical, I>(a.Zeroth, a.First, a.Second, a.Third);
+            var result = new FourVector<Cylindrical, I>(a.X0, a.X1, a.X2, a.X3);
             result.SetIndex(0, a._Index.IndexName);
             return result;
         }
 
         public static explicit operator FourVector<Spherical, I>(FourVector<T, I> a)
         {
-            var result = new FourVector<Spherical, I>(a.Zeroth, a.First, a.Second, a.Third);
+            var result = new FourVector<Spherical, I>(a.X0, a.X1, a.X2, a.X3);
             result.SetIndex(0, a._Index.IndexName);
             return result;
         }
@@ -148,13 +148,13 @@
         {
             if (_Index.Location is null || _Index.IndexName != index)
             {
-                throw new ArgumentException("error: Index not found");
+                throw new ArgumentException("error: Index either not found or already set");
             }
         }
 
         public bool Equals(FourVector<T, I> other)
         {
-            return Zeroth == other.Zeroth && First == other.First && Second == other.Second && Third == other.Third;
+            return X0 == other.X0 && X1 == other.X1 && X2 == other.X2 && X3 == other.X3;
         }
 
         public override bool Equals(object? obj)
@@ -164,7 +164,7 @@
 
         public static bool operator ==(FourVector<T, I> a, FourVector<T, I> b)
         {
-            return a.Zeroth == b.Zeroth && a.First == b.First && a.Second == b.Second && a.Third == b.Third;
+            return a.X0 == b.X0 && a.X1 == b.X1 && a.X2 == b.X2 && a.X3 == b.X3;
         }
 
         public static bool operator !=(FourVector<T, I> a, FourVector<T, I> b)
@@ -174,12 +174,12 @@
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Zeroth, First, Second, Third);
+            return HashCode.Combine(X0, X1, X2, X3);
         }
 
         public override string ToString()
         {
-            return $"({Zeroth}, {First}, {Second}, {Third})";
+            return $"({X0}, {X1}, {X2}, {X3})";
         }
 
         public double this[int index]
@@ -188,10 +188,10 @@
             {
                 return index switch
                 {
-                    0 => Zeroth,
-                    1 => First,
-                    2 => Second,
-                    3 => Third,
+                    0 => X0,
+                    1 => X1,
+                    2 => X2,
+                    3 => X3,
                     _ => throw new ArgumentOutOfRangeException(nameof(index)),
                 };
             }
@@ -199,10 +199,10 @@
             {
                 switch (index)
                 {
-                    case 0: Zeroth = value; break;
-                    case 1: First = value; break;
-                    case 2: Second = value; break;
-                    case 3: Third = value; break;
+                    case 0: X0 = value; break;
+                    case 1: X1 = value; break;
+                    case 2: X2 = value; break;
+                    case 3: X3 = value; break;
                     default: throw new ArgumentOutOfRangeException(nameof(index));
                 }
             }
