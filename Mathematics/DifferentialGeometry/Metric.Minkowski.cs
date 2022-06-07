@@ -2,60 +2,57 @@
 {
     public static partial class Metric
     {
-        private readonly static int sc = Session.SigConst;
-
-        /// <summary>
-        /// Calculate the value of the Minkowski metric at a point in spacetime represented by a <paramref name="fourvector"/> with a contravariant index. 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="fourvector"></param>
-        /// <returns></returns>
         public static FourVector<T, L> Minkowski<T>(FourVector<T, U> fourvector)
             where T : class, ICoordinateSystem, I3D
         {
             string coordinateSystem = typeof(T).Name;
-
-            if (coordinateSystem is "Cartesian")
+            return coordinateSystem switch
             {
-                return new FourVector<T, L>(-1 * sc, sc, sc, sc);
-            }
-            else if (coordinateSystem is "Cylindrical")
-            {
-                return new FourVector<T, L>(-1 * sc, sc, fourvector.First * fourvector.First * sc, sc);
-            }
-            else
-            {
-                var firstSquared = fourvector.First * fourvector.First;
-                var sinSquared = Math.Sin(fourvector.Second) * Math.Sin(fourvector.Second);
-                return new FourVector<T, L>(-1 * sc, sc, firstSquared * sc, firstSquared * sinSquared * sc);
-            }
+                "Cartesian" => Minkowski<T>(Session.Signature, (FourVector<Cartesian, U>)fourvector),
+                "Cylindrical" => Minkowski<T>(Session.Signature, (FourVector<Cylindrical, U>)fourvector),
+                "Spherical" => Minkowski<T>(Session.Signature, (FourVector<Spherical, U>)fourvector),
+                _ => throw new TypeAccessException($"error: {coordinateSystem} is not a valid coordinate system"),
+            };
         }
 
-        /// <summary>
-        /// Calculate the value of the Minkowski metric at a point in spacetime represented by a <paramref name="fourvector"/> with a covariant index.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="fourvector"></param>
-        /// <returns></returns>
-        public static FourVector<T, U> Minkowski<T>(FourVector<T, L> fourvector)
+        public static FourVector<T, L> Minkowski<T>(Signature<Spacelike> _, FourVector<Cartesian, U> _1)
             where T : class, ICoordinateSystem, I3D
         {
-            string coordinateSystem = typeof(T).Name;
+            return new FourVector<T, L>(-1, 1, 1, 1);
+        }
 
-            if (coordinateSystem is "Cartesian")
-            {
-                return new FourVector<T, U>(-1 * sc, sc, sc, sc);
-            }
-            else if (coordinateSystem is "Cylindrical")
-            {
-                return new FourVector<T, U>(-1 * sc, sc, sc / (fourvector.First * fourvector.First), sc);
-            }
-            else
-            {
-                var firstSquared = fourvector.First * fourvector.First;
-                var sinSquared = Math.Sin(fourvector.Second) * Math.Sin(fourvector.Second);
-                return new FourVector<T, U>(-1 * sc, sc, sc / firstSquared, sc / (firstSquared * sinSquared));
-            }
+        public static FourVector<T, L> Minkowski<T>(Signature<Timelike> _, FourVector<Cartesian, U> _1)
+            where T : class, ICoordinateSystem, I3D
+        {
+            return new FourVector<T, L>(1, -1, -1, -1);
+        }
+
+        public static FourVector<T, L> Minkowski<T>(Signature<Spacelike> _, FourVector<Cylindrical, U> fourvector)
+            where T : class, ICoordinateSystem, I3D
+        {
+            return new FourVector<T, L>(-1, 1, fourvector.First * fourvector.First, 1);
+        }
+
+        public static FourVector<T, L> Minkowski<T>(Signature<Timelike> _, FourVector<Cylindrical, U> fourvector)
+            where T : class, ICoordinateSystem, I3D
+        {
+            return new FourVector<T, L>(1, -1, -1 * fourvector.First * fourvector.First, -1);
+        }
+
+        public static FourVector<T, L> Minkowski<T>(Signature<Spacelike> _, FourVector<Spherical, U> fourvector)
+            where T : class, ICoordinateSystem, I3D
+        {
+            var rSquared = fourvector.First * fourvector.First;
+            var sinSquared = Math.Sin(fourvector.Second) * Math.Sin(fourvector.Second);
+            return new FourVector<T, L>(-1, 1, rSquared, rSquared * sinSquared);
+        }
+
+        public static FourVector<T, L> Minkowski<T>(Signature<Timelike> _, FourVector<Spherical, U> fourvector)
+            where T : class, ICoordinateSystem, I3D
+        {
+            var rSquared = fourvector.First * fourvector.First;
+            var sinSquared = Math.Sin(fourvector.Second) * Math.Sin(fourvector.Second);
+            return new FourVector<T, L>(1, -1, -1 * rSquared, -1 * rSquared * sinSquared);
         }
     }
 }
