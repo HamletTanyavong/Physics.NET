@@ -30,28 +30,28 @@
         public static FourVector<T, L> Minkowski<T>(Signature<Spacelike> _, FourVector<Cylindrical, U> fourvector)
             where T : class, ICoordinateSystem, I3D
         {
-            return new FourVector<T, L>(-1, 1, fourvector.First * fourvector.First, 1);
+            return new FourVector<T, L>(-1, 1, fourvector.X1 * fourvector.X1, 1);
         }
 
         public static FourVector<T, L> Minkowski<T>(Signature<Timelike> _, FourVector<Cylindrical, U> fourvector)
             where T : class, ICoordinateSystem, I3D
         {
-            return new FourVector<T, L>(1, -1, -1 * fourvector.First * fourvector.First, -1);
+            return new FourVector<T, L>(1, -1, -1 * fourvector.X1 * fourvector.X1, -1);
         }
 
         public static FourVector<T, L> Minkowski<T>(Signature<Spacelike> _, FourVector<Spherical, U> fourvector)
             where T : class, ICoordinateSystem, I3D
         {
-            var rSquared = fourvector.First * fourvector.First;
-            var sinSquared = Math.Sin(fourvector.Second) * Math.Sin(fourvector.Second);
+            var rSquared = fourvector.X1 * fourvector.X1;
+            var sinSquared = Math.Sin(fourvector.X2) * Math.Sin(fourvector.X2);
             return new FourVector<T, L>(-1, 1, rSquared, rSquared * sinSquared);
         }
 
         public static FourVector<T, L> Minkowski<T>(Signature<Timelike> _, FourVector<Spherical, U> fourvector)
             where T : class, ICoordinateSystem, I3D
         {
-            var rSquared = fourvector.First * fourvector.First;
-            var sinSquared = Math.Sin(fourvector.Second) * Math.Sin(fourvector.Second);
+            var rSquared = fourvector.X1 * fourvector.X1;
+            var sinSquared = Math.Sin(fourvector.X2) * Math.Sin(fourvector.X2);
             return new FourVector<T, L>(1, -1, -1 * rSquared, -1 * rSquared * sinSquared);
         }
     }
