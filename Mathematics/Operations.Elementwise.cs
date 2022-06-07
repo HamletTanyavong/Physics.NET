@@ -20,7 +20,7 @@ namespace Physics.NET.Mathematics
                 where T : class, ICoordinateSystem, I3D
                 where I : class, IIndexPosition
             {
-                return new FourVector<T, L>(a.Zeroth * b.Zeroth, a.First * b.First, a.Second * b.Second, a.Third * b.Third);
+                return new FourVector<T, L>(a.X0 * b.X0, a.X1 * b.X1, a.X2 * b.X2, a.X3 * b.X3);
             }
 
             /// <summary>
@@ -34,7 +34,7 @@ namespace Physics.NET.Mathematics
                 where T : class, ICoordinateSystem, I3D
                 where I : class, IIndexPosition
             {
-                return new FourVector<T, U>(a.Zeroth * b.Zeroth, a.First * b.First, a.Second * b.Second, a.Third * b.Third);
+                return new FourVector<T, U>(a.X0 * b.X0, a.X1 * b.X1, a.X2 * b.X2, a.X3 * b.X3);
             }
         }
     }
