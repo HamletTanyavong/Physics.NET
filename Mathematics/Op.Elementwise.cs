@@ -2,7 +2,7 @@
 
 namespace Physics.NET.Mathematics
 {
-    public static partial class Operations
+    public static partial class Op
     {
         /// <summary>
         /// Perform element-wise operations on tensors.

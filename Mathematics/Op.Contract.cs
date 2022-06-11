@@ -2,7 +2,7 @@
 
 namespace Physics.NET.Mathematics
 {
-    public static partial class Operations
+    public static partial class Op
     {
         public static double Contract<T>(FourVector<T, U> a, FourVector<T, L> b)
             where T : class, ICoordinateSystem, I3D

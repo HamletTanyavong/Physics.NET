@@ -1,6 +1,6 @@
 ﻿namespace Physics.NET.Mathematics
 {
-    public static partial class Operations
+    public static partial class Op
     {
         public static partial class Matrix
         {

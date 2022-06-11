@@ -1,6 +1,6 @@
 ﻿namespace Physics.NET.Mathematics
 {
-    public static partial class Operations
+    public static partial class Op
     {
         public static Vector3D<T> Multiply<T>(double a, Vector3D<T> b)
             where T : class, ICoordinateSystem, I3D
