@@ -59,7 +59,6 @@
                 input.X1 = x;
                 input.X2 = y;
 
-                //Domain.Sample(random, domain, rangeX, rangeY);
                 if (domain(input))
                 {
                     partialSum += function(input);
