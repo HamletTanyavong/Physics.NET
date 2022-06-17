@@ -15,108 +15,89 @@ namespace Physics.NET.Mathematics.LinearAlgebra
     /// <typeparam name="T"></typeparam>
     /// <typeparam name="Cartesian"></typeparam>
     /// <typeparam name="Polar"></typeparam>
-    public struct Vector2D<T> : IVector
+    public struct Vector2D<T> : IVector, IEquatable<Vector2D<T>>
         where T : class, ICoordinateSystem, I2D
     {
-        private static string? _coordinateSystem;
-        public double First { get; set; }
-        public double Second { get; set; }
+        public double X1 { get; set; }
+        public double X2 { get; set; }
 
-        public Vector2D(double first, double second)
+        public Vector2D(double x1, double x2)
         {
-            _coordinateSystem = typeof(T).Name;
-            First = first;
-            Second = second;
+            X1 = x1;
+            X2 = x2;
         }
 
-        public static Vector2D<T> operator +(Vector2D<T> left, Vector2D<T> right)
+        public static explicit operator Vector2D<Cartesian>(Vector2D<T> a)
         {
-            if (_coordinateSystem is "Cartesian")
-            {
-                return new Vector2D<T>(left.First + right.First, left.Second + right.Second);
-            }
-            else
-            {
-                var result = (left.ToCartesian() + right.ToCartesian()).ToPolar();
-                return new Vector2D<T>(result.First, result.Second);
-            }
+            var result = new Vector2D<Cartesian>(a.X1, a.X2);
+            return result;
         }
 
-        public static Vector2D<T> operator -(Vector2D<T> left, Vector2D<T> right)
+        public static explicit operator Vector2D<Polar>(Vector2D<T> a)
         {
-            if (_coordinateSystem is "Cartesian")
-            {
-                return new Vector2D<T>(left.First - right.First, left.Second - right.Second);
-            }
-            else
-            {
-                var result = (left.ToCartesian() - right.ToCartesian()).ToPolar();
-                return new Vector2D<T>(result.First, result.Second);
-            }
+            var result = new Vector2D<Polar>(a.X1, a.X2);
+            return result;
         }
 
-        public static Vector2D<T> operator *(double left, Vector2D<T> right)
+        public static Vector2D<T> operator +(Vector2D<T> a, Vector2D<T> b)
         {
-            if (_coordinateSystem is "Cartesian")
-            {
-                return new Vector2D<T>(left * right.First, left * right.Second);
-            }
-            else
-            {
-                return new Vector2D<T>(left * right.First, right.Second);
-            }
+            return Op.Add(a, b);
         }
 
-        public static Vector2D<T> operator *(Vector2D<T> left, double right)
+        public static Vector2D<T> operator -(Vector2D<T> a, Vector2D<T> b)
         {
-            if (_coordinateSystem is "Cartesian")
-            {
-                return new Vector2D<T>(left.First * right, left.Second * right);
-            }
-            else
-            {
-                return new Vector2D<T>(left.First * right, left.Second);
-            }
+            return Op.Subtract(a, b);
         }
 
-        public double Length()
+        public static Vector2D<T> operator *(double a, Vector2D<T> b)
         {
-            if (_coordinateSystem is "Cartesian")
-            {
-                return Math.Sqrt(First * First + Second * Second);
-            }
-            else
-            {
-                return First;
-            }
+            return Op.Multiply(a, b);
+        }
+
+        public static Vector2D<T> operator *(Vector2D<T> a, double b)
+        {
+            return Op.Multiply(a, b);
+        }
+
+        public double Norm()
+        {
+            return Math.Sqrt(X1 * X1 + X2 * X2);
         }
 
         public Vector2D<T> Normalize()
         {
-            var length = Length();
-            if (_coordinateSystem is "Cartesian")
-            {
-                return new Vector2D<T>(First / length, Second / length);
-            }
-            else
-            {
-                return new Vector2D<T>(First / length, Second);
-            }
+            var norm = Norm();
+            return new Vector2D<T>(X1 / norm, X2 / norm);
         }
 
-        public Vector2D<Cartesian> ToCartesian()
+        public bool Equals(Vector2D<T> other)
         {
-            return new Vector2D<Cartesian>(First * Math.Cos(Second), First * Math.Sin(Second));
+            return X1 == other.X1 && X2 == other.X2;
         }
 
-        public Vector2D<Polar> ToPolar()
+        public override bool Equals(object? obj)
         {
-            return new Vector2D<Polar>(Math.Sqrt(First * First + Second * Second), Math.Atan2(Second, First));
+            return obj is Vector2D<T> && Equals(this);
+        }
+
+        public static bool operator ==(Vector2D<T> a, Vector2D<T> b)
+        {
+            return a.X1 == b.X1 && a.X2 == b.X2;
+        }
+
+        public static bool operator !=(Vector2D<T> a, Vector2D<T> b)
+        {
+            return !(a == b);
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(X1, X2);
         }
 
         public override string ToString()
         {
-            return $"({First}, {Second})";
+            return $"({X1}, {X2})";
         }
     }
 }
