@@ -37,7 +37,7 @@
         public static Vector3D<T> Multiply<T>(Vector3D<Cartesian> a, double b)
             where T : class, ICoordinateSystem, I3D
         {
-            return new(b * a.X1, b * a.X2, b * a.X3);
+            return new(a.X1 * b, a.X2 * b, b * a.X3);
         }
 
         public static Vector3D<T> Multiply<T>(double a, Vector3D<Cylindrical> b)
