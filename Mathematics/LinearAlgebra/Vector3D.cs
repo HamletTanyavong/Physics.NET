@@ -13,8 +13,6 @@
     public struct Vector3D<T> : IVector, IEquatable<Vector3D<T>>
         where T : class, ICoordinateSystem, I3D
     {
-        private static readonly string CoordinateSystem = typeof(T).Name;
-
         public double X1 { get; set; }
         public double X2 { get; set; }
         public double X3 { get; set; }
@@ -29,6 +27,20 @@
         {
             X1 = x1;
             X2 = x2;
+            X3 = x3;
+        }
+
+        public Vector3D(Vector2D<Cartesian> a, double x3)
+        {
+            X1 = a.X1;
+            X2 = a.X2;
+            X3 = x3;
+        }
+
+        public Vector3D(Vector2D<Polar> a, double x3)
+        {
+            X1 = a.X1;
+            X2 = a.X2;
             X3 = x3;
         }
 
@@ -52,22 +64,22 @@
 
         public static Vector3D<T> operator +(Vector3D<T> a, Vector3D<T> b)
         {
-            return Operations.Add(a, b);
+            return Op.Add(a, b);
         }
 
         public static Vector3D<T> operator -(Vector3D<T> a, Vector3D<T> b)
         {
-            return Operations.Subtract(a, b);
+            return Op.Subtract(a, b);
         }
 
         public static Vector3D<T> operator *(double a, Vector3D<T> b)
         {
-            return Operations.Multiply(a, b);
+            return Op.Multiply(a, b);
         }
 
         public static Vector3D<T> operator *(Vector3D<T> a, double b)
         {
-            return Operations.Multiply(a, b);
+            return Op.Multiply(a, b);
         }
 
         public double Norm()
