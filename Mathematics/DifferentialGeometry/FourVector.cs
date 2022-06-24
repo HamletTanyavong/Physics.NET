@@ -11,7 +11,7 @@
         private static readonly string IndexPosition = typeof(I).Name;
         internal readonly IIndex _Index;
 
-        readonly public int Rank { get; } = 1;
+        public static readonly int Rank = 1;
 
         public double X0 { get; set; }
         public double X1 { get; set; }
@@ -94,7 +94,7 @@
             }
             
             var value = metric((FourVector<T, L>)this);
-            var result = Operations.Elementwise.Multiply(value, this);
+            var result = Op.Elementwise.Multiply(value, this);
             result.SetIndex(0, index);
             return result;
         }
@@ -109,7 +109,7 @@
             }
 
             var value = metric(M, (FourVector<T, L>)this);
-            var result = Operations.Elementwise.Multiply(value, this);
+            var result = Op.Elementwise.Multiply(value, this);
             result.SetIndex(0, index);
             return result;
         }
@@ -124,7 +124,7 @@
             }
 
             var value = metric((FourVector<T, U>)this);
-            var result = Operations.Elementwise.Multiply(value, this);
+            var result = Op.Elementwise.Multiply(value, this);
             result.SetIndex(0, index);
             return result;
         }
@@ -139,7 +139,7 @@
             }
 
             var value = metric(M, (FourVector<T, U>)this);
-            var result = Operations.Elementwise.Multiply(value, this);
+            var result = Op.Elementwise.Multiply(value, this);
             result.SetIndex(0, index);
             return result;
         }
