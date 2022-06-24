@@ -2,10 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <BaseOutputPath>$(SolutionDir)bin</BaseOutputPath>
+    <BaseOutputPath></BaseOutputPath>
     <Platforms>x64</Platforms>
     <Authors>Hamlet Tanyavong</Authors>
     <PackageTags>physics; QFT; quantum; general relativity, electrodynamics; statistical mechanics; mathematics; math</PackageTags>
@@ -27,15 +26,12 @@
 
   <ItemGroup>
     <Compile Remove="bin\**" />
-    <Compile Remove="Graphics\**" />
     <Compile Remove="lib\**" />
     <Compile Remove="packages\**" />
     <EmbeddedResource Remove="bin\**" />
-    <EmbeddedResource Remove="Graphics\**" />
     <EmbeddedResource Remove="lib\**" />
     <EmbeddedResource Remove="packages\**" />
     <None Remove="bin\**" />
-    <None Remove="Graphics\**" />
     <None Remove="lib\**" />
     <None Remove="packages\**" />
   </ItemGroup>
