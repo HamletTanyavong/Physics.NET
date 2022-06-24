@@ -20,8 +20,8 @@
             string coordinateSystem = typeof(T).Name;
             return coordinateSystem switch
             {
-                "Cartesian" => Multiply<T>(b, (Vector2D<Cartesian>)a),
-                "Polar" => Multiply<T>(b, (Vector2D<Polar>)a),
+                "Cartesian" => Multiply<T>((Vector2D<Cartesian>)a, b),
+                "Polar" => Multiply<T>((Vector2D<Polar>)a, b),
                 _ => throw new TypeAccessException($"error: {coordinateSystem} is not a valid coordinate system"),
             };
         }
@@ -32,11 +32,28 @@
             return new(a * b.X1, a * b.X2);
         }
 
+        public static Vector2D<T> Multiply<T>(Vector2D<Cartesian> a, double b)
+            where T : class, ICoordinateSystem, I2D
+        {
+            return new(b * a.X1, b * a.X2);
+        }
+
         public static Vector2D<T> Multiply<T>(double a, Vector2D<Polar> b)
             where T : class, ICoordinateSystem, I2D
         {
             var r_1 = a * b.X1 * Math.Cos(b.X2);
             var r_2 = a * b.X1 * Math.Sin(b.X2);
+            return new(
+                Math.Sqrt(r_1 * r_1 + r_2 * r_2),
+                Math.Atan2(r_2, r_1)
+            );
+        }
+
+        public static Vector2D<T> Multiply<T>(Vector2D<Polar> a, double b)
+            where T : class, ICoordinateSystem, I2D
+        {
+            var r_1 = b * a.X1 * Math.Cos(a.X2);
+            var r_2 = b * a.X1 * Math.Sin(a.X2);
             return new(
                 Math.Sqrt(r_1 * r_1 + r_2 * r_2),
                 Math.Atan2(r_2, r_1)
