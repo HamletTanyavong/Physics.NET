@@ -3,7 +3,7 @@
     /// <summary>
     /// Polar coordinates in the form (r, θ).
     /// </summary>
-    public class Polar : ICoordinateSystem, I2D
+    public sealed class Polar : ICoordinateSystem, I2D
     {
     }
 }

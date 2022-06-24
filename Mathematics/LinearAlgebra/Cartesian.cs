@@ -3,7 +3,7 @@
     /// <summary>
     /// Cartesian coordinates.
     /// </summary>
-    public class Cartesian : ICoordinateSystem, I2D, I3D
+    public sealed class Cartesian : ICoordinateSystem, I2D, I3D
     {
     }
 }
