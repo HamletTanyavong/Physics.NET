@@ -7,23 +7,44 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Physics.NET", "Physics.NET.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Physics.NET.Console", "..\Physics.NET.Console\Physics.NET.Console.csproj", "{13A0C2F6-6A3E-4FD2-B177-3B80C69583EC}"
 	ProjectSection(ProjectDependencies) = postProject
+		{88EB672D-4717-48A5-8F33-397400CBD2F3} = {88EB672D-4717-48A5-8F33-397400CBD2F3}
 		{A9E4DF95-5F64-4FEA-AA98-BCC4C654790C} = {A9E4DF95-5F64-4FEA-AA98-BCC4C654790C}
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Physics.NET.Graphics", "..\Physics.NET.Graphics\Physics.NET.Graphics.csproj", "{88EB672D-4717-48A5-8F33-397400CBD2F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9E4DF95-5F64-4FEA-AA98-BCC4C654790C}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{A9E4DF95-5F64-4FEA-AA98-BCC4C654790C}.Debug|Any CPU.Build.0 = Debug|x64
 		{A9E4DF95-5F64-4FEA-AA98-BCC4C654790C}.Debug|x64.ActiveCfg = Debug|x64
 		{A9E4DF95-5F64-4FEA-AA98-BCC4C654790C}.Debug|x64.Build.0 = Debug|x64
+		{A9E4DF95-5F64-4FEA-AA98-BCC4C654790C}.Release|Any CPU.ActiveCfg = Release|x64
+		{A9E4DF95-5F64-4FEA-AA98-BCC4C654790C}.Release|Any CPU.Build.0 = Release|x64
 		{A9E4DF95-5F64-4FEA-AA98-BCC4C654790C}.Release|x64.ActiveCfg = Release|x64
 		{A9E4DF95-5F64-4FEA-AA98-BCC4C654790C}.Release|x64.Build.0 = Release|x64
+		{13A0C2F6-6A3E-4FD2-B177-3B80C69583EC}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{13A0C2F6-6A3E-4FD2-B177-3B80C69583EC}.Debug|Any CPU.Build.0 = Debug|x64
 		{13A0C2F6-6A3E-4FD2-B177-3B80C69583EC}.Debug|x64.ActiveCfg = Debug|x64
 		{13A0C2F6-6A3E-4FD2-B177-3B80C69583EC}.Debug|x64.Build.0 = Debug|x64
+		{13A0C2F6-6A3E-4FD2-B177-3B80C69583EC}.Release|Any CPU.ActiveCfg = Release|x64
+		{13A0C2F6-6A3E-4FD2-B177-3B80C69583EC}.Release|Any CPU.Build.0 = Release|x64
 		{13A0C2F6-6A3E-4FD2-B177-3B80C69583EC}.Release|x64.ActiveCfg = Release|x64
 		{13A0C2F6-6A3E-4FD2-B177-3B80C69583EC}.Release|x64.Build.0 = Release|x64
+		{88EB672D-4717-48A5-8F33-397400CBD2F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88EB672D-4717-48A5-8F33-397400CBD2F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88EB672D-4717-48A5-8F33-397400CBD2F3}.Debug|x64.ActiveCfg = Debug|x64
+		{88EB672D-4717-48A5-8F33-397400CBD2F3}.Debug|x64.Build.0 = Debug|x64
+		{88EB672D-4717-48A5-8F33-397400CBD2F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88EB672D-4717-48A5-8F33-397400CBD2F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88EB672D-4717-48A5-8F33-397400CBD2F3}.Release|x64.ActiveCfg = Release|x64
+		{88EB672D-4717-48A5-8F33-397400CBD2F3}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
