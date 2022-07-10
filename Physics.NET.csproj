@@ -9,7 +9,7 @@
     <Authors>Hamlet Tanyavong</Authors>
     <PackageTags>physics; QFT; quantum; general relativity, electrodynamics; statistical mechanics; mathematics; math</PackageTags>
     <PackageId>$(AssemblyName)</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.1.1-alpha.1</Version>
     <Description>A class library for solving physics problems encountered in Quantum Field Theory, Electrodynamics, General Relativity, and Statistical Mechanics.</Description>
     <RepositoryType>git</RepositoryType>
     <Copyright>Copyright (c) 2022 Hamlet Tanyavong</Copyright>
