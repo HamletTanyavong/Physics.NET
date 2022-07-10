@@ -85,29 +85,29 @@
             }
             double Area = (rangeX.Item3 - rangeX.Item2) * (rangeY.Item3 - rangeY.Item2);
             return partialSum * Area / (N * threads);
-        }
 
-        private static double ParallelIntegrateComponent(int seed, Func<double, double, bool> domain, Func<double, double, double> function, ValueTuple<string, double, double> rangeX, ValueTuple<string, double, double> rangeY, int N)
-        {
-            Random random = new(seed * Guid.NewGuid().GetHashCode());
-
-            double m_x = rangeX.Item3 - rangeX.Item2;
-            double b_x = rangeX.Item2;
-            double m_y = rangeY.Item3 - rangeY.Item2;
-            double b_y = rangeY.Item2;
-
-            double subtotal = 0;
-            for (int i = 0; i < N; i++)
+            static double ParallelIntegrateComponent(int seed, Func<double, double, bool> domain, Func<double, double, double> function, ValueTuple<string, double, double> rangeX, ValueTuple<string, double, double> rangeY, int N)
             {
-                double x = random.NextDouble() * m_x + b_x;
-                double y = random.NextDouble() * m_y + b_y;
+                Random random = new(seed * Guid.NewGuid().GetHashCode());
 
-                if (domain(x, y))
+                double m_x = rangeX.Item3 - rangeX.Item2;
+                double b_x = rangeX.Item2;
+                double m_y = rangeY.Item3 - rangeY.Item2;
+                double b_y = rangeY.Item2;
+
+                double subtotal = 0;
+                for (int i = 0; i < N; i++)
                 {
-                    subtotal += function(x, y);
+                    double x = random.NextDouble() * m_x + b_x;
+                    double y = random.NextDouble() * m_y + b_y;
+
+                    if (domain(x, y))
+                    {
+                        subtotal += function(x, y);
+                    }
                 }
+                return subtotal;
             }
-            return subtotal;
         }
 
         public static double Integrate(Func<Vector2D<Cartesian>, bool> domain, Func<Vector2D<Cartesian>, double> function, ValueTuple<string, double, double> rangeX, ValueTuple<string, double, double> rangeY, int N)
