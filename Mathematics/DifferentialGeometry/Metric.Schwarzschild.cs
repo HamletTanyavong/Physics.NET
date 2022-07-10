@@ -8,7 +8,7 @@
             string coordinateSystem = typeof(T).Name;
             return coordinateSystem switch
             {
-                "Spherical" => Schwarzschild<T>(Session.Signature, M, (FourVector<Spherical, U>)fourvector),
+                "Spherical" => Schwarzschild<T>(Session._Signature, M, (FourVector<Spherical, U>)fourvector),
                 _ => throw new TypeAccessException($"error: {coordinateSystem} is not a valid coordinate system"),
             };
         }

@@ -7,8 +7,14 @@ namespace Physics.NET
     /// </summary>
     public static class Session
     {
-        internal static dynamic Signature = new Signature<Spacelike>();
-        internal static string? Units { get; set; } = "Natural";
+        internal static int _Cores = Environment.ProcessorCount;
+        public static int Cores { get { return _Cores; } }
+
+        internal readonly static Random _Random = new();
+        public static double Random { get { return _Random.NextDouble(); } }
+
+        internal static dynamic _Signature = new Signature<Spacelike>();
+        internal static string? Units = "Natural";
 
         public static void SetUnits(string units)
         {
@@ -26,11 +32,11 @@ namespace Physics.NET
             {
                 if (signature == "Spacelike")
                 {
-                    Signature = new Signature<Spacelike>();
+                    _Signature = new Signature<Spacelike>();
                 }
                 else
                 {
-                    Signature = new Signature<Timelike>();
+                    _Signature = new Signature<Timelike>();
                 }
             }
             else

@@ -8,9 +8,9 @@
             string coordinateSystem = typeof(T).Name;
             return coordinateSystem switch
             {
-                "Cartesian" => Minkowski<T>(Session.Signature, (FourVector<Cartesian, U>)fourvector),
-                "Cylindrical" => Minkowski<T>(Session.Signature, (FourVector<Cylindrical, U>)fourvector),
-                "Spherical" => Minkowski<T>(Session.Signature, (FourVector<Spherical, U>)fourvector),
+                "Cartesian" => Minkowski<T>(Session._Signature, (FourVector<Cartesian, U>)fourvector),
+                "Cylindrical" => Minkowski<T>(Session._Signature, (FourVector<Cylindrical, U>)fourvector),
+                "Spherical" => Minkowski<T>(Session._Signature, (FourVector<Spherical, U>)fourvector),
                 _ => throw new TypeAccessException($"error: {coordinateSystem} is not a valid coordinate system"),
             };
         }
