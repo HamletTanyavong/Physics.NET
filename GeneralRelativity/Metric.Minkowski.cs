@@ -1,4 +1,6 @@
-﻿namespace Physics.NET.Mathematics.DifferentialGeometry
+﻿using Physics.NET.GeneralRelativity;
+
+namespace Physics.NET.Mathematics.DifferentialGeometry
 {
     public static partial class Metric
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Physics.NET.Mathematics.DifferentialGeometry
+namespace Physics.NET.GeneralRelativity
 {
     public interface ISignature
     {

@@ -1,10 +1,12 @@
-﻿namespace Physics.NET.Mathematics.DifferentialGeometry
+﻿using Physics.NET.Mathematics.DifferentialGeometry;
+
+namespace Physics.NET.GeneralRelativity
 {
     /// <summary>
     /// Four-vector, with a specified index, in <typeparamref name="T"/> coordinates.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public struct FourVector<T, I> : IFourVector, IFourVectorIndexManagement<T>, IEquatable<FourVector<T, I>>
+    public struct FourVector<T, I> : IFourVector, IFourVectorIndexManager<T>, IEquatable<FourVector<T, I>>
         where T : class, ICoordinateSystem, I3D
         where I : class, IIndexPosition
     {
@@ -92,7 +94,7 @@
             {
                 throw new ArgumentException($"error: {index} is already raised");
             }
-            
+
             var value = metric((FourVector<T, L>)this);
             var result = Op.Elementwise.Multiply(value, this);
             result.SetIndex(0, index);
