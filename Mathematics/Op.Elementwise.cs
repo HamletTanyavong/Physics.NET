@@ -1,4 +1,5 @@
-﻿using Physics.NET.Mathematics.DifferentialGeometry;
+﻿using Physics.NET.GeneralRelativity;
+using Physics.NET.Mathematics.DifferentialGeometry;
 
 namespace Physics.NET.Mathematics
 {

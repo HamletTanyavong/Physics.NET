@@ -1,8 +1,9 @@
-﻿using Physics.NET.Mathematics.LinearAlgebra;
+﻿using Physics.NET.Mathematics.DifferentialGeometry;
+using Physics.NET.Mathematics.LinearAlgebra;
 
-namespace Physics.NET.Mathematics.DifferentialGeometry
+namespace Physics.NET.GeneralRelativity
 {
-    public interface IFourVectorIndexManagement<T>
+    public interface IFourVectorIndexManager<T>
         where T : class, ICoordinateSystem, I3D
     {
         FourVector<T, L> Lower(string index, Func<double, FourVector<T, U>, FourVector<T, L>> metric, double M);

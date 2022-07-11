@@ -1,4 +1,6 @@
-﻿namespace Physics.NET.Mathematics.DifferentialGeometry
+﻿using Physics.NET.Mathematics.DifferentialGeometry;
+
+namespace Physics.NET.GeneralRelativity
 {
     public interface IFourVector : ITensorR1
     {
