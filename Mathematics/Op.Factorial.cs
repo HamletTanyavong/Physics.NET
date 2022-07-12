@@ -6,40 +6,44 @@
     public static partial class Op
     {
         /// <summary>
-        /// Computes the factorial of <paramref name="n"/> for <paramref name="n"/> less than or equal to 65. For larger values of <paramref name="n"/>, use approximations.
+        /// Compute the factorial of a double <paramref name="n"/>. For large values of <paramref name="n"/>, use approximations.
         /// </summary>
         /// <param name="n"></param>
-        /// <returns></returns>
-        public static int Factorial(int n)
+        /// <returns><paramref name="n"/> factorial as a double</returns>
+        public static double Factorial(int n)
         {
             if (n == 0)
-                return 1;
-            int result = 1;
-            if (n <= 65)
+                return 1d;
+            double result = 1;
+            if (n <= 170)
             {
-                for (int i = n; i > 1; i--)
+                for (double i = n; i > 1; i--)
                 {
                     result *= i;
                 }
             }
             else
             {
-                throw new ArgumentException("n must be less than or equal to 65");
+                throw new ArgumentException("error: n is too large, try using Stirling's approximation");
             }
             return result;
         }
 
         /// <summary>
-        /// Computes the factorial of <paramref name="n"/> using the Stirling approximation to <paramref name="order"/> no more than 9. Use <paramref name="n"/> less than or equal to 142.
+        /// Compute the factorial of <paramref name="n"/> using the Stirling approximation to <paramref name="order"/> no more than 9.
         /// </summary>
         /// <param name="n"></param>
         /// <param name="order"></param>
-        /// <returns>Returns an approximation of the factorial of <paramref name="n"/>.</returns>
+        /// <returns>Stirling's approximation of the factorial of <paramref name="n"/>.</returns>
         public static double Stirling(int n, int order)
         {
             if (order > 9)
             {
-                throw new ArgumentException("error: order too high");
+                throw new ArgumentException("error: choose an order less than 10");
+            }
+            if (n > 142)
+            {
+                throw new ArgumentException("error: choose n less than or equal to 142");
             }
 
             long[] Numerator = new long[] { 1, 1, 1, -139, -571, 163879, 5246819, -534703531, -4483131259, 432261921612371 };
