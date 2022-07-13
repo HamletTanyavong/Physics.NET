@@ -54,12 +54,24 @@
                 throw new ArgumentException($"error: n must not be zero");
             }
 
+            double r = Math.Pow(z.Magnitude, 1d / n);
+            double phase = z.Phase / n;
             Complex[] result = new Complex[n];
-            for (int i = 0; i < n; i++)
+            if (n % 2 == 0)
             {
-                result[i] = Complex.FromPolarCoordinates(Math.Pow(z.Magnitude, 1d / n), z.Phase / n + 2 * Math.PI * i / n);
+                for (int i = 0; i < n / 2; i++)
+                {
+                    result[i] = Complex.FromPolarCoordinates(r, phase + 2 * Math.PI * i / n);
+                    result[i + n / 2] = Complex.FromPolarCoordinates(r, phase + Math.PI + 2 * Math.PI * i / n);
+                }
             }
-
+            else
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    result[i] = Complex.FromPolarCoordinates(r, phase + 2 * Math.PI * i / n);
+                }
+            }
             return result;
         }
 
