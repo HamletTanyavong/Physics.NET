@@ -36,6 +36,28 @@ Specify a version number to get a specific version of the package.
 
 ## Examples
 
+### Integration
+
+Here, we will integrate a 2D function using the Monte Carlo method. First define a function
+```csharp
+public static double MyEquation(double x, double y)
+{
+    return Math.Sqrt(x * x + y * y) * Math.Sin(y);
+}
+```
+Now define a domain; the method must return true if a point sample is within the domain. We choose a semicircle on the positive y part of the plane with radius 1.
+```csharp
+public static bool MyDomain(double x, double y)
+{
+    return Math.Sqrt(x * x + y * y) <= 1 && y >= 0 ? true : false;
+}
+```
+To integrate the function, we must specify a sample area. Choose x between -1 and 1, and y between 0 and 1.
+```csharp
+N = 1_000_000;
+var result = Integrate.MonteCarlo(MyDomain, MyFunction, ("x", -1, 1), ("y", 0, 1), N);
+```
+
 ### General Relativity
 
 Here, we specify spacetime around an object of mass `m` and a contravariant four-vector at a specified location. The index is set to `mu`. With the method `Lower`, we can lower the index and save the result. This result is the value of the field at the point `a` in the form of a covariant four-vector. 
