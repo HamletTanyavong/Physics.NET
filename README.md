@@ -16,7 +16,7 @@
 
 - [About](#about)
 - [Intstallation](#installation)
-- [Examples](examples)
+- [Examples](#examples)
 
 ## About
 
