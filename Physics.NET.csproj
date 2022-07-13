@@ -56,5 +56,10 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
+	
+  <ItemGroup>
+    <Folder Include="Mathematics\Fourier\" />
+    <Folder Include="Mathematics\SpecialFunctions\" />
+  </ItemGroup>
 
 </Project>
