@@ -9,7 +9,7 @@
         /// <returns>Returns the result in polar form.</returns>
         public static Complex Ln(Complex z)
         {
-            return new(Math.Log(z.Magnitude), z.Phase);
+            return Complex.Log(z);
         }
     }
 }
