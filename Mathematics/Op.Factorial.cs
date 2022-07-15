@@ -1,8 +1,5 @@
 ﻿namespace Physics.NET.Mathematics
 {
-    /// <summary>
-    /// General Mathematical Functions.
-    /// </summary>
     public static partial class Op
     {
         /// <summary>
