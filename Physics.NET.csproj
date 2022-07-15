@@ -58,7 +58,8 @@
   </ItemGroup>
 	
   <ItemGroup>
-    <Folder Include="Mathematics\Fourier\" />
+    <Folder Include="Mathematics\ComplexAnalysis\" />
+    <Folder Include="Mathematics\FourierAnalysis\" />
     <Folder Include="Mathematics\SpecialFunctions\" />
   </ItemGroup>
 
