@@ -54,7 +54,7 @@ Now define a domain; the method must return true if a point sample is within the
 ```csharp
 public static bool MyDomain(double x, double y)
 {
-    return Math.Sqrt(x * x + y * y) <= 1 && y >= 0 ? true : false;
+    return Math.Sqrt(x * x + y * y) <= 1 && y >= 0;
 }
 ```
 To integrate the function, we must specify a sample area. Choose x between -1 and 1, and y between 0 and 1.
