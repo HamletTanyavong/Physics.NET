@@ -41,6 +41,68 @@ using static Physics.NET.Mathematics.Op;
 
 ## Examples
 
+### Plotting
+
+We can plot functions using Plotly.NET or, alternatively, XPlot. Here is an example using Plotly.NET.
+```csharp
+#r "nuget: Plotly.NET"
+#r "nuget: Plotly.NET.Interactive"
+```
+Import the following:
+```csharp
+using Plotly.NET;
+using Plotly.NET.LayoutObjects;
+```
+Define a function that we want to plot:
+```csharp
+public static double Equation(double x)
+{
+    return x * Math.Sqrt(x) * Math.Sin(s)
+}
+```
+Generate points to plot:
+```csharp
+int n = 100;
+double[] x = Physics.NET.Mathematics.Domain.Linspace(0, 10, n);
+double[] y = new double[n];
+for (int i = 0; i < x.Length; i++)
+{
+    y[i] = Equation(x[i]);
+}
+```
+Set up plot and show the result:
+```csharp
+var layout = Layout.init<IConvertible>(
+    Title: Title.init(Text: "2D Plot", X: 0.5),
+    Width: 1000,
+    PlotBGColor: Color.fromHex("#161616"),
+    PaperBGColor: Color.fromHex("#202020"),
+    Font: Font.init(Color: Color.fromHex("#ffffff")));
+
+var xAxis = LinearAxis.init<IConvertible, IConvertible, IConvertible, IConvertible, IConvertible, IConvertible>(
+    Title: Title.init("x"),
+    ZeroLineColor: Color.fromHex("#424242"),
+    GridColor: Color.fromHex("#323232"));
+
+var yAxis = LinearAxis.init<IConvertible, IConvertible, IConvertible, IConvertible, IConvertible, IConvertible>(
+    Title: Title.init("f(x)"),
+    ZeroLineColor: Color.fromHex("#424242"),
+    GridColor: Color.fromHex("#323232"));
+
+GenericChart.GenericChart chart = Chart2D.Chart.Line<double, double, string>(
+    x: x,
+    y: y,
+    MarkerColor: Color.fromHex("#87cefa"),
+    UseWebGL: true);
+
+chart
+    .WithLayout(layout)
+    .WithXAxis(xAxis)
+    .WithYAxis(yAxis)
+    .WithTraceInfo("f(x) = sqrt(x)sin(x)", ShowLegend: false)
+    .Show();
+```
+
 ### Integration
 
 Here, we will integrate a 2D function using the Monte Carlo method. First define a function
