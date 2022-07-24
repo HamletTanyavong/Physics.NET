@@ -10,7 +10,7 @@ namespace Physics.NET.GeneralRelativity
         where T : class, ICoordinateSystem, I3D
         where I : class, IIndexPosition
     {
-        private static readonly string IndexPosition = typeof(I).Name;
+        private readonly string IndexPosition = typeof(I).Name;
         internal readonly IIndex _Index;
 
         public static readonly int Rank = 1;
@@ -166,12 +166,12 @@ namespace Physics.NET.GeneralRelativity
 
         public static bool operator ==(FourVector<T, I> a, FourVector<T, I> b)
         {
-            return a.X0 == b.X0 && a.X1 == b.X1 && a.X2 == b.X2 && a.X3 == b.X3;
+            return a.Equals(b);
         }
 
         public static bool operator !=(FourVector<T, I> a, FourVector<T, I> b)
         {
-            return !(a == b);
+            return !a.Equals(b);
         }
 
         public override int GetHashCode()
