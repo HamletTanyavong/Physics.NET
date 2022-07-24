@@ -105,12 +105,12 @@
 
         public static bool operator ==(Vector3D<T> a, Vector3D<T> b)
         {
-            return a.X1 == b.X1 && a.X2 == b.X2 && a.X3 == b.X3;
+            return a.Equals(b);
         }
 
         public static bool operator !=(Vector3D<T> a, Vector3D<T> b)
         {
-            return !(a == b);
+            return !a.Equals(b);
         }
 
         public override int GetHashCode()
