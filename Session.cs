@@ -27,23 +27,9 @@ namespace Physics.NET
         /// </summary>
         /// <param name="signature"></param>
         /// <exception cref="TypeAccessException"></exception>
-        public static void SetSignature(string signature)
+        public static void Set(Signature signature)
         {
-            if (typeof(ISignature).IsAssignableFrom(Type.GetType($"Physics.NET.Mathematics.DifferentialGeometry.{signature}")))
-            {
-                if (signature == "Spacelike")
-                {
-                    _Signature = new Signature<Spacelike>();
-                }
-                else
-                {
-                    _Signature = new Signature<Timelike>();
-                }
-            }
-            else
-            {
-                throw new ArgumentException($"error: {signature} is not a valid metric signature");
-            }
+            _Signature = signature == Signature.Spacelike ? new Signature<Spacelike>() : new Signature<Timelike>();
         }
     }
 }
