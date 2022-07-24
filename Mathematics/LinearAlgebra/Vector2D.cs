@@ -76,12 +76,12 @@
 
         public static bool operator ==(Vector2D<T> a, Vector2D<T> b)
         {
-            return a.X1 == b.X1 && a.X2 == b.X2;
+            return a.Equals(b);
         }
 
         public static bool operator !=(Vector2D<T> a, Vector2D<T> b)
         {
-            return !(a == b);
+            return !a.Equals(b);
         }
 
         public override int GetHashCode()
