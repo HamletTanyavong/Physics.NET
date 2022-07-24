@@ -99,7 +99,7 @@ chart
     .WithLayout(layout)
     .WithXAxis(xAxis)
     .WithYAxis(yAxis)
-    .WithTraceInfo("f(x) = sqrt(x)sin(x)", ShowLegend: false)
+    .WithTraceInfo("f(x) = x sqrt(x) sin(x)", ShowLegend: false)
     .Show();
 ```
 
