@@ -97,7 +97,7 @@
                 }
                 hold[0] = (i != 0 ? " [" : "[[") + hold[0];
                 hold[n - 1] += i != m - 1 ? "]," : "]]";
-                result += String.Join(", ", hold);
+                result += String.Join(" ", hold);
                 result += $"\n";
             }
             return result[..^1];
