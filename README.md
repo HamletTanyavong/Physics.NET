@@ -27,11 +27,11 @@ This library contains methods used to solve basic physics problems and also cont
 
 This package is available from [nuget](https://www.nuget.org/packages/Physics.NET/) and can be installed in [.NET Interactive](https://github.com/dotnet/interactive) notebooks with the following command:
 ```csharp
-#r "nuget:Physics.NET"
+#r "nuget: Physics.NET"
 ```
 Specify a version number to get a specific version of the package.
 ```csharp
-#r "nuget:Physics.NET, 0.1.1-alpha.1"
+#r "nuget: Physics.NET, 0.1.1-alpha.1"
 ```
 Import the following
 ```csharp
