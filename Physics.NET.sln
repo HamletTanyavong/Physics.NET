@@ -31,6 +31,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{02080990-6A2B-44B8-8759-33F28E6C3E3F}"
+	ProjectSection(SolutionItems) = preProject
+		tests\.runsettings = tests\.runsettings
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Physics.NET.Tests", "tests\Physics.NET.Tests\Physics.NET.Tests.csproj", "{4C0B5B22-4529-4908-8DD5-15CADF2B5AB7}"
 EndProject
