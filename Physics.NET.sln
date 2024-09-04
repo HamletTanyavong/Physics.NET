@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Physics.NET.DevApp", "src\Physics.NET.DevApp\Physics.NET.DevApp.csproj", "{5C68975E-31D9-45D7-8612-7F37982E880C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Physics.NET.DevApp", "src\Physics.NET.DevApp\Physics.NET.DevApp.csproj", "{5C68975E-31D9-45D7-8612-7F37982E880C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{C54F0F37-9BC2-4117-9311-47934D652146}"
 	ProjectSection(SolutionItems) = preProject
@@ -29,6 +29,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\codeql.yml = .github\workflows\codeql.yml
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{02080990-6A2B-44B8-8759-33F28E6C3E3F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Physics.NET.Tests", "tests\Physics.NET.Tests\Physics.NET.Tests.csproj", "{4C0B5B22-4529-4908-8DD5-15CADF2B5AB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +48,10 @@ Global
 		{5C68975E-31D9-45D7-8612-7F37982E880C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C68975E-31D9-45D7-8612-7F37982E880C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C68975E-31D9-45D7-8612-7F37982E880C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C0B5B22-4529-4908-8DD5-15CADF2B5AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C0B5B22-4529-4908-8DD5-15CADF2B5AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C0B5B22-4529-4908-8DD5-15CADF2B5AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C0B5B22-4529-4908-8DD5-15CADF2B5AB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +60,7 @@ Global
 		{38742ED6-963E-4A40-9DA0-709E538C2EFF} = {CEB694E5-488F-4D98-82B8-9E7BB8C77551}
 		{5C68975E-31D9-45D7-8612-7F37982E880C} = {CEB694E5-488F-4D98-82B8-9E7BB8C77551}
 		{C2589E1B-DD4E-4353-8451-40D8A5EC8220} = {C54F0F37-9BC2-4117-9311-47934D652146}
+		{4C0B5B22-4529-4908-8DD5-15CADF2B5AB7} = {02080990-6A2B-44B8-8759-33F28E6C3E3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F70FDCFF-0D64-4035-9870-FD60ECA54FD2}
