@@ -1,0 +1,40 @@
+# Run Mathematics.NET Unit Tests
+
+name: "Unit Tests"
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  test:
+    name: Run Unit Tests
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
+        dotnet-version: [ 8.x ]
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ matrix.dotnet-version }}
+
+    - name: Restore Dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: |
+        cd tests/Physics.NET.Tests
+        dotnet build --no-restore
+
+    - name: Test
+      run: |
+        cd tests/Physics.NET.Tests
+        dotnet test --no-build --verbosity normal
