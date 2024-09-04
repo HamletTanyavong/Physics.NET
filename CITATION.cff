@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: 'If you use this software, please cite it as below.'
+title: Physics.NET
+authors:
+- family-names: Tanyavong
+  given-names: Hamlet
+  orcid: 'https://orcid.org/0009-0002-0327-881X'
+type: software
+version: 0.2.0-alpha.1
+license: MIT
+date-released: 2024-9-3
+repository-code: 'https://github.com/HamletTanyavong/Physics.NET'
+url: 'https://physics.hamlettanyavong.com'
+keywords:
+- mathematics
+- math
+- physics
+- autodiff
+- classical mechanics
+- quantum mechanics
+- thermodynamics
+- general relativity
+- statistical mechanics
+- qft

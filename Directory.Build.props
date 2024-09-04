@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <!-- Project settings -->
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU</Platforms>
+
+    <!-- Package information -->
+    <Version>0.2.0-alpha.1</Version>
+    <Authors>Hamlet Tanyavong</Authors>
+    <Copyright>Copyright (c) 2024-present Hamlet Tanyavong</Copyright>
+    <PackageProjectUrl>https://physics.hamlettanyavong.com</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/HamletTanyavong/Physics.NET</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+
+    <!-- Build -->
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <Deterministic>true</Deterministic>
+
+    <!-- Documentation file -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+
+</Project>

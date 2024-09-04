@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
+    <PackageReference Include="Plotly.NET.CSharp" Version="0.12.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Physics.NET\Physics.NET.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Mathematics.NET" />
+    <Using Include="Mathematics.NET.Core" />
+  </ItemGroup>
+
+</Project>
