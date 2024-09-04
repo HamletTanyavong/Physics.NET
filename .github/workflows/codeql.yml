@@ -3,8 +3,10 @@
 name: "CodeQL"
 
 on:
+  push:
+    branches: [ main, dev ]
   pull_request:
-    branches: [ "main", "dev" ]
+    branches: [ main, dev ]
   schedule:
   - cron: '00 2 * * 6'
 
@@ -21,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'csharp' ]
+        language: [ csharp ]
 
     steps:
     - name: Checkout Repository
