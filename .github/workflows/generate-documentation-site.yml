@@ -1,0 +1,48 @@
+# Generate documentation for Physics.NET
+
+name: "Generate Documentation Site"
+
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publish-docs:
+    name: Generate Documentation Site
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.x
+
+    - name: Build Physics.NET Project
+      run: dotnet build -c Release
+
+    - name: Update DocFX
+      run: dotnet tool update -g docfx
+
+    - name: Run DocFX
+      run: docfx docs/docfx.json
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/_site
+        cname: physics.hamlettanyavong.com
+        force_orphan: true
