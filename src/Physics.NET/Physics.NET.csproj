@@ -2,7 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Title>Physics.NET</Title>
+    <PackageId>Physics.NET</PackageId>
+    <PackageIcon>mathematics.net.png</PackageIcon>
+    <Description>Physics.NET is a C# class libary that provides tools for solving physics problems.</Description>
+    <PackageTags>autodiff; complex; math; mathematics; physics; rational; tensors;</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+    <PackageReleaseNotes>This project is in alpha and is not yet ready for release.</PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\docs\images\logo\mathematics.net.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
+    <None Update="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="ErrorProne.NET.CoreAnalyzers" Version="0.1.2" PrivateAssets="all">
