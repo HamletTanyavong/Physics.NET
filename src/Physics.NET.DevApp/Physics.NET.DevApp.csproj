@@ -18,6 +18,8 @@
   <ItemGroup>
     <Using Include="Mathematics.NET" />
     <Using Include="Mathematics.NET.Core" />
+    <Using Include="Physics.NET" />
+    <Using Include="Physics.NET.DimensionalAnalysis" />
   </ItemGroup>
 
 </Project>
