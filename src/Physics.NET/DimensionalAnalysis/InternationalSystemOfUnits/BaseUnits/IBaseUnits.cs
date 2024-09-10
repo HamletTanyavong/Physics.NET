@@ -36,8 +36,9 @@ namespace Physics.NET.DimensionalAnalysis.InternationalSystemOfUnits.BaseUnits;
 /// <typeparam name="TTemperature">The type that represents the unit of thermodynamic temperature.</typeparam>
 /// <typeparam name="TAmount">The type that represents the unit of an amount of substance.</typeparam>
 /// <typeparam name="TIntensity">The type that represents the unit of luminous intensity.</typeparam>
-internal interface IBaseUnits<TBaseUnits, TTime, TLength, TMass, TCurrent, TTemperature, TAmount, TIntensity>
-    where TBaseUnits : IBaseUnits<TBaseUnits, TTime, TLength, TMass, TCurrent, TTemperature, TAmount, TIntensity>
+/// <typeparam name="TAngle">The type that represents the unit of a plane or phase angle.</typeparam>
+internal interface IBaseUnits<TBaseUnits, TTime, TLength, TMass, TCurrent, TTemperature, TAmount, TIntensity, TAngle>
+    where TBaseUnits : IBaseUnits<TBaseUnits, TTime, TLength, TMass, TCurrent, TTemperature, TAmount, TIntensity, TAngle>
     where TTime : ITime<TTime>
     where TLength : ILength<TLength>
     where TMass : IMass<TMass>
@@ -45,6 +46,7 @@ internal interface IBaseUnits<TBaseUnits, TTime, TLength, TMass, TCurrent, TTemp
     where TTemperature : ITemperature<TTemperature>
     where TAmount : IAmount<TAmount>
     where TIntensity : IIntensity<TIntensity>
+    where TAngle : IAngle<TAngle>
 {
     /// <summary>Represents the SI base quantity of time.</summary>
     TTime Time { get; init; }
@@ -66,4 +68,13 @@ internal interface IBaseUnits<TBaseUnits, TTime, TLength, TMass, TCurrent, TTemp
 
     /// <summary>Represents the SI base quantity of luminous intensity.</summary>
     TIntensity Intensity { get; init; }
+
+    // It is convenient to add the quantity, angle, since it makes structs that implement this
+    // interface have sizes of multiples of eight bytes, allowing for better performance optimizations.
+
+    /// <summary>Represents the quantity of a plane or phase angle.</summary>
+    /// <remarks>
+    /// In Physics.NET, this has been added to the SI base units for convenience. However, there are justifications for adding it formally. See <see href="https://iopscience.iop.org/article/10.1088/1681-7575/ac7bc2/pdf">On the Dimension of Angles and Their Units</see> by Peter J. Mohr, Eric L. Shirley, William D. Phillips, and Michael Trott. 
+    /// </remarks>
+    TAngle Angle { get; init; }
 }
