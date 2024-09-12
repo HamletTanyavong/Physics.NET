@@ -33,7 +33,7 @@ namespace Physics.NET.DimensionalAnalysis;
 /// <summary>
 /// Represents the <i>International System of Units</i>, the <i>Metric system</i>, as coordinated by the <see href="https://www.bipm.org">International Bureau of Weights and Measurements</see>.
 /// </summary>
-[StructLayout(LayoutKind.Sequential)]
+[Serializable, StructLayout(LayoutKind.Sequential)]
 public readonly record struct Metric
     : ISystemOfMeasurement<Metric>,
       IBaseUnits<Metric, Second, Meter, Kilogram, Ampere, Kelvin, Mole, Candela, Radian>

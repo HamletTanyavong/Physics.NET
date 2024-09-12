@@ -25,8 +25,6 @@
 // SOFTWARE.
 // </copyright>
 
-#pragma warning disable IDE0032
-
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
@@ -36,6 +34,7 @@ namespace Physics.NET;
 /// <summary>Represents a physical quantity.</summary>
 /// <typeparam name="TNumber">The type that represents the value.</typeparam>
 /// <typeparam name="TSystemOfMeasurement">The system of measurement to use.</typeparam>
+[Serializable]
 public readonly record struct Quantity<TNumber, TSystemOfMeasurement>
     where TNumber : IComplex<TNumber>
     where TSystemOfMeasurement : ISystemOfMeasurement<TSystemOfMeasurement>

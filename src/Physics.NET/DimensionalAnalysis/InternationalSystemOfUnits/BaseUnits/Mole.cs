@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 namespace Physics.NET.DimensionalAnalysis.InternationalSystemOfUnits.BaseUnits;
 
 /// <summary>Represents the SI base unit of an amount of substance.</summary>
-[StructLayout(LayoutKind.Sequential)]
+[Serializable, StructLayout(LayoutKind.Sequential)]
 public readonly record struct Mole : IAmount<Mole>
 {
     public Mole()

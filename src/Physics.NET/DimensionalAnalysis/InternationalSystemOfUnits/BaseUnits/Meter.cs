@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 namespace Physics.NET.DimensionalAnalysis.InternationalSystemOfUnits.BaseUnits;
 
 /// <summary>Represents the SI base unit of length.</summary>
-[StructLayout(LayoutKind.Sequential)]
+[Serializable, StructLayout(LayoutKind.Sequential)]
 public readonly record struct Meter : ILength<Meter>
 {
     public Meter()

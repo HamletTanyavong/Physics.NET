@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 namespace Physics.NET.DimensionalAnalysis.InternationalSystemOfUnits.BaseUnits;
 
 /// <summary>Represents the unit of a plane or phase angle.</summary>
-[StructLayout(LayoutKind.Sequential)]
+[Serializable, StructLayout(LayoutKind.Sequential)]
 public readonly record struct Radian : IAngle<Radian>
 {
     public Radian()
