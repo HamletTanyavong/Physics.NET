@@ -38,6 +38,7 @@ public readonly record struct Metric
     : ISystemOfMeasurement<Metric>,
       IBaseUnits<Metric, Second, Meter, Kilogram, Ampere, Kelvin, Mole, Candela, Radian>
 {
+    /// <inheritdoc cref="ISystemOfMeasurement{T}.Dimensionless"/>
     public static readonly Metric Dimensionless = new();
 
     public Metric() { }
