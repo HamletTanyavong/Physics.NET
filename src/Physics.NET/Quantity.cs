@@ -25,6 +25,12 @@
 // SOFTWARE.
 // </copyright>
 
+#pragma warning disable IDE0032
+
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.Intrinsics;
+
 namespace Physics.NET;
 
 /// <summary>Represents a physical quantity.</summary>
@@ -34,27 +40,54 @@ public readonly record struct Quantity<TNumber, TSystemOfMeasurement>
     where TNumber : IComplex<TNumber>
     where TSystemOfMeasurement : ISystemOfMeasurement<TSystemOfMeasurement>
 {
+    private readonly TNumber _value;
+    private readonly TSystemOfMeasurement _units;
+
     public Quantity()
     {
-        Value = TNumber.Zero;
-        Units = TSystemOfMeasurement.Dimensionless;
+        _value = TNumber.Zero;
+        _units = TSystemOfMeasurement.Dimensionless;
     }
 
     public Quantity(TNumber value)
     {
-        Value = value;
-        Units = TSystemOfMeasurement.Dimensionless;
+        _value = value;
+        _units = TSystemOfMeasurement.Dimensionless;
     }
 
     public Quantity(TNumber value, TSystemOfMeasurement units)
     {
-        Value = value;
-        Units = units;
+        _value = value;
+        _units = units;
     }
 
     /// <summary>The value of the quantity.</summary>
-    public readonly TNumber Value { get; }
+    public readonly TNumber Value => _value;
 
     /// <summary>The units of the quantity.</summary>
-    public readonly TSystemOfMeasurement Units { get; }
+    public readonly TSystemOfMeasurement Units => _units;
+
+    /// <summary>Check that the units of the quantity are valid.</summary>
+    /// <param name="units">The units to check against.</param>
+    /// <exception cref="InvalidUnitsException">Thrown when the quantity's units do not match the specified units.</exception>
+    [Conditional("UNITS")]
+    public void VerifyUnits(in TSystemOfMeasurement units)
+    {
+        if (Vector128.IsHardwareAccelerated)
+        {
+            if (!Vector128.EqualsAll(
+                Unsafe.As<TSystemOfMeasurement, Vector128<ulong>>(ref Unsafe.AsRef(in _units)),
+                Unsafe.As<TSystemOfMeasurement, Vector128<ulong>>(ref Unsafe.AsRef(in units))))
+            {
+                throw new InvalidUnitsException($"The units of the quantity are invalid.");
+            }
+        }
+        else
+        {
+            if (!_units.Equals(units))
+            {
+                throw new InvalidUnitsException($"The units of the quantity are invalid.");
+            }
+        }
+    }
 }
