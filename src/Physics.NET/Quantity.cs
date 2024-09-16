@@ -84,9 +84,7 @@ public readonly record struct Quantity<TNumber, TSystemOfMeasurement>
         else
         {
             if (!_units.Equals(units))
-            {
                 throw new InvalidUnitsException($"The units of the quantity are invalid.");
-            }
         }
     }
 }
