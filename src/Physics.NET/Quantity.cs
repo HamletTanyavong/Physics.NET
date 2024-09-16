@@ -83,8 +83,12 @@ public readonly record struct Quantity<TNumber, TSystemOfMeasurement>
         }
         else
         {
-            if (!_units.Equals(units))
+            if (!Vector64.EqualsAll(
+                Unsafe.As<TSystemOfMeasurement, Vector64<ulong>>(ref Unsafe.AsRef(in _units)),
+                Unsafe.As<TSystemOfMeasurement, Vector64<ulong>>(ref Unsafe.AsRef(in units))))
+            {
                 throw new InvalidUnitsException($"The units of the quantity are invalid.");
+            }
         }
     }
 }
