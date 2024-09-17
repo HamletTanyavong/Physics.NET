@@ -1,4 +1,4 @@
-﻿// <copyright file="ITemperature.cs" company="Physics.NET">
+﻿// <copyright file="CGS.cs" company="Physics.NET">
 // Physics.NET
 // https://github.com/HamletTanyavong/Physics.NET
 //
@@ -25,9 +25,14 @@
 // SOFTWARE.
 // </copyright>
 
-namespace Physics.NET.DimensionalAnalysis.InternationalSystemOfUnits.BaseUnits;
+using System.Runtime.InteropServices;
 
-/// <summary>Defines support for the SI base unit of thermodynamic temperature.</summary>
-/// <typeparam name="TTemperature">The type that implements the interface.</typeparam>
-internal interface ITemperature<TTemperature> : IBaseQuantity<TTemperature>
-    where TTemperature : ITemperature<TTemperature>;
+namespace Physics.NET.DimensionalAnalysis;
+
+/// <summary>Represents the <i>Centimeter-Gram-Second</i> (CGS) system of units.</summary>
+[Serializable, StructLayout(LayoutKind.Sequential)]
+public readonly struct CGS : ISystemOfMeasurement<CGS>
+{
+    public const string Name = "CGS";
+    static string ISystemOfMeasurement<CGS>.Name => Name;
+}
