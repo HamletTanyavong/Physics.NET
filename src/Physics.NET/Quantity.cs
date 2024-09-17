@@ -72,23 +72,11 @@ public readonly record struct Quantity<TNumber, TSystemOfMeasurement>
     [Conditional("UNITS")]
     public void VerifyUnits(in TSystemOfMeasurement units)
     {
-        if (Vector128.IsHardwareAccelerated)
+        if (!Vector128.EqualsAll(
+            Unsafe.As<TSystemOfMeasurement, Vector128<ulong>>(ref Unsafe.AsRef(in _units)),
+            Unsafe.As<TSystemOfMeasurement, Vector128<ulong>>(ref Unsafe.AsRef(in units))))
         {
-            if (!Vector128.EqualsAll(
-                Unsafe.As<TSystemOfMeasurement, Vector128<ulong>>(ref Unsafe.AsRef(in _units)),
-                Unsafe.As<TSystemOfMeasurement, Vector128<ulong>>(ref Unsafe.AsRef(in units))))
-            {
-                throw new InvalidUnitsException($"The units of the quantity are invalid.");
-            }
-        }
-        else
-        {
-            if (!Vector64.EqualsAll(
-                Unsafe.As<TSystemOfMeasurement, Vector64<ulong>>(ref Unsafe.AsRef(in _units)),
-                Unsafe.As<TSystemOfMeasurement, Vector64<ulong>>(ref Unsafe.AsRef(in units))))
-            {
-                throw new InvalidUnitsException($"The units of the quantity are invalid.");
-            }
+            throw new InvalidUnitsException($"The units of the quantity are invalid.");
         }
     }
 }
