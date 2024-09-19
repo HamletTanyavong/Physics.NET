@@ -25,8 +25,11 @@
 // SOFTWARE.
 // </copyright>
 
+#define DIMENSIONS
+
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
 
 namespace Physics.NET;
@@ -34,49 +37,78 @@ namespace Physics.NET;
 /// <summary>Represents a physical quantity.</summary>
 /// <typeparam name="TNumber">The type that represents the value.</typeparam>
 /// <typeparam name="TSystemOfMeasurement">The system of measurement to use.</typeparam>
-[Serializable]
+[Serializable, StructLayout(LayoutKind.Sequential)]
 public readonly record struct Quantity<TNumber, TSystemOfMeasurement>
-    where TNumber : IComplex<TNumber>
+    where TNumber : IComplex<TNumber>, IDifferentiableFunctions<TNumber>
     where TSystemOfMeasurement : ISystemOfMeasurement<TSystemOfMeasurement>
 {
-    private readonly TNumber _value;
-    private readonly TSystemOfMeasurement _units;
+    internal readonly TNumber _value;
+    internal readonly Dimensions _dimensions;
 
     public Quantity()
     {
         _value = TNumber.Zero;
-        _units = TSystemOfMeasurement.Dimensionless;
+        _dimensions = Dimensions.Dimensionless;
     }
 
     public Quantity(TNumber value)
     {
         _value = value;
-        _units = TSystemOfMeasurement.Dimensionless;
+        _dimensions = Dimensions.Dimensionless;
     }
 
-    public Quantity(TNumber value, TSystemOfMeasurement units)
+    public Quantity(TNumber value, Dimensions dimensions)
     {
         _value = value;
-        _units = units;
+        _dimensions = dimensions;
     }
 
     /// <summary>The value of the quantity.</summary>
     public readonly TNumber Value => _value;
 
-    /// <summary>The units of the quantity.</summary>
-    public readonly TSystemOfMeasurement Units => _units;
+    /// <summary>The dimensions of the quantity.</summary>
+    public readonly Dimensions Dimensions => _dimensions;
 
-    /// <summary>Check that the units of the quantity are valid.</summary>
-    /// <param name="units">The units to check against.</param>
-    /// <exception cref="InvalidUnitsException">Thrown when the quantity's units do not match the specified units.</exception>
-    [Conditional("UNITS")]
-    public void VerifyUnits(in TSystemOfMeasurement units)
+    /// <inheritdoc cref="ISystemOfMeasurement{T}.Name"/>
+    public readonly string Units => TSystemOfMeasurement.Name;
+
+    /// <summary>Check that the dimensions of the quantity are valid.</summary>
+    /// <param name="dimensions">The dimensions to check against.</param>
+    /// <exception cref="DimensionalAnalysisException">Thrown when the quantity's dimensions do not match the specified dimensions.</exception>
+    [Conditional("DIMENSIONS")]
+    public void VerifyDimensions(in Dimensions dimensions)
     {
         if (!Vector128.EqualsAll(
-            Unsafe.As<TSystemOfMeasurement, Vector128<ulong>>(ref Unsafe.AsRef(in _units)),
-            Unsafe.As<TSystemOfMeasurement, Vector128<ulong>>(ref Unsafe.AsRef(in units))))
+            Unsafe.As<Dimensions, Vector128<ulong>>(ref Unsafe.AsRef(in _dimensions)),
+            Unsafe.As<Dimensions, Vector128<ulong>>(ref Unsafe.AsRef(in dimensions))))
         {
-            throw new InvalidUnitsException($"The units of the quantity are invalid.");
+            throw new DimensionalAnalysisException($"The dimensions of the quantity are invalid.");
         }
     }
+
+    //
+    // Operators
+    //
+
+    public static Quantity<TNumber, TSystemOfMeasurement> operator +(Quantity<TNumber, TSystemOfMeasurement> z) => z;
+
+    public static Quantity<TNumber, TSystemOfMeasurement> operator -(Quantity<TNumber, TSystemOfMeasurement> z) => new(-z._value, z._dimensions);
+
+    public static Quantity<TNumber, TSystemOfMeasurement> operator +(Quantity<TNumber, TSystemOfMeasurement> z, Quantity<TNumber, TSystemOfMeasurement> w)
+    {
+        z.VerifyDimensions(w._dimensions);
+        return new(z._value + w._value, z._dimensions | w._dimensions);
+    }
+
+    public static Quantity<TNumber, TSystemOfMeasurement> operator -(Quantity<TNumber, TSystemOfMeasurement> z, Quantity<TNumber, TSystemOfMeasurement> w)
+    {
+        z.VerifyDimensions(w._dimensions);
+        return new(z._value - w._value, z._dimensions | w._dimensions);
+    }
+
+    public static Quantity<TNumber, TSystemOfMeasurement> operator *(Quantity<TNumber, TSystemOfMeasurement> z, Quantity<TNumber, TSystemOfMeasurement> w)
+        => new(z._value * w._value, z._dimensions * w._dimensions);
+
+    public static Quantity<TNumber, TSystemOfMeasurement> operator /(Quantity<TNumber, TSystemOfMeasurement> z, Quantity<TNumber, TSystemOfMeasurement> w)
+        => new(z._value / w._value, z._dimensions / w._dimensions);
 }

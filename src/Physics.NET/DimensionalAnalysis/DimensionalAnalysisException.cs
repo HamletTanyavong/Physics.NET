@@ -1,4 +1,4 @@
-﻿// <copyright file="ILength.cs" company="Physics.NET">
+﻿// <copyright file="DimensionalAnalysisException.cs" company="Physics.NET">
 // Physics.NET
 // https://github.com/HamletTanyavong/Physics.NET
 //
@@ -25,9 +25,16 @@
 // SOFTWARE.
 // </copyright>
 
-namespace Physics.NET.DimensionalAnalysis.InternationalSystemOfUnits.BaseUnits;
+namespace Physics.NET.DimensionalAnalysis;
 
-/// <summary>Defines support for the SI base unit of length.</summary>
-/// <typeparam name="T">The type that implements the interface.</typeparam>
-internal interface ILength<T> : IBaseQuantity<T>
-    where T : ILength<T>;
+/// <summary>Represents errors that occur when the dimensions and/or units of quantities do not match the required dimensions/units of certain operations.</summary>
+internal class DimensionalAnalysisException : Exception
+{
+    public DimensionalAnalysisException() { }
+
+    public DimensionalAnalysisException(string message)
+        : base(message) { }
+
+    public DimensionalAnalysisException(string message, Exception innerException)
+        : base(message, innerException) { }
+}

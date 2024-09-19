@@ -32,6 +32,6 @@ namespace Physics.NET.DimensionalAnalysis;
 public interface ISystemOfMeasurement<T>
     where T : ISystemOfMeasurement<T>
 {
-    /// <summary>Represents no units.</summary>
-    static abstract T Dimensionless { get; }
+    /// <summary>The name of the system of measurement.</summary>
+    static abstract string Name { get; }
 }

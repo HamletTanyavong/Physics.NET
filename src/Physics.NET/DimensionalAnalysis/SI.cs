@@ -1,4 +1,4 @@
-﻿// <copyright file="IAmount.cs" company="Physics.NET">
+﻿// <copyright file="SI.cs" company="Physics.NET">
 // Physics.NET
 // https://github.com/HamletTanyavong/Physics.NET
 //
@@ -25,9 +25,16 @@
 // SOFTWARE.
 // </copyright>
 
-namespace Physics.NET.DimensionalAnalysis.InternationalSystemOfUnits.BaseUnits;
+using System.Runtime.InteropServices;
 
-/// <summary>Defines support for the SI base unit of an amount of substance.</summary>
-/// <typeparam name="T">The type that implements the interface.</typeparam>
-internal interface IAmount<T> : IBaseQuantity<T>
-    where T : IAmount<T>;
+namespace Physics.NET.DimensionalAnalysis;
+
+/// <summary>
+/// Represents the <i>International System of Units</i> (SI), as coordinated by the <see href="https://www.bipm.org">International Bureau of Weights and Measurements</see>.
+/// </summary>
+[Serializable, StructLayout(LayoutKind.Sequential)]
+public readonly struct SI : ISystemOfMeasurement<SI>
+{
+    public const string Name = "SI";
+    static string ISystemOfMeasurement<SI>.Name => Name;
+}
