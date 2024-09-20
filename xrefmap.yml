@@ -1,0 +1,881 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Physics.NET
+  name: Physics.NET
+  href: api/Physics.NET.html
+  commentId: N:Physics.NET
+  fullName: Physics.NET
+  nameWithType: Physics.NET
+- uid: Physics.NET.DimensionalAnalysis
+  name: Physics.NET.DimensionalAnalysis
+  href: api/Physics.NET.DimensionalAnalysis.html
+  commentId: N:Physics.NET.DimensionalAnalysis
+  fullName: Physics.NET.DimensionalAnalysis
+  nameWithType: Physics.NET.DimensionalAnalysis
+- uid: Physics.NET.DimensionalAnalysis.CGS
+  name: CGS
+  href: api/Physics.NET.DimensionalAnalysis.CGS.html
+  commentId: T:Physics.NET.DimensionalAnalysis.CGS
+  fullName: Physics.NET.DimensionalAnalysis.CGS
+  nameWithType: CGS
+- uid: Physics.NET.DimensionalAnalysis.CGS.Name
+  name: Name
+  href: api/Physics.NET.DimensionalAnalysis.CGS.html#Physics_NET_DimensionalAnalysis_CGS_Name
+  commentId: F:Physics.NET.DimensionalAnalysis.CGS.Name
+  fullName: Physics.NET.DimensionalAnalysis.CGS.Name
+  nameWithType: CGS.Name
+- uid: Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions
+  name: DimensionalAnalysisExtensions
+  href: api/Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.html
+  commentId: T:Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions
+  fullName: Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions
+  nameWithType: DimensionalAnalysisExtensions
+- uid: Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.ToCGS*
+  name: ToCGS
+  href: api/Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.html#Physics_NET_DimensionalAnalysis_DimensionalAnalysisExtensions_ToCGS_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.ToCGS
+  isSpec: "True"
+  fullName: Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.ToCGS
+  nameWithType: DimensionalAnalysisExtensions.ToCGS
+- uid: Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.ToCGS``1(Physics.NET.Quantity{``0,Physics.NET.DimensionalAnalysis.SI}@)
+  name: ToCGS<T>(in Quantity<T, SI>)
+  href: api/Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.html#Physics_NET_DimensionalAnalysis_DimensionalAnalysisExtensions_ToCGS__1_Physics_NET_Quantity___0_Physics_NET_DimensionalAnalysis_SI___
+  commentId: M:Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.ToCGS``1(Physics.NET.Quantity{``0,Physics.NET.DimensionalAnalysis.SI}@)
+  name.vb: ToCGS(Of T)(Quantity(Of T, SI))
+  fullName: Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.ToCGS<T>(in Physics.NET.Quantity<T, Physics.NET.DimensionalAnalysis.SI>)
+  fullName.vb: Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.ToCGS(Of T)(Physics.NET.Quantity(Of T, Physics.NET.DimensionalAnalysis.SI))
+  nameWithType: DimensionalAnalysisExtensions.ToCGS<T>(in Quantity<T, SI>)
+  nameWithType.vb: DimensionalAnalysisExtensions.ToCGS(Of T)(Quantity(Of T, SI))
+- uid: Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.ToSI*
+  name: ToSI
+  href: api/Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.html#Physics_NET_DimensionalAnalysis_DimensionalAnalysisExtensions_ToSI_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.ToSI
+  isSpec: "True"
+  fullName: Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.ToSI
+  nameWithType: DimensionalAnalysisExtensions.ToSI
+- uid: Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.ToSI``1(Physics.NET.Quantity{``0,Physics.NET.DimensionalAnalysis.CGS}@)
+  name: ToSI<T>(in Quantity<T, CGS>)
+  href: api/Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.html#Physics_NET_DimensionalAnalysis_DimensionalAnalysisExtensions_ToSI__1_Physics_NET_Quantity___0_Physics_NET_DimensionalAnalysis_CGS___
+  commentId: M:Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.ToSI``1(Physics.NET.Quantity{``0,Physics.NET.DimensionalAnalysis.CGS}@)
+  name.vb: ToSI(Of T)(Quantity(Of T, CGS))
+  fullName: Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.ToSI<T>(in Physics.NET.Quantity<T, Physics.NET.DimensionalAnalysis.CGS>)
+  fullName.vb: Physics.NET.DimensionalAnalysis.DimensionalAnalysisExtensions.ToSI(Of T)(Physics.NET.Quantity(Of T, Physics.NET.DimensionalAnalysis.CGS))
+  nameWithType: DimensionalAnalysisExtensions.ToSI<T>(in Quantity<T, CGS>)
+  nameWithType.vb: DimensionalAnalysisExtensions.ToSI(Of T)(Quantity(Of T, CGS))
+- uid: Physics.NET.DimensionalAnalysis.Dimensions
+  name: Dimensions
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html
+  commentId: T:Physics.NET.DimensionalAnalysis.Dimensions
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions
+  nameWithType: Dimensions
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.#ctor
+  name: Dimensions()
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions__ctor
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.#ctor
+  name.vb: New()
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Dimensions()
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.New()
+  nameWithType: Dimensions.Dimensions()
+  nameWithType.vb: Dimensions.New()
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.#ctor(Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte})
+  name: Dimensions(Rational<sbyte>, Rational<sbyte>, Rational<sbyte>, Rational<sbyte>, Rational<sbyte>, Rational<sbyte>, Rational<sbyte>, Rational<sbyte>)
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions__ctor_Mathematics_NET_Core_Rational_System_SByte__Mathematics_NET_Core_Rational_System_SByte__Mathematics_NET_Core_Rational_System_SByte__Mathematics_NET_Core_Rational_System_SByte__Mathematics_NET_Core_Rational_System_SByte__Mathematics_NET_Core_Rational_System_SByte__Mathematics_NET_Core_Rational_System_SByte__Mathematics_NET_Core_Rational_System_SByte__
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.#ctor(Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte})
+  name.vb: New(Rational(Of SByte), Rational(Of SByte), Rational(Of SByte), Rational(Of SByte), Rational(Of SByte), Rational(Of SByte), Rational(Of SByte), Rational(Of SByte))
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Dimensions(Mathematics.NET.Core.Rational<sbyte>, Mathematics.NET.Core.Rational<sbyte>, Mathematics.NET.Core.Rational<sbyte>, Mathematics.NET.Core.Rational<sbyte>, Mathematics.NET.Core.Rational<sbyte>, Mathematics.NET.Core.Rational<sbyte>, Mathematics.NET.Core.Rational<sbyte>, Mathematics.NET.Core.Rational<sbyte>)
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.New(Mathematics.NET.Core.Rational(Of SByte), Mathematics.NET.Core.Rational(Of SByte), Mathematics.NET.Core.Rational(Of SByte), Mathematics.NET.Core.Rational(Of SByte), Mathematics.NET.Core.Rational(Of SByte), Mathematics.NET.Core.Rational(Of SByte), Mathematics.NET.Core.Rational(Of SByte), Mathematics.NET.Core.Rational(Of SByte))
+  nameWithType: Dimensions.Dimensions(Rational<sbyte>, Rational<sbyte>, Rational<sbyte>, Rational<sbyte>, Rational<sbyte>, Rational<sbyte>, Rational<sbyte>, Rational<sbyte>)
+  nameWithType.vb: Dimensions.New(Rational(Of SByte), Rational(Of SByte), Rational(Of SByte), Rational(Of SByte), Rational(Of SByte), Rational(Of SByte), Rational(Of SByte), Rational(Of SByte))
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.#ctor*
+  name: Dimensions
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions__ctor_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.Dimensions.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Dimensions
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.New
+  nameWithType: Dimensions.Dimensions
+  nameWithType.vb: Dimensions.New
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.AbsorbedDose
+  name: AbsorbedDose
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_AbsorbedDose
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.AbsorbedDose
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.AbsorbedDose
+  nameWithType: Dimensions.AbsorbedDose
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Acceleration
+  name: Acceleration
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Acceleration
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Acceleration
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Acceleration
+  nameWithType: Dimensions.Acceleration
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Amount
+  name: Amount
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Amount
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Amount
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Amount
+  nameWithType: Dimensions.Amount
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Angle
+  name: Angle
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Angle
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Angle
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Angle
+  nameWithType: Dimensions.Angle
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.AngularAcceleration
+  name: AngularAcceleration
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_AngularAcceleration
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.AngularAcceleration
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.AngularAcceleration
+  nameWithType: Dimensions.AngularAcceleration
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.AngularVelocity
+  name: AngularVelocity
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_AngularVelocity
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.AngularVelocity
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.AngularVelocity
+  nameWithType: Dimensions.AngularVelocity
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Area
+  name: Area
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Area
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Area
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Area
+  nameWithType: Dimensions.Area
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.CatalyticActivity
+  name: CatalyticActivity
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_CatalyticActivity
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.CatalyticActivity
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.CatalyticActivity
+  nameWithType: Dimensions.CatalyticActivity
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Current
+  name: Current
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Current
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Current
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Current
+  nameWithType: Dimensions.Current
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.CurrentDensity
+  name: CurrentDensity
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_CurrentDensity
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.CurrentDensity
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.CurrentDensity
+  nameWithType: Dimensions.CurrentDensity
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Density
+  name: Density
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Density
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Density
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Density
+  nameWithType: Dimensions.Density
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Dimensionless
+  name: Dimensionless
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Dimensionless
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Dimensionless
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Dimensionless
+  nameWithType: Dimensions.Dimensionless
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.ElectricCharge
+  name: ElectricCharge
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_ElectricCharge
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.ElectricCharge
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.ElectricCharge
+  nameWithType: Dimensions.ElectricCharge
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.ElectricFieldStrength
+  name: ElectricFieldStrength
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_ElectricFieldStrength
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.ElectricFieldStrength
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.ElectricFieldStrength
+  nameWithType: Dimensions.ElectricFieldStrength
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.ElectricalCapacitance
+  name: ElectricalCapacitance
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_ElectricalCapacitance
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.ElectricalCapacitance
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.ElectricalCapacitance
+  nameWithType: Dimensions.ElectricalCapacitance
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.ElectricalConductance
+  name: ElectricalConductance
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_ElectricalConductance
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.ElectricalConductance
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.ElectricalConductance
+  nameWithType: Dimensions.ElectricalConductance
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.ElectricalInductance
+  name: ElectricalInductance
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_ElectricalInductance
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.ElectricalInductance
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.ElectricalInductance
+  nameWithType: Dimensions.ElectricalInductance
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.ElectricalPotentialDifference
+  name: ElectricalPotentialDifference
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_ElectricalPotentialDifference
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.ElectricalPotentialDifference
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.ElectricalPotentialDifference
+  nameWithType: Dimensions.ElectricalPotentialDifference
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.ElectricalResistance
+  name: ElectricalResistance
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_ElectricalResistance
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.ElectricalResistance
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.ElectricalResistance
+  nameWithType: Dimensions.ElectricalResistance
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Energy
+  name: Energy
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Energy
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Energy
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Energy
+  nameWithType: Dimensions.Energy
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.EnergyDensity
+  name: EnergyDensity
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_EnergyDensity
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.EnergyDensity
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.EnergyDensity
+  nameWithType: Dimensions.EnergyDensity
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Entropy
+  name: Entropy
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Entropy
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Entropy
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Entropy
+  nameWithType: Dimensions.Entropy
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Equals(Physics.NET.DimensionalAnalysis.Dimensions)
+  name: Equals(Dimensions)
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Equals_Physics_NET_DimensionalAnalysis_Dimensions_
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.Equals(Physics.NET.DimensionalAnalysis.Dimensions)
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Equals(Physics.NET.DimensionalAnalysis.Dimensions)
+  nameWithType: Dimensions.Equals(Dimensions)
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Equals(System.Object)
+  name: Equals(object?)
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Equals_System_Object_
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Equals(object?)
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.Equals(Object)
+  nameWithType: Dimensions.Equals(object?)
+  nameWithType.vb: Dimensions.Equals(Object)
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Equals*
+  name: Equals
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Equals_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.Dimensions.Equals
+  isSpec: "True"
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Equals
+  nameWithType: Dimensions.Equals
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.EquivalentDose
+  name: EquivalentDose
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_EquivalentDose
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.EquivalentDose
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.EquivalentDose
+  nameWithType: Dimensions.EquivalentDose
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Force
+  name: Force
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Force
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Force
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Force
+  nameWithType: Dimensions.Force
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Frequency
+  name: Frequency
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Frequency
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Frequency
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Frequency
+  nameWithType: Dimensions.Frequency
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.GetHashCode
+  name: GetHashCode()
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_GetHashCode
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.GetHashCode
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.GetHashCode()
+  nameWithType: Dimensions.GetHashCode()
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.GetHashCode*
+  name: GetHashCode
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_GetHashCode_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.Dimensions.GetHashCode
+  isSpec: "True"
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.GetHashCode
+  nameWithType: Dimensions.GetHashCode
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Illuminance
+  name: Illuminance
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Illuminance
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Illuminance
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Illuminance
+  nameWithType: Dimensions.Illuminance
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Intensity
+  name: Intensity
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Intensity
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Intensity
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Intensity
+  nameWithType: Dimensions.Intensity
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Length
+  name: Length
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Length
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Length
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Length
+  nameWithType: Dimensions.Length
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.LuminousFlux
+  name: LuminousFlux
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_LuminousFlux
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.LuminousFlux
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.LuminousFlux
+  nameWithType: Dimensions.LuminousFlux
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.MagneticFieldStrength
+  name: MagneticFieldStrength
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_MagneticFieldStrength
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.MagneticFieldStrength
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.MagneticFieldStrength
+  nameWithType: Dimensions.MagneticFieldStrength
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.MagneticFlux
+  name: MagneticFlux
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_MagneticFlux
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.MagneticFlux
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.MagneticFlux
+  nameWithType: Dimensions.MagneticFlux
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.MagneticInduction
+  name: MagneticInduction
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_MagneticInduction
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.MagneticInduction
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.MagneticInduction
+  nameWithType: Dimensions.MagneticInduction
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Mass
+  name: Mass
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Mass
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Mass
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Mass
+  nameWithType: Dimensions.Mass
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.MomentOfForce
+  name: MomentOfForce
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_MomentOfForce
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.MomentOfForce
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.MomentOfForce
+  nameWithType: Dimensions.MomentOfForce
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.MomentOfInertia
+  name: MomentOfInertia
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_MomentOfInertia
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.MomentOfInertia
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.MomentOfInertia
+  nameWithType: Dimensions.MomentOfInertia
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Permeability
+  name: Permeability
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Permeability
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Permeability
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Permeability
+  nameWithType: Dimensions.Permeability
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Permittivity
+  name: Permittivity
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Permittivity
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Permittivity
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Permittivity
+  nameWithType: Dimensions.Permittivity
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Power
+  name: Power
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Power
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Power
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Power
+  nameWithType: Dimensions.Power
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Pressure
+  name: Pressure
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Pressure
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Pressure
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Pressure
+  nameWithType: Dimensions.Pressure
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Radioactivity
+  name: Radioactivity
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Radioactivity
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Radioactivity
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Radioactivity
+  nameWithType: Dimensions.Radioactivity
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.SolidAngle
+  name: SolidAngle
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_SolidAngle
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.SolidAngle
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.SolidAngle
+  nameWithType: Dimensions.SolidAngle
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.SpecificEnergy
+  name: SpecificEnergy
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_SpecificEnergy
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.SpecificEnergy
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.SpecificEnergy
+  nameWithType: Dimensions.SpecificEnergy
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.SpecifictHeatCapacity
+  name: SpecifictHeatCapacity
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_SpecifictHeatCapacity
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.SpecifictHeatCapacity
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.SpecifictHeatCapacity
+  nameWithType: Dimensions.SpecifictHeatCapacity
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.SurfaceDensity
+  name: SurfaceDensity
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_SurfaceDensity
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.SurfaceDensity
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.SurfaceDensity
+  nameWithType: Dimensions.SurfaceDensity
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.SurfaceTension
+  name: SurfaceTension
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_SurfaceTension
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.SurfaceTension
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.SurfaceTension
+  nameWithType: Dimensions.SurfaceTension
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Temperature
+  name: Temperature
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Temperature
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Temperature
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Temperature
+  nameWithType: Dimensions.Temperature
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.ThermalConductivity
+  name: ThermalConductivity
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_ThermalConductivity
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.ThermalConductivity
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.ThermalConductivity
+  nameWithType: Dimensions.ThermalConductivity
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Time
+  name: Time
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Time
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Time
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Time
+  nameWithType: Dimensions.Time
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.ToString
+  name: ToString()
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_ToString
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.ToString
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.ToString()
+  nameWithType: Dimensions.ToString()
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.ToString(System.String,System.IFormatProvider)
+  name: ToString(string?, IFormatProvider?)
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_ToString_System_String_System_IFormatProvider_
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.ToString(System.String,System.IFormatProvider)
+  name.vb: ToString(String, IFormatProvider)
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.ToString(string?, System.IFormatProvider?)
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.ToString(String, System.IFormatProvider)
+  nameWithType: Dimensions.ToString(string?, IFormatProvider?)
+  nameWithType.vb: Dimensions.ToString(String, IFormatProvider)
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.ToString*
+  name: ToString
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_ToString_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.Dimensions.ToString
+  isSpec: "True"
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.ToString
+  nameWithType: Dimensions.ToString
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Velocity
+  name: Velocity
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Velocity
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Velocity
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Velocity
+  nameWithType: Dimensions.Velocity
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.Volume
+  name: Volume
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_Volume
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.Volume
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.Volume
+  nameWithType: Dimensions.Volume
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.WaveNumber
+  name: WaveNumber
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_WaveNumber
+  commentId: F:Physics.NET.DimensionalAnalysis.Dimensions.WaveNumber
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.WaveNumber
+  nameWithType: Dimensions.WaveNumber
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_BitwiseAnd(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)
+  name: operator &(Dimensions, Dimensions)
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_BitwiseAnd_Physics_NET_DimensionalAnalysis_Dimensions_Physics_NET_DimensionalAnalysis_Dimensions_
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.op_BitwiseAnd(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)
+  name.vb: And(Dimensions, Dimensions)
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator &(Physics.NET.DimensionalAnalysis.Dimensions, Physics.NET.DimensionalAnalysis.Dimensions)
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.And(Physics.NET.DimensionalAnalysis.Dimensions, Physics.NET.DimensionalAnalysis.Dimensions)
+  nameWithType: Dimensions.operator &(Dimensions, Dimensions)
+  nameWithType.vb: Dimensions.And(Dimensions, Dimensions)
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_BitwiseAnd*
+  name: operator &
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_BitwiseAnd_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.Dimensions.op_BitwiseAnd
+  isSpec: "True"
+  name.vb: And
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator &
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.And
+  nameWithType: Dimensions.operator &
+  nameWithType.vb: Dimensions.And
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_BitwiseOr(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)
+  name: operator |(Dimensions, Dimensions)
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_BitwiseOr_Physics_NET_DimensionalAnalysis_Dimensions_Physics_NET_DimensionalAnalysis_Dimensions_
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.op_BitwiseOr(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)
+  name.vb: Or(Dimensions, Dimensions)
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator |(Physics.NET.DimensionalAnalysis.Dimensions, Physics.NET.DimensionalAnalysis.Dimensions)
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.Or(Physics.NET.DimensionalAnalysis.Dimensions, Physics.NET.DimensionalAnalysis.Dimensions)
+  nameWithType: Dimensions.operator |(Dimensions, Dimensions)
+  nameWithType.vb: Dimensions.Or(Dimensions, Dimensions)
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_BitwiseOr*
+  name: operator |
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_BitwiseOr_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.Dimensions.op_BitwiseOr
+  isSpec: "True"
+  name.vb: Or
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator |
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.Or
+  nameWithType: Dimensions.operator |
+  nameWithType.vb: Dimensions.Or
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_Division(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)
+  name: operator /(Dimensions, Dimensions)
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_Division_Physics_NET_DimensionalAnalysis_Dimensions_Physics_NET_DimensionalAnalysis_Dimensions_
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.op_Division(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)
+  name.vb: /(Dimensions, Dimensions)
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator /(Physics.NET.DimensionalAnalysis.Dimensions, Physics.NET.DimensionalAnalysis.Dimensions)
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions./(Physics.NET.DimensionalAnalysis.Dimensions, Physics.NET.DimensionalAnalysis.Dimensions)
+  nameWithType: Dimensions.operator /(Dimensions, Dimensions)
+  nameWithType.vb: Dimensions./(Dimensions, Dimensions)
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_Division*
+  name: operator /
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_Division_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.Dimensions.op_Division
+  isSpec: "True"
+  name.vb: /
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator /
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions./
+  nameWithType: Dimensions.operator /
+  nameWithType.vb: Dimensions./
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_Equality(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)
+  name: operator ==(Dimensions, Dimensions)
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_Equality_Physics_NET_DimensionalAnalysis_Dimensions_Physics_NET_DimensionalAnalysis_Dimensions_
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.op_Equality(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)
+  name.vb: =(Dimensions, Dimensions)
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator ==(Physics.NET.DimensionalAnalysis.Dimensions, Physics.NET.DimensionalAnalysis.Dimensions)
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.=(Physics.NET.DimensionalAnalysis.Dimensions, Physics.NET.DimensionalAnalysis.Dimensions)
+  nameWithType: Dimensions.operator ==(Dimensions, Dimensions)
+  nameWithType.vb: Dimensions.=(Dimensions, Dimensions)
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_Equality*
+  name: operator ==
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_Equality_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.Dimensions.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator ==
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.=
+  nameWithType: Dimensions.operator ==
+  nameWithType.vb: Dimensions.=
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_ExclusiveOr(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)
+  name: operator ^(Dimensions, Dimensions)
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_ExclusiveOr_Physics_NET_DimensionalAnalysis_Dimensions_Physics_NET_DimensionalAnalysis_Dimensions_
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.op_ExclusiveOr(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)
+  name.vb: Xor(Dimensions, Dimensions)
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator ^(Physics.NET.DimensionalAnalysis.Dimensions, Physics.NET.DimensionalAnalysis.Dimensions)
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.Xor(Physics.NET.DimensionalAnalysis.Dimensions, Physics.NET.DimensionalAnalysis.Dimensions)
+  nameWithType: Dimensions.operator ^(Dimensions, Dimensions)
+  nameWithType.vb: Dimensions.Xor(Dimensions, Dimensions)
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_ExclusiveOr*
+  name: operator ^
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_ExclusiveOr_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.Dimensions.op_ExclusiveOr
+  isSpec: "True"
+  name.vb: Xor
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator ^
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.Xor
+  nameWithType: Dimensions.operator ^
+  nameWithType.vb: Dimensions.Xor
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_Inequality(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)
+  name: operator !=(Dimensions, Dimensions)
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_Inequality_Physics_NET_DimensionalAnalysis_Dimensions_Physics_NET_DimensionalAnalysis_Dimensions_
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.op_Inequality(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)
+  name.vb: <>(Dimensions, Dimensions)
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator !=(Physics.NET.DimensionalAnalysis.Dimensions, Physics.NET.DimensionalAnalysis.Dimensions)
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.<>(Physics.NET.DimensionalAnalysis.Dimensions, Physics.NET.DimensionalAnalysis.Dimensions)
+  nameWithType: Dimensions.operator !=(Dimensions, Dimensions)
+  nameWithType.vb: Dimensions.<>(Dimensions, Dimensions)
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_Inequality*
+  name: operator !=
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_Inequality_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.Dimensions.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator !=
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.<>
+  nameWithType: Dimensions.operator !=
+  nameWithType.vb: Dimensions.<>
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_Multiply(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)
+  name: operator *(Dimensions, Dimensions)
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_Multiply_Physics_NET_DimensionalAnalysis_Dimensions_Physics_NET_DimensionalAnalysis_Dimensions_
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.op_Multiply(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)
+  name.vb: '*(Dimensions, Dimensions)'
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator *(Physics.NET.DimensionalAnalysis.Dimensions, Physics.NET.DimensionalAnalysis.Dimensions)
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.*(Physics.NET.DimensionalAnalysis.Dimensions, Physics.NET.DimensionalAnalysis.Dimensions)
+  nameWithType: Dimensions.operator *(Dimensions, Dimensions)
+  nameWithType.vb: Dimensions.*(Dimensions, Dimensions)
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_Multiply*
+  name: operator *
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_Multiply_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.Dimensions.op_Multiply
+  isSpec: "True"
+  name.vb: '*'
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator *
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.*
+  nameWithType: Dimensions.operator *
+  nameWithType.vb: Dimensions.*
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_OnesComplement(Physics.NET.DimensionalAnalysis.Dimensions)
+  name: operator ~(Dimensions)
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_OnesComplement_Physics_NET_DimensionalAnalysis_Dimensions_
+  commentId: M:Physics.NET.DimensionalAnalysis.Dimensions.op_OnesComplement(Physics.NET.DimensionalAnalysis.Dimensions)
+  name.vb: Not(Dimensions)
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator ~(Physics.NET.DimensionalAnalysis.Dimensions)
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.Not(Physics.NET.DimensionalAnalysis.Dimensions)
+  nameWithType: Dimensions.operator ~(Dimensions)
+  nameWithType.vb: Dimensions.Not(Dimensions)
+- uid: Physics.NET.DimensionalAnalysis.Dimensions.op_OnesComplement*
+  name: operator ~
+  href: api/Physics.NET.DimensionalAnalysis.Dimensions.html#Physics_NET_DimensionalAnalysis_Dimensions_op_OnesComplement_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.Dimensions.op_OnesComplement
+  isSpec: "True"
+  name.vb: Not
+  fullName: Physics.NET.DimensionalAnalysis.Dimensions.operator ~
+  fullName.vb: Physics.NET.DimensionalAnalysis.Dimensions.Not
+  nameWithType: Dimensions.operator ~
+  nameWithType.vb: Dimensions.Not
+- uid: Physics.NET.DimensionalAnalysis.ISystemOfMeasurement`1
+  name: ISystemOfMeasurement<T>
+  href: api/Physics.NET.DimensionalAnalysis.ISystemOfMeasurement-1.html
+  commentId: T:Physics.NET.DimensionalAnalysis.ISystemOfMeasurement`1
+  name.vb: ISystemOfMeasurement(Of T)
+  fullName: Physics.NET.DimensionalAnalysis.ISystemOfMeasurement<T>
+  fullName.vb: Physics.NET.DimensionalAnalysis.ISystemOfMeasurement(Of T)
+  nameWithType: ISystemOfMeasurement<T>
+  nameWithType.vb: ISystemOfMeasurement(Of T)
+- uid: Physics.NET.DimensionalAnalysis.ISystemOfMeasurement`1.Name
+  name: Name
+  href: api/Physics.NET.DimensionalAnalysis.ISystemOfMeasurement-1.html#Physics_NET_DimensionalAnalysis_ISystemOfMeasurement_1_Name
+  commentId: P:Physics.NET.DimensionalAnalysis.ISystemOfMeasurement`1.Name
+  fullName: Physics.NET.DimensionalAnalysis.ISystemOfMeasurement<T>.Name
+  fullName.vb: Physics.NET.DimensionalAnalysis.ISystemOfMeasurement(Of T).Name
+  nameWithType: ISystemOfMeasurement<T>.Name
+  nameWithType.vb: ISystemOfMeasurement(Of T).Name
+- uid: Physics.NET.DimensionalAnalysis.ISystemOfMeasurement`1.Name*
+  name: Name
+  href: api/Physics.NET.DimensionalAnalysis.ISystemOfMeasurement-1.html#Physics_NET_DimensionalAnalysis_ISystemOfMeasurement_1_Name_
+  commentId: Overload:Physics.NET.DimensionalAnalysis.ISystemOfMeasurement`1.Name
+  isSpec: "True"
+  fullName: Physics.NET.DimensionalAnalysis.ISystemOfMeasurement<T>.Name
+  fullName.vb: Physics.NET.DimensionalAnalysis.ISystemOfMeasurement(Of T).Name
+  nameWithType: ISystemOfMeasurement<T>.Name
+  nameWithType.vb: ISystemOfMeasurement(Of T).Name
+- uid: Physics.NET.DimensionalAnalysis.SI
+  name: SI
+  href: api/Physics.NET.DimensionalAnalysis.SI.html
+  commentId: T:Physics.NET.DimensionalAnalysis.SI
+  fullName: Physics.NET.DimensionalAnalysis.SI
+  nameWithType: SI
+- uid: Physics.NET.DimensionalAnalysis.SI.Name
+  name: Name
+  href: api/Physics.NET.DimensionalAnalysis.SI.html#Physics_NET_DimensionalAnalysis_SI_Name
+  commentId: F:Physics.NET.DimensionalAnalysis.SI.Name
+  fullName: Physics.NET.DimensionalAnalysis.SI.Name
+  nameWithType: SI.Name
+- uid: Physics.NET.Quantity`2
+  name: Quantity<TNumber, TSystemOfMeasurement>
+  href: api/Physics.NET.Quantity-2.html
+  commentId: T:Physics.NET.Quantity`2
+  name.vb: Quantity(Of TNumber, TSystemOfMeasurement)
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement)
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement)
+- uid: Physics.NET.Quantity`2.#ctor
+  name: Quantity()
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2__ctor
+  commentId: M:Physics.NET.Quantity`2.#ctor
+  name.vb: New()
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.Quantity()
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).New()
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.Quantity()
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).New()
+- uid: Physics.NET.Quantity`2.#ctor(`0)
+  name: Quantity(TNumber)
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2__ctor__0_
+  commentId: M:Physics.NET.Quantity`2.#ctor(`0)
+  name.vb: New(TNumber)
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.Quantity(TNumber)
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).New(TNumber)
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.Quantity(TNumber)
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).New(TNumber)
+- uid: Physics.NET.Quantity`2.#ctor(`0,Physics.NET.DimensionalAnalysis.Dimensions)
+  name: Quantity(TNumber, Dimensions)
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2__ctor__0_Physics_NET_DimensionalAnalysis_Dimensions_
+  commentId: M:Physics.NET.Quantity`2.#ctor(`0,Physics.NET.DimensionalAnalysis.Dimensions)
+  name.vb: New(TNumber, Dimensions)
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.Quantity(TNumber, Physics.NET.DimensionalAnalysis.Dimensions)
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).New(TNumber, Physics.NET.DimensionalAnalysis.Dimensions)
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.Quantity(TNumber, Dimensions)
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).New(TNumber, Dimensions)
+- uid: Physics.NET.Quantity`2.#ctor*
+  name: Quantity
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2__ctor_
+  commentId: Overload:Physics.NET.Quantity`2.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.Quantity
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).New
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.Quantity
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).New
+- uid: Physics.NET.Quantity`2.Dimensions
+  name: Dimensions
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_Dimensions
+  commentId: P:Physics.NET.Quantity`2.Dimensions
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.Dimensions
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).Dimensions
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.Dimensions
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).Dimensions
+- uid: Physics.NET.Quantity`2.Dimensions*
+  name: Dimensions
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_Dimensions_
+  commentId: Overload:Physics.NET.Quantity`2.Dimensions
+  isSpec: "True"
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.Dimensions
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).Dimensions
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.Dimensions
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).Dimensions
+- uid: Physics.NET.Quantity`2.Units
+  name: Units
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_Units
+  commentId: P:Physics.NET.Quantity`2.Units
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.Units
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).Units
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.Units
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).Units
+- uid: Physics.NET.Quantity`2.Units*
+  name: Units
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_Units_
+  commentId: Overload:Physics.NET.Quantity`2.Units
+  isSpec: "True"
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.Units
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).Units
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.Units
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).Units
+- uid: Physics.NET.Quantity`2.Value
+  name: Value
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_Value
+  commentId: P:Physics.NET.Quantity`2.Value
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.Value
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).Value
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.Value
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).Value
+- uid: Physics.NET.Quantity`2.Value*
+  name: Value
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_Value_
+  commentId: Overload:Physics.NET.Quantity`2.Value
+  isSpec: "True"
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.Value
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).Value
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.Value
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).Value
+- uid: Physics.NET.Quantity`2.VerifyDimensions(Physics.NET.DimensionalAnalysis.Dimensions@)
+  name: VerifyDimensions(in Dimensions)
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_VerifyDimensions_Physics_NET_DimensionalAnalysis_Dimensions__
+  commentId: M:Physics.NET.Quantity`2.VerifyDimensions(Physics.NET.DimensionalAnalysis.Dimensions@)
+  name.vb: VerifyDimensions(Dimensions)
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.VerifyDimensions(in Physics.NET.DimensionalAnalysis.Dimensions)
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).VerifyDimensions(Physics.NET.DimensionalAnalysis.Dimensions)
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.VerifyDimensions(in Dimensions)
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).VerifyDimensions(Dimensions)
+- uid: Physics.NET.Quantity`2.VerifyDimensions*
+  name: VerifyDimensions
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_VerifyDimensions_
+  commentId: Overload:Physics.NET.Quantity`2.VerifyDimensions
+  isSpec: "True"
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.VerifyDimensions
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).VerifyDimensions
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.VerifyDimensions
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).VerifyDimensions
+- uid: Physics.NET.Quantity`2.op_Addition(Physics.NET.Quantity{`0,`1},Physics.NET.Quantity{`0,`1})
+  name: operator +(Quantity<TNumber, TSystemOfMeasurement>, Quantity<TNumber, TSystemOfMeasurement>)
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_op_Addition_Physics_NET_Quantity__0__1__Physics_NET_Quantity__0__1__
+  commentId: M:Physics.NET.Quantity`2.op_Addition(Physics.NET.Quantity{`0,`1},Physics.NET.Quantity{`0,`1})
+  name.vb: +(Quantity(Of TNumber, TSystemOfMeasurement), Quantity(Of TNumber, TSystemOfMeasurement))
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.operator +(Physics.NET.Quantity<TNumber, TSystemOfMeasurement>, Physics.NET.Quantity<TNumber, TSystemOfMeasurement>)
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).+(Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement), Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement))
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.operator +(Quantity<TNumber, TSystemOfMeasurement>, Quantity<TNumber, TSystemOfMeasurement>)
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).+(Quantity(Of TNumber, TSystemOfMeasurement), Quantity(Of TNumber, TSystemOfMeasurement))
+- uid: Physics.NET.Quantity`2.op_Addition*
+  name: operator +
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_op_Addition_
+  commentId: Overload:Physics.NET.Quantity`2.op_Addition
+  isSpec: "True"
+  name.vb: +
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.operator +
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).+
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.operator +
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).+
+- uid: Physics.NET.Quantity`2.op_Division(Physics.NET.Quantity{`0,`1},Physics.NET.Quantity{`0,`1})
+  name: operator /(Quantity<TNumber, TSystemOfMeasurement>, Quantity<TNumber, TSystemOfMeasurement>)
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_op_Division_Physics_NET_Quantity__0__1__Physics_NET_Quantity__0__1__
+  commentId: M:Physics.NET.Quantity`2.op_Division(Physics.NET.Quantity{`0,`1},Physics.NET.Quantity{`0,`1})
+  name.vb: /(Quantity(Of TNumber, TSystemOfMeasurement), Quantity(Of TNumber, TSystemOfMeasurement))
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.operator /(Physics.NET.Quantity<TNumber, TSystemOfMeasurement>, Physics.NET.Quantity<TNumber, TSystemOfMeasurement>)
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement)./(Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement), Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement))
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.operator /(Quantity<TNumber, TSystemOfMeasurement>, Quantity<TNumber, TSystemOfMeasurement>)
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement)./(Quantity(Of TNumber, TSystemOfMeasurement), Quantity(Of TNumber, TSystemOfMeasurement))
+- uid: Physics.NET.Quantity`2.op_Division*
+  name: operator /
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_op_Division_
+  commentId: Overload:Physics.NET.Quantity`2.op_Division
+  isSpec: "True"
+  name.vb: /
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.operator /
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement)./
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.operator /
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement)./
+- uid: Physics.NET.Quantity`2.op_Multiply(Physics.NET.Quantity{`0,`1},Physics.NET.Quantity{`0,`1})
+  name: operator *(Quantity<TNumber, TSystemOfMeasurement>, Quantity<TNumber, TSystemOfMeasurement>)
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_op_Multiply_Physics_NET_Quantity__0__1__Physics_NET_Quantity__0__1__
+  commentId: M:Physics.NET.Quantity`2.op_Multiply(Physics.NET.Quantity{`0,`1},Physics.NET.Quantity{`0,`1})
+  name.vb: '*(Quantity(Of TNumber, TSystemOfMeasurement), Quantity(Of TNumber, TSystemOfMeasurement))'
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.operator *(Physics.NET.Quantity<TNumber, TSystemOfMeasurement>, Physics.NET.Quantity<TNumber, TSystemOfMeasurement>)
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).*(Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement), Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement))
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.operator *(Quantity<TNumber, TSystemOfMeasurement>, Quantity<TNumber, TSystemOfMeasurement>)
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).*(Quantity(Of TNumber, TSystemOfMeasurement), Quantity(Of TNumber, TSystemOfMeasurement))
+- uid: Physics.NET.Quantity`2.op_Multiply*
+  name: operator *
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_op_Multiply_
+  commentId: Overload:Physics.NET.Quantity`2.op_Multiply
+  isSpec: "True"
+  name.vb: '*'
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.operator *
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).*
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.operator *
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).*
+- uid: Physics.NET.Quantity`2.op_Subtraction(Physics.NET.Quantity{`0,`1},Physics.NET.Quantity{`0,`1})
+  name: operator -(Quantity<TNumber, TSystemOfMeasurement>, Quantity<TNumber, TSystemOfMeasurement>)
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_op_Subtraction_Physics_NET_Quantity__0__1__Physics_NET_Quantity__0__1__
+  commentId: M:Physics.NET.Quantity`2.op_Subtraction(Physics.NET.Quantity{`0,`1},Physics.NET.Quantity{`0,`1})
+  name.vb: -(Quantity(Of TNumber, TSystemOfMeasurement), Quantity(Of TNumber, TSystemOfMeasurement))
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.operator -(Physics.NET.Quantity<TNumber, TSystemOfMeasurement>, Physics.NET.Quantity<TNumber, TSystemOfMeasurement>)
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).-(Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement), Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement))
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.operator -(Quantity<TNumber, TSystemOfMeasurement>, Quantity<TNumber, TSystemOfMeasurement>)
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).-(Quantity(Of TNumber, TSystemOfMeasurement), Quantity(Of TNumber, TSystemOfMeasurement))
+- uid: Physics.NET.Quantity`2.op_Subtraction*
+  name: operator -
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_op_Subtraction_
+  commentId: Overload:Physics.NET.Quantity`2.op_Subtraction
+  isSpec: "True"
+  name.vb: '-'
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.operator -
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).-
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.operator -
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).-
+- uid: Physics.NET.Quantity`2.op_UnaryNegation(Physics.NET.Quantity{`0,`1})
+  name: operator -(Quantity<TNumber, TSystemOfMeasurement>)
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_op_UnaryNegation_Physics_NET_Quantity__0__1__
+  commentId: M:Physics.NET.Quantity`2.op_UnaryNegation(Physics.NET.Quantity{`0,`1})
+  name.vb: -(Quantity(Of TNumber, TSystemOfMeasurement))
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.operator -(Physics.NET.Quantity<TNumber, TSystemOfMeasurement>)
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).-(Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement))
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.operator -(Quantity<TNumber, TSystemOfMeasurement>)
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).-(Quantity(Of TNumber, TSystemOfMeasurement))
+- uid: Physics.NET.Quantity`2.op_UnaryNegation*
+  name: operator -
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_op_UnaryNegation_
+  commentId: Overload:Physics.NET.Quantity`2.op_UnaryNegation
+  isSpec: "True"
+  name.vb: '-'
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.operator -
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).-
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.operator -
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).-
+- uid: Physics.NET.Quantity`2.op_UnaryPlus(Physics.NET.Quantity{`0,`1})
+  name: operator +(Quantity<TNumber, TSystemOfMeasurement>)
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_op_UnaryPlus_Physics_NET_Quantity__0__1__
+  commentId: M:Physics.NET.Quantity`2.op_UnaryPlus(Physics.NET.Quantity{`0,`1})
+  name.vb: +(Quantity(Of TNumber, TSystemOfMeasurement))
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.operator +(Physics.NET.Quantity<TNumber, TSystemOfMeasurement>)
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).+(Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement))
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.operator +(Quantity<TNumber, TSystemOfMeasurement>)
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).+(Quantity(Of TNumber, TSystemOfMeasurement))
+- uid: Physics.NET.Quantity`2.op_UnaryPlus*
+  name: operator +
+  href: api/Physics.NET.Quantity-2.html#Physics_NET_Quantity_2_op_UnaryPlus_
+  commentId: Overload:Physics.NET.Quantity`2.op_UnaryPlus
+  isSpec: "True"
+  name.vb: +
+  fullName: Physics.NET.Quantity<TNumber, TSystemOfMeasurement>.operator +
+  fullName.vb: Physics.NET.Quantity(Of TNumber, TSystemOfMeasurement).+
+  nameWithType: Quantity<TNumber, TSystemOfMeasurement>.operator +
+  nameWithType.vb: Quantity(Of TNumber, TSystemOfMeasurement).+

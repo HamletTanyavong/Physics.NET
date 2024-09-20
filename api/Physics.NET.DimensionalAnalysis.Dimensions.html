@@ -1,0 +1,2349 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct Dimensions | Physics.NET </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct Dimensions | Physics.NET ">
+      
+      <meta name="description" content="Represents the dimensions of a quantity.">
+      <link rel="icon" href="../images/logo/mathematics.net.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/HamletTanyavong/Physics.NET/new/main/apiSpec/new?filename=Physics_NET_DimensionalAnalysis_Dimensions.md&amp;value=---%0Auid%3A%20Physics.NET.DimensionalAnalysis.Dimensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo/mathematics.net.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Physics.NET.DimensionalAnalysis.Dimensions">
+
+
+
+  <h1 id="Physics_NET_DimensionalAnalysis_Dimensions" data-uid="Physics.NET.DimensionalAnalysis.Dimensions" class="text-break">
+Struct Dimensions  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Physics.html">Physics</a>.<a class="xref" href="Physics.NET.html">NET</a>.<a class="xref" href="Physics.NET.DimensionalAnalysis.html">DimensionalAnalysis</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Physics.NET.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents the dimensions of a quantity.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public readonly struct Dimensions : IBitwiseOperators&lt;Dimensions, Dimensions, Dimensions&gt;, IDivisionOperation&lt;Dimensions, Dimensions&gt;, IMultiplicationOperation&lt;Dimensions, Dimensions&gt;, IEqualityRelation&lt;Dimensions, bool&gt;, IEquatable&lt;Dimensions&gt;, IFormattable</code></pre>
+  </div>
+
+
+
+
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.ibitwiseoperators-3">IBitwiseOperators</a>&lt;<a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a>, <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a>, <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a>&gt;</div>
+      <div><span class="xref">IDivisionOperation</span>&lt;<a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a>, <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a>&gt;</div>
+      <div><span class="xref">IMultiplicationOperation</span>&lt;<a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a>, <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a>&gt;</div>
+      <div><span class="xref">IEqualityRelation</span>&lt;<a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformattable">IFormattable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions__ctor_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.#ctor*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions__ctor" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.#ctor">
+  Dimensions()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L242"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dimensions()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions__ctor_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.#ctor*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions__ctor_Mathematics_NET_Core_Rational_System_SByte__Mathematics_NET_Core_Rational_System_SByte__Mathematics_NET_Core_Rational_System_SByte__Mathematics_NET_Core_Rational_System_SByte__Mathematics_NET_Core_Rational_System_SByte__Mathematics_NET_Core_Rational_System_SByte__Mathematics_NET_Core_Rational_System_SByte__Mathematics_NET_Core_Rational_System_SByte__" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.#ctor(Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte},Mathematics.NET.Core.Rational{System.SByte})">
+  Dimensions(Rational&lt;sbyte&gt;, Rational&lt;sbyte&gt;, Rational&lt;sbyte&gt;, Rational&lt;sbyte&gt;, Rational&lt;sbyte&gt;, Rational&lt;sbyte&gt;, Rational&lt;sbyte&gt;, Rational&lt;sbyte&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L244"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dimensions(Rational&lt;sbyte&gt; time, Rational&lt;sbyte&gt; length, Rational&lt;sbyte&gt; mass, Rational&lt;sbyte&gt; current, Rational&lt;sbyte&gt; temperature, Rational&lt;sbyte&gt; amount, Rational&lt;sbyte&gt; intensity, Rational&lt;sbyte&gt; angle)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <span class="xref">Rational</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>length</code> <span class="xref">Rational</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>mass</code> <span class="xref">Rational</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>current</code> <span class="xref">Rational</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>temperature</code> <span class="xref">Rational</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>amount</code> <span class="xref">Rational</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>intensity</code> <span class="xref">Rational</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>angle</code> <span class="xref">Rational</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_AbsorbedDose" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.AbsorbedDose">
+  AbsorbedDose
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of ionizing radiation dose.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions AbsorbedDose</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Acceleration" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Acceleration">
+  Acceleration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of acceleration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Acceleration</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Amount" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Amount">
+  Amount
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the base unit of an amount of substance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Amount</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Angle" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Angle">
+  Angle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the unit of a plane angle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Angle</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="Physics_NET_DimensionalAnalysis_Dimensions_Angle_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>In Physics.NET, this has been added to the SI base units for convenience. However, there are justifications for adding it formally. See <a href="https://iopscience.iop.org/article/10.1088/1681-7575/ac7bc2/pdf">On the Dimension of Angles and Their Units</a> by Peter J. Mohr, Eric L. Shirley, William D. Phillips, and Michael Trott.</p>
+</div>
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_AngularAcceleration" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.AngularAcceleration">
+  AngularAcceleration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L167"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of angular acceleration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions AngularAcceleration</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_AngularVelocity" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.AngularVelocity">
+  AngularVelocity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of angular velocity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions AngularVelocity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Area" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Area">
+  Area
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L173"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of area.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Area</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_CatalyticActivity" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.CatalyticActivity">
+  CatalyticActivity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of catalytic activity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions CatalyticActivity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Current" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Current">
+  Current
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the base unit of electric current.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Current</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_CurrentDensity" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.CurrentDensity">
+  CurrentDensity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L176"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of current density.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions CurrentDensity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Density" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Density">
+  Density
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L179"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of density.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Density</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Dimensionless" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Dimensionless">
+  Dimensionless
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents no dimensions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Dimensionless</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_ElectricCharge" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.ElectricCharge">
+  ElectricCharge
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of electric charge.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions ElectricCharge</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_ElectricFieldStrength" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.ElectricFieldStrength">
+  ElectricFieldStrength
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L182"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of electric field strength.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions ElectricFieldStrength</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_ElectricalCapacitance" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.ElectricalCapacitance">
+  ElectricalCapacitance
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of electrical capacitance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions ElectricalCapacitance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_ElectricalConductance" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.ElectricalConductance">
+  ElectricalConductance
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of electrical conductance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions ElectricalConductance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_ElectricalInductance" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.ElectricalInductance">
+  ElectricalInductance
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of electrical inductance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions ElectricalInductance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_ElectricalPotentialDifference" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.ElectricalPotentialDifference">
+  ElectricalPotentialDifference
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of electrical potential difference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions ElectricalPotentialDifference</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_ElectricalResistance" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.ElectricalResistance">
+  ElectricalResistance
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of electrical resistance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions ElectricalResistance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Energy" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Energy">
+  Energy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of energy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Energy</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_EnergyDensity" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.EnergyDensity">
+  EnergyDensity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L185"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of energy density.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions EnergyDensity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Entropy" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Entropy">
+  Entropy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of entropy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Entropy</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_EquivalentDose" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.EquivalentDose">
+  EquivalentDose
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of equivalent dose.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions EquivalentDose</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Force" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Force">
+  Force
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of force.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Force</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Frequency" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Frequency">
+  Frequency
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of frequency.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Frequency</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Illuminance" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Illuminance">
+  Illuminance
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of illuminance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Illuminance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Intensity" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Intensity">
+  Intensity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the base unit of luminous intensity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Intensity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Length" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Length">
+  Length
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the base unit of length.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Length</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_LuminousFlux" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.LuminousFlux">
+  LuminousFlux
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of luminous flux.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions LuminousFlux</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_MagneticFieldStrength" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.MagneticFieldStrength">
+  MagneticFieldStrength
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L191"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of magnetic field strength.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions MagneticFieldStrength</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_MagneticFlux" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.MagneticFlux">
+  MagneticFlux
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of magnetic flux.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions MagneticFlux</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_MagneticInduction" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.MagneticInduction">
+  MagneticInduction
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of magnetic induction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions MagneticInduction</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Mass" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Mass">
+  Mass
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the base unit of mass.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Mass</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_MomentOfForce" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.MomentOfForce">
+  MomentOfForce
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of moment of force, also known as torque.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions MomentOfForce</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_MomentOfInertia" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.MomentOfInertia">
+  MomentOfInertia
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L197"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of moment of inertia.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions MomentOfInertia</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Permeability" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Permeability">
+  Permeability
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of permeability.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Permeability</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Permittivity" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Permittivity">
+  Permittivity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of permittivity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Permittivity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Power" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Power">
+  Power
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L148"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of power.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Power</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Pressure" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Pressure">
+  Pressure
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L151"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of pressure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Pressure</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Radioactivity" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Radioactivity">
+  Radioactivity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L154"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of radioactivity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Radioactivity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_SolidAngle" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.SolidAngle">
+  SolidAngle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the derived unit of a solid angle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions SolidAngle</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_SpecificEnergy" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.SpecificEnergy">
+  SpecificEnergy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L206"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of specific energy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions SpecificEnergy</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_SpecifictHeatCapacity" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.SpecifictHeatCapacity">
+  SpecifictHeatCapacity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of specific heat capacity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions SpecifictHeatCapacity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_SurfaceDensity" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.SurfaceDensity">
+  SurfaceDensity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L212"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of surface density.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions SurfaceDensity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_SurfaceTension" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.SurfaceTension">
+  SurfaceTension
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L215"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of surface tension.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions SurfaceTension</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Temperature" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Temperature">
+  Temperature
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the base unit of thermodynamic temperature.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Temperature</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_ThermalConductivity" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.ThermalConductivity">
+  ThermalConductivity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of thermal conductivity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions ThermalConductivity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Time" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Time">
+  Time
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the base unit of time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Time</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Velocity" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Velocity">
+  Velocity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of velocity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Velocity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Volume" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Volume">
+  Volume
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L221"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of volume.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions Volume</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_WaveNumber" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.WaveNumber">
+  WaveNumber
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L227"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the dimensions of the quantity of wavenumber.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dimensions WaveNumber</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions_Equals_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Equals*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Equals_Physics_NET_DimensionalAnalysis_Dimensions_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Equals(Physics.NET.DimensionalAnalysis.Dimensions)">
+  Equals(Dimensions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L328"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(Dimensions value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current object is equal to the <code class="paramref">other</code> parameter; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions_Equals_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Equals*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_Equals_System_Object_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.Equals(System.Object)">
+  Equals(object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L326"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether this instance and a specified object are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The object to compare with the current instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">obj</code> and this instance are the same type and represent the same value; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions_GetHashCode_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.GetHashCode*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_GetHashCode" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L331"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the hash code for this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>A 32-bit signed integer that is the hash code for this instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions_ToString_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.ToString*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_ToString" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L337"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the fully qualified type name of this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The fully qualified type name.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions_ToString_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.ToString*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_ToString_System_String_System_IFormatProvider_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.ToString(System.String,System.IFormatProvider)">
+  ToString(string?, IFormatProvider?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L339"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Formats the value of the current instance using the specified format.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToString(string? format, IFormatProvider? provider)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>format</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The format to use.</p>
+<p>-or-</p>
+<p>A null reference (<code>Nothing</code> in Visual Basic) to use the default format defined for the type of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformattable">IFormattable</a> implementation.</p>
+</dd>
+    <dt><code>provider</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The value of the current instance in the specified format.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions_op_BitwiseAnd_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_BitwiseAnd*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_op_BitwiseAnd_Physics_NET_DimensionalAnalysis_Dimensions_Physics_NET_DimensionalAnalysis_Dimensions_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_BitwiseAnd(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)">
+  operator &amp;(Dimensions, Dimensions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L276"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Computes the bitwise-and of two values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dimensions operator &amp;(Dimensions left, Dimensions right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The value to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/operators/patterns#logical-patterns">and</a> with <code class="paramref">right</code>.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The value to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/operators/patterns#logical-patterns">and</a> with <code class="paramref">left</code>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The bitwise-and of <code class="paramref">left</code> and <code class="paramref">right</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions_op_BitwiseOr_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_BitwiseOr*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_op_BitwiseOr_Physics_NET_DimensionalAnalysis_Dimensions_Physics_NET_DimensionalAnalysis_Dimensions_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_BitwiseOr(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)">
+  operator |(Dimensions, Dimensions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L282"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Computes the bitwise-or of two values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dimensions operator |(Dimensions left, Dimensions right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The value to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/operators/patterns#logical-patterns">or</a> with <code class="paramref">right</code>.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The value to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/operators/patterns#logical-patterns">or</a> with <code class="paramref">left</code>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The bitwise-or of <code class="paramref">left</code> and <code class="paramref">right</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions_op_Division_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_Division*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_op_Division_Physics_NET_DimensionalAnalysis_Dimensions_Physics_NET_DimensionalAnalysis_Dimensions_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_Division(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)">
+  operator /(Dimensions, Dimensions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L305"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Divide the left value by the right value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dimensions operator /(Dimensions left, Dimensions right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The dividend.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The divisor.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The left value divided by the right value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions_op_Equality_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_Equality*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_op_Equality_Physics_NET_DimensionalAnalysis_Dimensions_Physics_NET_DimensionalAnalysis_Dimensions_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_Equality(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)">
+  operator ==(Dimensions, Dimensions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L320"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(Dimensions left, Dimensions right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions_op_ExclusiveOr_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_ExclusiveOr*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_op_ExclusiveOr_Physics_NET_DimensionalAnalysis_Dimensions_Physics_NET_DimensionalAnalysis_Dimensions_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_ExclusiveOr(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)">
+  operator ^(Dimensions, Dimensions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L288"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Computes the exclusive-or of two values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dimensions operator ^(Dimensions left, Dimensions right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The value to xor with <code class="paramref">right</code>.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The value to xor with <code class="paramref">left</code>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The exclusive-or of <code class="paramref">left</code> and <code class="paramref">right</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions_op_Inequality_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_Inequality*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_op_Inequality_Physics_NET_DimensionalAnalysis_Dimensions_Physics_NET_DimensionalAnalysis_Dimensions_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_Inequality(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)">
+  operator !=(Dimensions, Dimensions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L323"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(Dimensions left, Dimensions right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions_op_Multiply_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_Multiply*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_op_Multiply_Physics_NET_DimensionalAnalysis_Dimensions_Physics_NET_DimensionalAnalysis_Dimensions_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_Multiply(Physics.NET.DimensionalAnalysis.Dimensions,Physics.NET.DimensionalAnalysis.Dimensions)">
+  operator *(Dimensions, Dimensions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L294"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Multiply the left value by the right value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dimensions operator *(Dimensions left, Dimensions right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The left value.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The right value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The product of the two values.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Physics_NET_DimensionalAnalysis_Dimensions_op_OnesComplement_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_OnesComplement*"></a>
+
+  <h3 id="Physics_NET_DimensionalAnalysis_Dimensions_op_OnesComplement_Physics_NET_DimensionalAnalysis_Dimensions_" data-uid="Physics.NET.DimensionalAnalysis.Dimensions.op_OnesComplement(Physics.NET.DimensionalAnalysis.Dimensions)">
+  operator ~(Dimensions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/HamletTanyavong/Physics.NET/blob/main/src/Physics.NET/DimensionalAnalysis/Dimensions.cs/#L270"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Computes the ones-complement representation of a given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dimensions operator ~(Dimensions value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The value for which to compute the ones-complement.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Physics.NET.DimensionalAnalysis.Dimensions.html">Dimensions</a></dt>
+    <dd><p>The ones-complement of <code class="paramref">value</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2024 Hamlet Tanyavong
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
