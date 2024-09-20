@@ -25,8 +25,6 @@
 // SOFTWARE.
 // </copyright>
 
-#define DIMENSIONS
-
 namespace Physics.NET.DimensionalAnalysis;
 
 /// <summary>Dimensional analysis extensions.</summary>
